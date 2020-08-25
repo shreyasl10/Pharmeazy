@@ -58,6 +58,66 @@
     .info .foot p {
       font-size: 2.5em;
     }
+
+    .button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 0.5em 1em;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1.2em;
+      margin: 1em 1em;
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+
+    .button1 {
+      background-color: white; 
+      color: black; 
+      border: 0.2em solid #4CAF50;
+    }
+
+    .button1:hover {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .inputfile {
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1;
+    }
+
+    .inputfile + label {
+        border: 0.2em solid #f44336;
+        padding: 0.2em;
+        font-size: 1em;
+        color: black;
+        background-color: #e7e7e7;
+        display: inline-block;
+    }
+
+    .inputfile:focus + label,
+    .inputfile + label:hover {
+        background-color: red;
+        cursor: pointer;
+    }
+
+    input[type=number] {
+      border: 2px solid #d87822;
+      border-radius: 4px;
+      width: 3em;
+    }
+
+     body {
+      font-family: sans-serif;
+    }
+
   </style>
 </head>
 
@@ -84,7 +144,7 @@
   <main style="margin-left: 1em; margin-top: 2.5rem;">
     <div style="display:inline-block;vertical-align:top;">
       <center>
-        <h1 style="margin: 0.5em;"><u>My Cart</u></h1>
+        <h1 style="margin: 0.5em; margin-top: 1em;"><u>My Cart</u></h1>
       </center>
       <br>
       <br>
@@ -159,9 +219,13 @@
 
       <br>
       <br>
-      <h6 style="margin-left: 1em;">Please upload the scanned copy of required prescriptions:</h6>
-      <input name="presc_file" type="file" style="margin-left: 1em; margin-top: 1em; width: 15em;">
-      <center><button style="margin: 3em 2em 3em 3em;" onclick="window.location.href = 'paymentinfo.html';">Proceed to
+      <h5 style="margin-left: 1em; font-family: sans-serif;">
+        Please upload a scanned copy of your prescriptions:</h5>  
+      <input name="presc_file" type="file" id="file" class="inputfile" 
+        style="margin-left: 1em; margin-top: 1em; width: 15em;">
+        <label for="file" style = "margin-left: 14em; margin-top: 2em;">Choose a file</label>
+      <center><button class="button button1" style="margin: 3em 2em 3em 3em;" 
+        onclick="window.location.href = 'paymentinfo.html';">Proceed to
           Payment</button></center>
     </div>
 
@@ -212,7 +276,7 @@
 
           <ul class="pl-5">
             <li>
-              <a href="terms_and_conditions.html">Terms and Conditions</a>
+              <a href="#!">Terms and Conditions</a>
             </li>
             <li>
               <a href="#!">Privacy Policy</a>
