@@ -66,6 +66,69 @@
     .info .foot p {
       font-size: 15px;
     }
+
+    input[type=number] {
+      border: 2px solid #d87822;
+      border-radius: 4px;
+      width: 7em;
+      height: 2em;
+    }
+
+    input[type=submit] {
+      border: 2px solid #d87822;
+      border-radius: 4px;
+      width: 10em;
+    }
+
+    input[type=submit].btn:hover {
+      background-color:#d87822;
+      color: white;
+    }
+
+    .button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition-duration: 0.4s;
+    }
+
+    .button1 {
+      background-color: white; 
+      color: black; 
+      border: 2px solid #4CAF50;
+    }
+
+    .button1:hover {
+      background-color: #4CAF50; /* Green */
+      color: white;
+    }
+
+    .container {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 4em;
+      text-shadow: 2px 2px #000000;
+    }
+
+    body {
+      font-family: 'Helvetica', 'Arial', sans-serif;
+    }
+
   </style>
 </head>
 
@@ -89,8 +152,14 @@
       </ul>
     </div>
   </header>
-  <div style="text-align: center;">
-    <h1><u>Payment Portal</u></h1>
+
+  <div class="container">
+    <img src="assets/payment2.jpeg" alt="hi"
+    style="width: 100%; height: 25em">
+    <div class="centered">Payment Portal</div>
+  </div>
+
+  <div style="text-align: center; font-size: larger;">
     <p>Your order total is: <b>₹ 500.00</b></p>
     <p>Please note that COD is available in selected regions only.</p>
     <p>Kindly enter your pincode to check its availaility</p>
@@ -98,26 +167,27 @@
     <form action="">
       <label for="quantity">PIN code:</label>
       <input type="number" id="pincode" name="pincode" min="000000" max="999999" />
-      <input type="submit" value="Check availability" />
+      <input type="submit" class="btn" value="Check availability" />
     </form>
-
+    <br>
     <p>Please choose your desired payment option:</p>
+    <br>
 
-    <input type="radio" id="cod" name="paymentOption" value="cod" style="margin-left: -10px;" />
-    <label for="cod">COD (Cash on Delivery)</label><br />
+    <input type="radio" id="cod" name="paymentOption" value="cod" style="margin-left: 0px;" />
+    <label style="color: #fe325a;" for="cod">COD (Cash on Delivery)</label><br />
     <input type="radio" id="netbanking" name="paymentOption" value="netbanking" style="margin-left: -58px;" />
-    <label for="netbanking">Internet Banking</label><br />
+    <label style="color: #fe325a;" for="netbanking">Internet Banking</label><br />
     <input type="radio" id="card" name="paymentOption" value="card" style="margin-left: -50px;" />
-    <label for="card">Credit/Debit Card</label>
+    <label style="color: #fe325a;" for="card">Credit/Debit Card</label>
 
     <br />
     <center>
-      <button style="margin: 10px 20px 30px 5px;" type="button">Pay</button>
+      <button class="button button1" style="margin: 10px 20px 30px 5px;" type="button">Pay</button>
     </center>
     <p>
-      <b>CAUTION!</b> Merely making the payment does not guarantees the
+     <img src="assets/caution.png" style="height: 5em;"> <b>Merely making the payment does not guarantees the
       fulfillment of your order. You need to have the correct prescription
-      uploaded for it.
+      uploaded. </b>
     </p>
     <p>
       Before you click on the Pay button and place your order, we encourage
