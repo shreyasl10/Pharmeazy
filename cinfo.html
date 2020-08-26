@@ -6,63 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Offer - Pharmaeazy | An Easier Pharmacy</title>
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
     <link href="assets/css/all.min.css" rel="stylesheet" />
 	<link href="assets/css/offer.css" rel="stylesheet" />	
     <link href="assets/css/bootstrap.css" rel="stylesheet" />   
     <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
     <style>
-      header {
-        display: flex;
-        justify-content: space-between;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 5%;
-        padding-right: 5%;
-        background: black;
-      }
+    body,
+    html {
+      margin-top: 2.5rem;
+      font-family: 'Poppins';
+    }
 
-      header nav {
-        padding-top: 1%;
-      }
+    .luxbar-item a:hover {
+      color: green;
+      background-color: honeydew;
+      text-decoration: none;
+    }
 
-      header a {
-        padding-right: 10px;
-        color: greenyellow;
-      }
+    .luxbar-brand i:hover {
+      color: green;
+    }
 
-      footer {
-        background: black;
-        color: white;
-        height: 450px;
-      }
-      .info .foot {
-        display: flex;
-        justify-content: space-evenly;
-      }
-      .info .foot p {
-        font-size: 15px;
-      }
-    </style>
+    footer {
+      background: black;
+      color: white;
+      height: 450px;
+    }
+
+    .info .foot {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .info .foot p {
+      font-size: 15px;
+    }
+  </style>
 </head>
 
 <body> 
-<header>
-      <a href="index.html"
-        ><i
-          class="fa fa-medkit"
-          style="font-size: 40px; color: greenyellow;"
-        ></i
-      ></a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="#">Shop</a>
-
-        <a href="login.html">Login</a>
-        <a href="accountinfo.html">About Me</a>
-      </nav>
-    </header>
+<header id="luxbar" class="luxbar-fixed">
+    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
+    <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
+      <ul class="luxbar-navigation">
+        <li class="luxbar-header">
+          <a href="index.html" class="luxbar-brand"><i class="fa fa-medkit"
+              style="font-size: 2.5rem; padding: 0.5rem;"></i></a>
+          <label class="luxbar-hamburger luxbar-hamburger-doublespin" id="luxbar-hamburger" for="luxbar-checkbox">
+            <span></span>
+          </label>
+        </li>
+        <li class="luxbar-item"><a href="index.html">Home</a></li>
+        <li class="luxbar-item"><a href="about.html">About Us</a></li>
+        <li class="luxbar-item"><a href="cata.html">Shop</a></li>
+        <li class="luxbar-item"><a href="login.html">Login</a></li>
+        <li class="luxbar-item"><a href="accountinfo.html">About Me</a></li>
+      </ul>
+    </div>
+  </header>
     <br />
 
 	<div class="container">
@@ -105,7 +111,8 @@
 							<figcaption class="tm-person-description">
 								<h4 class="tm-person-name">Tip #1</h4>
 								<p class="tm-person-title">Social Distancing</p>
-								<p class="tm-person-about">Always wanted to stay away from the crowd? This is the best chance you will ever get, grab it with both hands.</p>
+								<p class="tm-person-about">Always wanted to stay away from the crowd?</p>
+								<p class="tm-person-about">This is the best chance you will ever get, grab it with both hands.</p>
 							
 							</figcaption>
 							<img src="img/about-01.jpg" alt="Image" class="img-fluid tm-person-img" />
