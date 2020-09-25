@@ -84,6 +84,13 @@
       color: white;
     }
 
+    button:disabled,
+    button[disabled]{
+      border: 1px solid #999999;
+      background-color: #cccccc;
+      color: #666666;
+    }
+
     .inputfile {
       width: 0.1px;
       height: 0.1px;
@@ -136,6 +143,7 @@
 </head>
 
 <body>
+  
   <header id="luxbar" class="luxbar-fixed">
     <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
     <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
@@ -175,7 +183,7 @@
         <div style="margin: 1em 0em 0em 3em; padding:1em; font-weight: bold;">Paracetamol (100mg)</div>
         <div form class="quantity" action="" style="margin-left:4em; padding:0em;">
           <label for="quantity">Quantity: </label>
-          <input type="number" name="quantity-2" id="quantity2" value="1" min="1" max="10">
+          <input type="number" onchange="calc()" onkeyup="calc()" name="quantity-2" id="paracetamolQuantity" value="1" min="1" max="10">
         </div form>
       </div>
 
@@ -191,7 +199,7 @@
         <div style="margin: 1em 0em 0em 3em; padding:1em; font-weight: bold;">Burnol (150g tube)</div>
         <div form class="quantity" action="" style="margin-left:4em; padding:0em;">
           <label for="quantity">Quantity: </label>
-          <input type="number" name="quantity-2" id="quantity2" value="1" min="1" max="10">
+          <input type="number" onchange="calc()" onkeyup="calc()" name="quantity-2" id="burnolQuantity" value="1" min="1" max="10">
         </div form>
       </div>
 
@@ -209,7 +217,7 @@
         <div style="margin: 1em 0em 0em 3em; padding:1em; font-weight: bold;">Benadryl Cough Syrup (for dry cough)</div>
         <div form class="quantity" action="" style="margin-left:4em; padding:0em;">
           <label for="quantity">Quantity: </label>
-          <input type="number" name="quantity-2" id="quantity2" value="1" min="1" max="10">
+          <input type="number" onchange="calc()" onkeyup="calc()" name="quantity-2" id="benadrylQuantity" value="1" min="1" max="10">
         </div form>
       </div>
 
@@ -226,15 +234,16 @@
         <div style="margin: 1em 0em 0em 3em; padding:1em; font-weight: bold;">Digene Tablets</div>
         <div form class="quantity" action="" style="margin-left:4em; padding:0em;">
           <label for="quantity">Quantity: </label>
-          <input type="number" name="quantity-2" id="quantity2" value="1" min="1" max="10">
+          <input type="number" onchange="calc()" onkeyup="calc()" name="quantity-2" id="digeneQuantity" value="1" min="1" max="10">
         </div form>
       </div>
-
-
-
       <br>
       <br>
-
+      <br>
+      <br>
+      <p><b>Cart Total:</b></p>
+      <p id="total"><b>₹ 200</b></p>
+      <br>
       <br>
       <br>
       <h5 style="margin-left: 1em; font-family: sans-serif;">
@@ -242,8 +251,8 @@
       <input name="presc_file" type="file" id="file" class="inputfile" 
         style="margin-left: 1em; margin-top: 1em; width: 15em;">
         <label for="file" style = "margin-left: 14em; margin-top: 2em;">Choose a file</label>
-      <center><button class="button button1" style="margin: 3em 2em 3em 3em;" 
-        onclick="window.location.href = 'paymentinfo.html';">Proceed to
+      <center><button type="button" disabled id="paymentButton" class="button button1" style="margin: 3em 2em 3em 3em;" 
+       >Proceed to
           Payment</button></center>
     </div>
 
@@ -315,6 +324,8 @@
       </div>
     </div>
   </footer>
+
+  <script src="js/cart.js"></script>
 </body>
 
 </html>
