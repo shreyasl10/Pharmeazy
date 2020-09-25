@@ -107,7 +107,7 @@
       <div class="row">
         <div class="main">
           <h1 style="text-align: center; padding-top: 20px">Sign Up</h1>
-          <form action="" method="POST">
+          <form name="myForm" onsubmit="return(validate())" action="" method="POST">
             <div class="form-group">
               <label style="padding-top: 20px" for="name">Name</label>
               <input class="form-control" type="text" name="name" placeholder="Enter your name" />
@@ -125,9 +125,9 @@
               <input class="form-control" type="password" name="password" placeholder="Enter password" />
             </div>
             <div style= "padding-top: 20px; width: 25%; margin: auto" class="form-group">
-              <button class="btn btn-success btn-block">Sign Up</button>
+              <button type="Submit" value="Submit" class="btn btn-success btn-block">Sign Up</button>
             </div>
-          </form>
+          </form> 
         </div>
       </div>
     </div>
@@ -181,6 +181,66 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
   </script>
-</body>
 
+  <!-- Script for From Validation -->
+  <script type="text/javascript">
+    function validate()
+    {
+      if(document.myForm.name.value == "")
+      {
+        alert("Please provide your Name");
+        document.myForm.name.focus();
+        return false;
+      }
+      if(document.myForm.phoneno.value == "")
+      {
+        alert("Please provide your Phone number");
+        document.myForm.phoneno.focus();
+        return false;
+      }
+      else
+      {
+        var phone = document.myForm.phoneno.value;
+        if(isNaN(phone))
+        {
+          alert("Please enter a valid Phone Number");
+          document.myForm.phoneno.focus();
+          return false;
+        }
+        if(phone.length<1 || phone.length>10)
+        {
+          alert("Please enter a valid Phone Number");
+          document.myForm.phoneno.focus();
+          return false;
+        }
+      }
+      if(document.myForm.email.value == "")
+      {
+        alert("Please provide your Email");
+        document.myForm.email.focus();
+        return false;
+      }
+      else
+      {
+        var emailId = document.myForm.email.value;
+        var atpos =  emailId.indexOf("@");
+        var dotpos = emailId.lastIndexOf(".");
+        if(atpos < 1 || (dotpos - atpos<2) || (dotpos + 2 >= emailId.length ))
+        {
+          alert("Please enter a valid Email");
+          document.myForm.email.focus();
+          return false;
+        }
+      }
+      if(document.myForm.password.value == "")
+      {
+        alert("Please provide your Password");
+        document.myForm.password.focus();
+        return false;
+      }
+      return (true);
+    }
+  </script>
+
+</body>
 </html>
