@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  	<title>Catalogue - Pharmaeazy | An Easier Pharmacy</title>
+  	<link href="assets/css/offer.css" rel="stylesheet" />
+	<link  href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"/>
+
+	<style>
+		$background-color: #375ffa;
+$pinpad-color: #212121;
+$dot-size: .8em;
+$number-size: 2.5em;
+
+body {
+	height: 100vh;
+	background: $background-color;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: Open Sans;
+	&.wrong {
+		animation: bg-red 1s ease-in;
+	}
+	&.correct {
+		animation: bg-green 1s ease-in;
+	}
+}
+#inspiration {
+	position: fixed;
+	right: 1em;
+	bottom: 1em;
+	a {
+		display: inline-block;
+		float: left;
+		text-decoration: none;
+		font-weight: bold;
+		color: white;
+		transition: all 1s ease;
+		&:hover {
+			color: #212121;
+		}
+	}
+	& p {
+		margin: 0;
+		padding-left: .4em;
+		display: inline-block;
+		float: right;
+		color: rgba(255,255,255,.6);
+	}
+}
+#pin {
+	background: $pinpad-color;
+	width: 20em; min-width: 320px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 1em;
+	border-radius: .3em;
+	box-shadow: 4px 4px 8px rgba(0,0,0,.3);
+	margin: auto;
+	color: rgba(255,255,255,.2);
+}
+.dots {
+	width: 50%;
+	display: flex;
+	justify-content: space-around;
+	padding: 1em;
+	padding-top: 3em;
+}
+.dot {
+	position: relative;
+	background: rgba(255,255,255,.2);
+	border-radius: $dot-size;
+	width: $dot-size;
+	height: $dot-size;
+	transform: scale3d(.7,.7,.7);
+	&.active {
+		animation: growDot .5s ease;
+		animation-fill-mode: forwards;
+	}
+	&.wrong {
+		animation: wrong .9s ease;
+	}
+	&.correct {
+		animation: correct .9s ease;
+	}
+}
+#pin p {
+	font-size: .8em;
+}
+.numbers {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: space-around;
+	align-content: flex-end;
+	margin: 2em 0;
+}
+.number {
+	position: relative;
+	width: $number-size;
+	height: $number-size;
+	margin: $number-size/5;
+	border-radius: $number-size;
+	border: 2px solid rgba(255,255,255, 0);
+	text-align: center;
+	line-height: $number-size;
+	font-weight: 400;
+	font-size: 1.8em;
+	cursor: pointer;
+	user-select: none;
+	transition: all .5s ease;
+	&:hover {
+		color: rgba(255,255,255, .5);
+		&:before {
+		border: 2px solid rgba(255,255,255, .5);
+		}
+	}
+	&:before {
+		content: "";
+		position: absolute;
+		left: -2px;
+		width: $number-size;
+		height: $number-size;
+		border: 2px solid rgba(255,255,255, .1);
+		border-radius: $number-size;
+		transition: all .5s ease;
+	}
+	&.grow:before {
+		animation: grow .6s ease;
+	}
+}
+
+@keyframes growDot {
+	100% {
+		background: white;
+		transform: scale3d(.9,.9,.9);
+	}
+}
+
+@keyframes grow {
+	50% {
+		transform: scale3d(1.5,1.5,1.5);
+	}
+	100% {
+		transform: scale3d(1,1,1);
+	}
+}
+@keyframes wrong {
+	20% {
+		background: crimson;
+	}
+	40% {
+		transform: translate(-15px, 0);
+	}
+	60% {
+		transform: translate(10px, 0);
+	}
+	80% {
+		transform: translate(-5px, 0);
+	}
+}
+@keyframes correct {
+	20% {
+		background: limegreen;
+	}
+	40% {
+		transform: translate(0, -15px);
+	}
+	60% {
+		transform: translate(0, 10px);
+	}
+	80% {
+		transform: translate(0, -5px);
+	}
+}
+@keyframes bg-red {
+	50% {
+		background: crimson;
+	}
+}
+@keyframes bg-green {
+	50% {
+		background: limegreen;
+	}
+}
+	</style>
+</head>
+
+<body> 
+	<div id="dots" class="dots">
+	
+		<span class="dot"></span>
+		<span class="dot"></span>
+		<span class="dot"></span>
+		<span class="dot"></span>
+	</div>
+	<p> Enter the PINCODE </p>
+	<div>
+
+	</div>
+	<script>
+		(function() {
+	var input 	= '',
+		correct = '111111';
+	
+	var dots    = document.getElementsByClassName('dot'), 
+		numbers = document.getElementsByClassName('number');
+		dots    = Array.from(dots);
+		numbers = Array.from(numbers);
+	
+	var numbersBox = document.getElementsByClassName('numbers')[0];
+	$(numbersBox).on('click', '.number', function(evt) {
+		var number = $( this );
+		
+		number.addClass( 'grow' );
+		input += ( number.index()+1 );
+		$( dots[input.length-1] ).addClass( 'active' );
+		
+		if( input.length >= 6 ) {
+			if( input !== correct ) {
+				dots.forEach( (dot) => $(dot).addClass( 'wrong' ) );
+				$( document.body ).addClass( 'wrong' );
+			}
+			else {
+				dots.forEach( (dot) => $(dot).addClass( 'correct' ) );
+				$( document.body ).addClass( 'correct' );
+			}
+			setTimeout(function() {
+				dots.forEach( (dot) => dot.className = 'dot' );
+				input = '';
+			}, 900);
+			setTimeout(function() {
+				document.body.className = '';
+			}, 1000);
+		}
+		setTimeout(function() {
+			number.className = 'number';
+		}, 1000);
+	});
+})();
+	</script>
+<body>
+	</html>
