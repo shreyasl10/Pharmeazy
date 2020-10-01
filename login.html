@@ -39,15 +39,15 @@
       padding-top: 15%;
     }
 
-    .main{
-       width: 400px;
-       height: 400px;
-       margin: 7em auto;
-       border-radius: 1.5em;
-       background-color: #d1d9e6;
+    .main {
+      width: 400px;
+      height: 400px;
+      margin: 7em auto;
+      border-radius: 1.5em;
+      background-color: #d1d9e6;
     }
 
-    .form-group{
+    .form-group {
       width: 76%;
       padding: 10px 20px;
       margin-left: 50px;
@@ -117,7 +117,8 @@
               <input class="form-control" type="password" name="password" placeholder="Enter your password">
             </div>
             <div class="form-group">
-              <button type="Submit" value="Submit" style="width: 50%; margin: auto" class="btn btn-success btn-block">Login</button>
+              <button type="Submit" value="Submit" style="width: 50%; margin: auto"
+                class="btn btn-success btn-block">Login</button>
             </div>
           </form>
           <div style="padding-top: 30px; font-size: 2rem">
@@ -182,37 +183,32 @@
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
   </script>
 
-  <!-- Script for From Validation -->
+  <!-- Script for Form Validation -->
   <script type="text/javascript">
-  	function validate()
-  	{
-  		if(document.myForm.email.value == "")
-  		{
-  			alert("Please provide your Email");
-  			document.myForm.email.focus();
-  			return false;
-  		}
-      else
-      {
+    function validate() {
+      if (document.myForm.email.value == "") {
+        alert("Please provide your Email");
+        document.myForm.email.focus();
+        return false;
+      } else {
         var emailId = document.myForm.email.value;
-        var atpos =  emailId.indexOf("@");
+        var atpos = emailId.indexOf("@");
         var dotpos = emailId.lastIndexOf(".");
-        if(atpos < 1 || (dotpos - atpos<2) || (dotpos + 2 >= emailId.length ))
-        {
+        if (atpos < 1 || (dotpos - atpos < 2) || (dotpos + 2 >= emailId.length)) {
           alert("Please enter a valid Email");
           document.myForm.email.focus();
           return false;
-        }  
+        }
       }
-  		if(document.myForm.password.value == "")
-  		{
-  			alert("Please provide your Password");
-  			document.myForm.password.focus();
-  			return false;
-  		}
-  		return (true);
-  	}
+      if (document.myForm.password.value == "") {
+        alert("Please provide your Password");
+        document.myForm.password.focus();
+        return false;
+      }
+      return (true);
+    }
   </script>
 
 </body>
+
 </html>
