@@ -186,23 +186,6 @@
         font-size: 15px;
       }
     </style>
-    <script>
-      function validate() {
-        var emailID = document.forms["news"]["email"].value;
-        alert(emailId);
-        var atpos = emailId.indexOf("@");
-        var dotpos = emailId.lastIndexOf(".");
-        if (emailID == "") {
-          alert("Please enter a valid email ID");
-        } else if (
-          atpos < 1 ||
-          dotpos - atpos < 2 ||
-          dotpos + 2 >= emailId.length
-        ) {
-          alert("Please enter a valid Email");
-        }
-      }
-    </script>
   </head>
 
   <body>
@@ -407,12 +390,14 @@
           <form
             name="news"
             action=""
-            onsubmit="validate()"
+            onsubmit="return (validate())"
             method="POST"
             style="padding-top: 1.5em"
           >
-            <label for="email"><h5>Email:</h5></label>
-            <input type="text" id="email" name="email" />
+            <label for="email">
+              <h5>Email:</h5>
+            </label>
+            <input type="email" id="email" name="email" />
             <br /><input
               type="submit"
               style="margin-bottom: 1.5em; margin-top: 1.2em"
@@ -460,6 +445,22 @@
         </div>
       </div>
     </footer>
+    <script type="text/javascript">
+      function validate() {
+        if ((document.news.email.value = "")) {
+          alert("Please enter a valid email ID");
+          return false;
+        }
+        var emailID = document.news.email.value;
+        var atpos = emailId.indexOf("@");
+        var dotpos = emailId.lastIndexOf(".");
+        if (atpos < 1 || dotpos - atpos < 2 || dotpos + 2 >= emailId.length) {
+          alert("Please enter a valid email ID");
+          return false;
+        }
+        return true;
+      }
+    </script>
     <script type="text/javascript" src="slideshow.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
