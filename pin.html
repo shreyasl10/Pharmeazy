@@ -317,6 +317,7 @@ bg-green {  50% {
 
 <body>
 <div id="pin">
+  <p id="ran"></p>
   <div class="dots">
     <div class="dot"></div>
     <div class="dot"></div>
@@ -325,7 +326,7 @@ bg-green {  50% {
     <div class="dot"></div>
     <div class="dot"></div>
   </div>
-  <p>Enter the ZIPCODE</p>
+  <p>Hooman? Gib pruf.</p>
   <div class="numbers">
     <div class="number">1</div>
     <div class="number">2</div>
@@ -339,8 +340,21 @@ bg-green {  50% {
     <div class="number">0</div>
   </div>
 </div>
-<script>(function () {
-    var input = '', correct = '111111';
+<script>
+  var correct;
+  function random4Digit(){
+  correct= shuffle( "123456789".split('') ).join('').substring(0,6);
+  return correct;
+  }
+
+  function shuffle(o){
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+  }
+  document.getElementById("ran").innerHTML = random4Digit();
+
+  (function () {
+    var input = '';
     var dots = document.querySelectorAll('.dot'), numbers = document.querySelectorAll('.number');
     dots = Array.prototype.slice.call(dots);
     numbers = Array.prototype.slice.call(numbers);
