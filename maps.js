@@ -5,7 +5,7 @@ function maps(p) {
         'height=500' + ',width=500' + ',top=' + TopPosition + ',left=' + LeftPosition +
         ',resizable';
     if (p == 1) {
-        window.open('https://goo.gl/maps/cPEq6NzWRSJVEe8P7', 'Chennai', settings);
+        window.open('https://goo.gl/maps/Dqt2THBiZEQTxfz98', 'Chennai', settings);
     } else if (p == 2) {
         window.open('https://goo.gl/maps/oH918wBJ6X1jdYGQ6', 'Mumbai', settings);
     } else if (p == 3) {
