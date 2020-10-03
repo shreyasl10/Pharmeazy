@@ -47,6 +47,7 @@
     .info .foot p {
       font-size: 15px;
     }
+
     .tab {
       margin-right: 0.5em
     }
@@ -140,7 +141,8 @@
           <div class="col-md-8  col-sm-12 col-xs-12">
             <p><label class="control-label ">Price: Overpriced</label>
               <a href="cart.html" class="btn btn-primary pull-right" role="button">Add To Cart</a>
-              <a href="pin.html" onclick= "centeredPopup(this.href,'myWindow','500','500','yes');return false" class="btn btn-success pull-right tab" role="button">Verify</a>
+              <a href="pin.html" onclick="centeredPopup(this.href,'myWindow','500','500','yes');return false"
+                class="btn btn-success pull-right tab" role="button">Verify</a>
             </p>
 
             <hr class="soft">
@@ -221,15 +223,17 @@
   </footer>
 
   <script language="javascript">
-  var popupWindow = null;
-  function centeredPopup(url,winName,w,h,scroll){
-  LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
-  TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
-  settings =
-  'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
-  popupWindow = window.open(url,winName,settings)
-  }
-</script>
+    var popupWindow = null;
+
+    function centeredPopup(url, winName, w, h, scroll) {
+      LeftPosition = (screen.width) ? (screen.width - w) / 2 : 0;
+      TopPosition = (screen.height) ? (screen.height - h) / 2 : 0;
+      settings =
+        'height=' + h + ',width=' + w + ',top=' + TopPosition + ',left=' + LeftPosition + ',scrollbars=' + scroll +
+        ',resizable'
+      popupWindow = window.open(url, winName, settings)
+    }
+  </script>
 </body>
 
 
