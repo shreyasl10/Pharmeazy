@@ -6,17 +6,28 @@
 <title>Profile Page</title>
 </head>
 <style>
-.idcard{width:50%;margin:auto; } 
+.idcard{width:100%; } 
+.cent{
+  padding-left:40%;
+  padding-top: 15%;
+}
+h3{
+  font-size:25px;
+}
+h4{
+  font-size:20px;
+}
 </style>
 <body>
   <div class="idcard">
+        <div class="cent" style="display:inline-block">
         <center>
-        <span> <h3>Name:</h3> <xsl:value-of select="profile/user/name"/> </span>
-        <span> <h3>Mobile Number:</h3> <xsl:value-of select="profile/user/mobile"/> </span>
-        <span> <h3>Email ID</h3> <xsl:value-of select="profile/user/email"/> </span>
-        <span> <h3>Linkedin Profile</h3> <xsl:value-of select="profile/user/linkedin"/> </span>
-        <span> <h3>Interests</h3> <xsl:value-of select="profile/user/interests"/> </span>      
-        </center>
+         <h3> <strong><u> Name </u></strong> </h3> <h4><xsl:value-of select="profile/user/name"/></h4>
+         <h3> <strong><u> Mobile Number </u></strong> </h3> <h4><xsl:value-of select="profile/user/mobile"/></h4>
+         <h3> <strong><u> Email ID </u></strong> </h3> <h4><xsl:value-of select="profile/user/email"/></h4>
+         <h3> <strong><u> Linkedin Profile </u></strong></h3> <h4><xsl:value-of select="profile/user/linkedin"/></h4>
+         <h3> <strong><u> Interests </u></strong></h3> <h4> <xsl:value-of select="profile/user/interests"/></h4>
+        </center></div>
   </div>  
 </body>
 </html>

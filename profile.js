@@ -1,4 +1,4 @@
-function maps(p) {
+function profile(p) {
   LeftPosition = screen.width ? (screen.width - 500) / 2 : 0;
   TopPosition = screen.height ? (screen.height - 500) / 2 : 0;
   settings =

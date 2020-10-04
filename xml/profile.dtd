@@ -1,5 +1,6 @@
 <!ELEMENT profile(user)>
-<!ELEMENT user(name,mobile,linkedin,email,interests)>
+<!ELEMENT user(img,name,mobile,linkedin,email,interests)>
+<!ELEMENT img (#PCDATA)>
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT mobile (#PCDATA)>
 <!ELEMENT linkedin (#PCDATA)>
