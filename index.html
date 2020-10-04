@@ -44,7 +44,7 @@
       justify-content: center;
       align-items: center;
       max-width: 100%;
-      height: 130vh;
+      height: 100vh;
       padding-bottom: 3.5rem;
       text-align: center;
     }
@@ -74,7 +74,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: inherit;
       z-index: -1;
       opacity: 0;
       transition: opacity 0.75s ease-in-out;
@@ -184,18 +184,27 @@
       <ul class="luxbar-navigation">
         <li class="luxbar-header">
           <a href="index.html" class="luxbar-brand"><i class="fa fa-medkit"
-              style="font-size: 2.5rem; padding: 0.5rem;"></i></a>
+              style="font-size: 2.5rem; padding: 0.5rem"></i></a>
           <label class="luxbar-hamburger luxbar-hamburger-doublespin" id="luxbar-hamburger" for="luxbar-checkbox">
             <span></span>
           </label>
         </li>
 
-        <li class="luxbar-item" style="text-align: center;"><a href="index.html">Home</a></li>
-        <li class="luxbar-item" style="text-align: center;"><a href="about.html">About Us</a></li>
-        <li class="luxbar-item" style="text-align: center;"><a href="cata.html">Shop</a></li>
-        <li class="luxbar-item" style="text-align: center;"><a href="login.html">Login</a></li>
-        <li class="luxbar-item" style="text-align: center;"><a href="accountinfo.html">About Me</a></li>
-
+        <li class="luxbar-item" style="text-align: center">
+          <a href="index.html">Home</a>
+        </li>
+        <li class="luxbar-item" style="text-align: center">
+          <a href="about.html">About Us</a>
+        </li>
+        <li class="luxbar-item" style="text-align: center">
+          <a href="cata.html">Shop</a>
+        </li>
+        <li class="luxbar-item" style="text-align: center">
+          <a href="login.html">Login</a>
+        </li>
+        <li class="luxbar-item" style="text-align: center">
+          <a href="accountinfo.html">About Me</a>
+        </li>
       </ul>
     </div>
   </header>
@@ -213,98 +222,116 @@
         <center>We are LOREM! We are IPSUM! We are DOLOR!</center>
       </h4>
       <center>
-        <a href="cata.html"><button class="btn btn-success" style="width: 9rem; height: 2.5rem; margin-top: 1%;">
+        <a href="cata.html"><button class="btn btn-success" style="width: 9rem; height: 2.5rem; margin-top: 1%">
             Shop Now
           </button></a>
       </center>
     </div>
   </header>
   <section class="body">
-    <section class="icons" style="padding-left: 5%;">
+    <section class="icons" style="padding-left: 5%">
       <div class="row">
-        <div class="card" style="padding-bottom: 2%;">
-          <img src="assets/first.png" alt="first" style="max-width: 200px; margin-left: 5%;" class="hov" />
-          <h3 style="text-shadow: 0 0 0.15em white;">Lorem Ipsum Dolor!</h3>
+        <div class="card" style="padding-bottom: 2%">
+          <img src="assets/first.png" alt="first" style="max-width: 200px; margin-left: 5%" class="hov" />
+          <h3 style="text-shadow: 0 0 0.15em white">Lorem Ipsum Dolor!</h3>
         </div>
-        <div class="card" style="padding-bottom: 2%;">
-          <img src="assets/second.png" alt="second" style="max-width: 200px; margin-left: 5%;" class="hov" />
-          <h3 style="text-shadow: 0 0 0.15em white;">Lorem Ipsum Dolor!</h3>
+        <div class="card" style="padding-bottom: 2%">
+          <img src="assets/second.png" alt="second" style="max-width: 200px; margin-left: 5%" class="hov" />
+          <h3 style="text-shadow: 0 0 0.15em white">Lorem Ipsum Dolor!</h3>
         </div>
-        <div class="card" style="padding-bottom: 2%;">
-          <img src="assets/third.png" alt="third" style="max-width: 200px; margin-left: 5%;" class="hov" />
-          <h3 style="text-shadow: 0 0 0.15em white;">Lorem Ipsum Dolor!</h3>
+        <div class="card" style="padding-bottom: 2%">
+          <img src="assets/third.png" alt="third" style="max-width: 200px; margin-left: 5%" class="hov" />
+          <h3 style="text-shadow: 0 0 0.15em white">Lorem Ipsum Dolor!</h3>
         </div>
       </div>
     </section>
-    <section class="about" style="padding: 5%; background-color: rgba(0, 0, 0, 0.2);">
+    <section class="about" style="padding: 5%; background-color: rgba(0, 0, 0, 0.2)">
       <center>
-        <h3 style="text-shadow: 0 0 0.15em white;">
+        <h3 style="text-shadow: 0 0 0.15em white">
           <strong>Want to learn more about us??</strong>
         </h3>
-        <a href="about.html"><button class="btn btn-success" style="width: 9rem; height: 2.5rem; margin-top: 2%;">
+        <a href="about.html"><button class="btn btn-success" style="width: 9rem; height: 2.5rem; margin-top: 2%">
             About Us!
           </button></a>
       </center>
     </section>
-    <section class="stores" style="padding-top: 5%; padding-left: 5%;">
+    <section class="stores" style="padding-top: 5%; padding-left: 5%">
       <center>
-        <h3 style="text-shadow: 0 0 0.15em white;">
+        <h3 style="text-shadow: 0 0 0.15em white">
           <strong>Visit Us At Our Stores</strong>
         </h3>
       </center>
-      <div class="row" style="margin-top: 5%; margin-right: 2%;">
-        <a href="" class="statelinks">
-          <div class="statepic hov">
-            <img src="assets/chennai.jpg" style="max-width: 400px; max-height: 300px;" alt="ChennaiPic" />
-            <div class="statename">
-              <h3 style="
-                  color: white;
-                  text-shadow: 0 0 0.15em black;
-                  padding-left: 30%;
-                ">
-                Chennai
-              </h3>
-              <div class="description">
-                15, Lorem Ipsum Street, Chennai
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="" class="statelinks">
-          <div class="statepic hov">
-            <img src="assets/mumbai.jpg" style="max-width: 400px; max-height: 300px;" alt="MumbaiPic" />
-            <div class="statename">
-              <h3 style="
-                  color: white;
-                  text-shadow: 0 0 0.15em black;
-                  padding-left: 30%;
-                ">
-                Mumbai
-              </h3>
-              <div class="description">
-                5, Dolor Connecticut Street, Mumbai
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="" class="statelinks">
-          <div class="statepic hov">
-            <img src="assets/delhi.jpg" style="max-width: 400px; max-height: 300px;" ; alt="DelhiPic" />
-            <div class="statename">
-              <h3 style="
+      <div class="row" style="margin-top: 5%; margin-right: 2%">
+
+        <div onclick="maps(1)" class="statepic hov">
+          <img src="assets/chennai.jpg" style="max-width: 400px; max-height: 300px" alt="ChennaiPic" />
+          <div class="statename">
+            <h3 style="
                     color: white;
                     text-shadow: 0 0 0.15em black;
                     padding-left: 30%;
                   ">
-                Delhi
-              </h3>
-              <div class="description">
-                20,Consectetur adipisicing Street, Delhi
-              </div>
+              Chennai
+            </h3>
+            <div class="description">15, Lorem Ipsum Street, Chennai</div>
+          </div>
+        </div>
+
+
+        <div onclick="maps(2)" class="statepic hov">
+          <img src="assets/mumbai.jpg" style="max-width: 400px; max-height: 300px" alt="MumbaiPic" />
+          <div class="statename">
+            <h3 style="
+                    color: white;
+                    text-shadow: 0 0 0.15em black;
+                    padding-left: 30%;
+                  ">
+              Mumbai
+            </h3>
+            <div class="description">
+              5, Dolor Connecticut Street, Mumbai
             </div>
           </div>
-        </a>
+        </div>
+
+
+        <div onclick="maps(3)" class="statepic hov">
+          <img src="assets/delhi.jpg" style="max-width: 400px; max-height: 300px" ; alt="DelhiPic" />
+          <div class="statename">
+            <h3 style="
+                    color: white;
+                    text-shadow: 0 0 0.15em black;
+                    padding-left: 30%;
+                  ">
+              Delhi
+            </h3>
+            <div class="description">
+              20,Consectetur adipisicing Street, Delhi
+            </div>
+          </div>
+        </div>
+
       </div>
+    </section>
+    <section class="newsLetter">
+      <center>
+        <h3 style="text-shadow: 0 0 0.15em white">
+          <strong>Want to get updates on our Eazy Offers?? </strong>
+        </h3>
+        <h5 style="padding-top: 1.5em">
+          Subscribe to get instant updates the next time we give an EZ Offer
+        </h5>
+        <form name="news" action="" onsubmit="return (validate())" method="POST" style="padding-top: 1.5em">
+          <label for="email">
+            <h5>Email:</h5>
+          </label>
+          <input type="email" id="email" name="email" />
+          <div class="form-group">
+            <button type="Submit" value="Submit" style="width: 10%; margin: 2em"
+              class="btn btn-success btn-block">Submit</button>
+          </div>
+        </form>
+      </center>
     </section>
   </section>
   <footer class="pt-1">
@@ -312,7 +339,7 @@
       <div class="row">
         <div class="col-md-6">
           <h5>About Us</h5>
-          <p style="text-align: justify;">
+          <p style="text-align: justify">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem,
             accusamus suscipit, voluptas temporibus doloribus nesciunt tempore
             eligendi deserunt dignissimos officiis sed molestiae placeat
@@ -325,7 +352,7 @@
 
           <ul class="pl-5">
             <li>
-              <a href="#!">Terms and Conditions</a>
+              <a href="terms_and_conditions.html">Terms and Conditions</a>
             </li>
             <li>
               <a href="#!">Privacy Policy</a>
@@ -346,6 +373,26 @@
       </div>
     </div>
   </footer>
+  <script type="text/javascript">
+    function validate() {
+      if (document.news.email.value == "") {
+        alert("Please provide your Email");
+        document.myForm.email.focus();
+        return false;
+      } else {
+        var emailId = document.myForm.email.value;
+        var atpos = emailId.indexOf("@");
+        var dotpos = emailId.lastIndexOf(".");
+        if (atpos < 1 || (dotpos - atpos < 2) || (dotpos + 2 >= emailId.length)) {
+          alert("Please enter a valid Email");
+          document.myForm.email.focus();
+          return false;
+        }
+      }
+      return (true);
+    }
+  </script>
+
   <script type="text/javascript" src="slideshow.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
@@ -356,6 +403,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
   </script>
+  <script type="text/javascript" src="maps.js"></script>
 </body>
 
 </html>
