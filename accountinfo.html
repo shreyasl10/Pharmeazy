@@ -65,6 +65,11 @@
     .info .foot p {
       font-size: 15px;
     }
+    
+    .presc:hover {
+        transform: scale(1.1);
+    }
+    
   </style>
 </head>
 
@@ -129,13 +134,13 @@
         <br>
         <br>
         <h4>My uploaded prescriptions:</h3>
-          <p>(click on the document name to view it)</p>
-        <ol>
-          <li><a HREF="assets/presc1.jpg" target="_blank">Prashanth Hospital presc.</a></li>
-          <li><a HREF="assets/presc2.jpg" target="_blank">Dr M Renjith</a></li>
-        </ol>
-        <img src="assets/presc.jpeg" alt="prescription image" width="200" height="200" 
-          style="border-radius: 10%; margin-left: 5em;"/>
+        <p>(click on the image below to view them)</p>
+        <div class="presc">
+          <a href="xml/prescriptions.xml">
+            <img src="assets/presc.jpeg" alt="prescription image" width="200" height="200" 
+              style="border-radius: 10%; margin-left: 5em;"/>
+          </a>
+        </div>
       </div>
   </main>
   <footer class="pt-1">
