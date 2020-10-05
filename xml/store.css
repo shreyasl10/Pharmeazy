@@ -1,17 +1,54 @@
-coronastore { 
+coronastore  
+              { 
+              font-size:80%; 
+              margin:0.5em; 
+              font-family: Verdana; 
+              display:block; 
+              } 
+/*coronastore { 
      color: white; 
      background-color : gray; 
      width: 100%; 
-} 
- heading { 
-     color: green; 
-     font-size : 40px; 
-     background-color : powderblue; 
-} 
+} */
+heading { 
+      display:block; 
+      font-weight:bolder; 
+      text-align:center; 
+      font-size:30px; 
+      background-color: green; 
+      color: white; 
+  
+      }
+      section { 
+              display:block;  
+              border: 1px solid silver; 
+              margin:0.5em;  
+              padding:0.5em;  
+              background-color:whitesmoke; 
+              } 
  heading, title, price { 
      display : block; 
+     text-align:center;
 } 
- title { 
+ /**title { 
      font-size : 25px; 
      font-weight : bold; 
-} 
+} */
+title { 
+     color:green;  
+     text-decoration: underline  ; 
+     font-weight:bolder; 
+     font-size:20px; 
+     font-size : 25px; 
+     font-weight : bold;
+     } 
+price { 
+       color:brown 
+       } 
+       .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  object-fit: scale-down;
+}
