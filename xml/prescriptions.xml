@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="presc_format.xsl"?>
+<prescriptions>
+    
+    
+    <presc1>
+        <docname>M K Jha</docname>
+        <docregno>26645</docregno>
+        <date>26 Jan, 2020</date>
+        <mobile>8888888888</mobile>
+        <photo>mihir.png</photo>
+        <meds>
+            <med1>Paracetamol</med1>
+            <med2>Digene</med2>
+            <med3>Disprin</med3>
+        </meds>
+        <dosage>
+            <dosage1>1-0-1</dosage1>
+            <dosage2>1-1-1</dosage2>
+            <dosage3>0-0-1</dosage3>
+        </dosage>
+    </presc1>
+
+    <presc2>
+        <docname>Shreyas Som</docname>
+        <docregno>34456</docregno>
+        <date>05 July, 2019</date>
+        <mobile>6666666666</mobile>
+        <meds>
+            <med1>Paracetamol</med1>
+            <med2>Digene</med2>
+            <med3>Disprin</med3>
+        </meds>
+        <dosage>
+            <dosage1>1-0-1</dosage1>
+            <dosage2>1-1-1</dosage2>
+            <dosage3>0-0-1</dosage3>
+        </dosage>
+    </presc2>
+</prescriptions>
