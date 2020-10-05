@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="profs.xsl"?>
-<!DOCTYPE profile SYSTEM "profile.dtd">
+<?xml-stylesheet type="text/css" href="profs.css"?>
 <profile>
-    <user>
-		<img>assets/adithya.jpg</img>
-        <name>Adhithya N</name>
+	<user>
+		<img>
+		<html xmlns="http://www.w3.org/1999/xhtml">
+        <div class="center"><img src="img/adithya.jpg"/></div>
+      	</html>
+	    </img>
+	    <name>Adhithya N</name>
         <mobile>9167061117</mobile>
         <linkedin>linkedin.com/in/nadhithya</linkedin>
         <email>adhithya5599@gmail.com</email>

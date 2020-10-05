@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="profs.xsl"?>
-<!DOCTYPE profile SYSTEM "profile.dtd">
+<?xml-stylesheet type="text/css" href="profs.css"?>
 <profile>
-    <user>
-		<img>assets/mihir.jpg</img>
-        <name>Mihir Kumar Jha</name>
+	<user>
+		<img>
+		<html xmlns="http://www.w3.org/1999/xhtml">
+        <div class="center" style="margin-left:30%;" ><img src="img/mihir.jpg" class="center" /></div>
+      	</html>
+	    </img>
+	    <name>Mihir Kumar Jha</name>
         <mobile>9602172341</mobile>
-        <linkedin>linkedin.com/in/mihir-jha</linkedin>
-        <email>mihirk_jha@outlook.in</email>
-        <interests>Iss a mega noob</interests>
+        <linkedin>www.linkedin.com/in/shreyasl10</linkedin>
+        <email>linkedin.com/in/mihir-jha</email>
+        <interests>Issa mega noob</interests>
     </user>
 </profile>

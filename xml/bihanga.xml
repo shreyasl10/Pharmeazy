@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="profs.xsl"?>
-<!DOCTYPE profile SYSTEM "profile.dtd">
+<?xml-stylesheet type="text/css" href="profs.css"?>
 <profile>
-    <user>
-		<img>assets/bingo.jpg</img>
-        <name>Bihanga Som</name>
+	<user>
+		<img>
+		<html xmlns="http://www.w3.org/1999/xhtml">
+        <div class="center" ><img src="img/bingo.jpg"/></div>
+	    </html>
+		</img>
+		
+	    <name>Bihanga Som</name>
         <mobile>8334889329</mobile>
         <linkedin>https://www.linkedin.com/in/bihanga-som</linkedin>
         <email>bihangasom@gmail.com</email>
         <interests> Religious Evangelist </interests>
+		
     </user>
 </profile>

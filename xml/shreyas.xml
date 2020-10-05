@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="profs.xsl"?>
-<!DOCTYPE profile SYSTEM "profile.dtd">
+<?xml-stylesheet type="text/css" href="profs.css"?>
 <profile>
-    <user>
-		<img>assets/shreyas.jpg</img>
-        <name>Shreyas L</name>
+	<user>
+		<img>
+		<html xmlns="http://www.w3.org/1999/xhtml">
+        <div class="center"><img src="img/shreyas.jpg"/></div>
+      	</html>
+	    </img>
+	    <name>Shreyas L</name>
         <mobile>7550237835</mobile>
         <linkedin>www.linkedin.com/in/shreyasl10</linkedin>
         <email>shreyaslakshminarayanan10@gmail.com</email>
