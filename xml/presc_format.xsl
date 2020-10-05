@@ -58,7 +58,7 @@
         
         <h4>Doctor's name:</h4> <xsl:value-of select="prescriptions/presc2/docname" />
         <p><b>Registration Number: </b> <xsl:value-of select="prescriptions/presc2/docregno" /> </p>
-        <h4>Date:</h4> <xsl:value-of select="prescriptions/presc2/date" />
+        <p><b>Date: </b> <xsl:value-of select="prescriptions/presc2/date" /> </p>
         <p><b>Contact Number: </b> <xsl:value-of select="prescriptions/presc2/mobile" /> </p>
         <h4>Medicines Prescribed:</h4>
         
