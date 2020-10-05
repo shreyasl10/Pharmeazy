@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coronastore>
+
+  <item category="mask">
+    <title lang="en">Covid Mask 1</title>
+    <price>Underpriced</price>
+  </item>
+
+  <item category="mask">
+    <title lang="en">Covid Mask 2</title>
+    <price>Underpriced</price>
+  </item>
+
+  <item category="mask">
+    <title lang="en">Covid Mask 3</title>
+    <price>Underpriced</price>
+  </item>
+
+  <item category="sanitizer">
+    <title lang="en">Sanitizer 1</title>
+    <price>Underpriced</price>
+  </item>
+
+  <item category="sanitizer">
+    <title lang="en">Sanitizer 2</title>
+    <price>Underpriced</price>
+  </item>
+
+  <item category="sanitizer">
+    <title lang="en">Sanitizer 3</title>
+    <price>Underpriced</price>
+  </item>
+
+  <item category="med">
+    <title lang="en">Covid Med 1</title>
+    <price>Underpriced</price>
+  </item>
+
+  <item category="med">
+    <title lang="en">Covid Med 2</title>
+    <price>Underpriced</price>
+  </item>
+
+  <item category="med">
+    <title lang="en">Covid Med 3</title>
+    <price>Underpriced</price>
+  </item>
+
+</coronastore>
