@@ -8,8 +8,10 @@
 <style>
 .idcard{width:100%; } 
 .cent{
-  padding-left:40%;
-  padding-top: 15%;
+  margin-left:25%;
+  margin-top: 5%;
+  padding: 10%;
+  border: 3px solid black;
 }
 h3{
   font-size:25px;
