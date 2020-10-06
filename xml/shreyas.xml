@@ -2,9 +2,6 @@
 <?xml-stylesheet type="text/css" href="profs.css"?>
 <profile>
 	<user>
-        <html>
-        <h1>About Us</h1>
-        </html>
 		<img>
         <html xmlns="http://www.w3.org/1999/xhtml">
         <div class="center"><img src="img/shreyas.jpg"/></div>
@@ -12,29 +9,28 @@
 	    </img>
         <name>
         <html xmlns="http://www.w3.org/1999/xhtml">
-        <h3>Name</h3>  Shreyas L 
+         <p> <b>Name: </b>  Shreyas L </p>  
         </html>
         </name>
         <mobile>
         <html xmlns="http://www.w3.org/1999/xhtml">
-        <h3>Mobile No</h3>  7550237835 
+        <p><b>Mobile No: </b>  7550237835</p> 
         </html>
         </mobile>
         <linkedin>
         <html xmlns="http://www.w3.org/1999/xhtml">
-         <h3>LinkedIn Profile</h3>  www.linkedin.com/in/shreyasl10
+         <p><b>LinkedIn: </b>  www.linkedin.com/in/shreyasl10</p>
         </html>
         </linkedin>
         <email>
         <html xmlns="http://www.w3.org/1999/xhtml">
-         <h3>Email ID</h3> shreyaslakshminarayanan10@gmail.com
+         <p><b>Email: </b> shreyaslakshminarayanan10@gmail.com</p>
         </html>
         </email>
         <interests>
         <html xmlns="http://www.w3.org/1999/xhtml">
-        <h3>Interests</h3>Issa gamer and movie geek
+        <p><b>Interests: </b>Issa gamer and movie geek</p>
         </html>
-        </interests>
-        
+        </interests>      
     </user>
 </profile>
