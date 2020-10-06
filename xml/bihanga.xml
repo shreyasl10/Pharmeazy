@@ -2,17 +2,42 @@
 <?xml-stylesheet type="text/css" href="profs.css"?>
 <profile>
 	<user>
+        <html>
+        <h1>About Us</h1>
+        </html>
 		<img>
 		<html xmlns="http://www.w3.org/1999/xhtml">
         <div class="center" ><img src="img/bingo.jpg"/></div>
 	    </html>
 		</img>
-		
-	    <name>Bihanga Som</name>
-        <mobile>8334889329</mobile>
-        <linkedin>https://www.linkedin.com/in/bihanga-som</linkedin>
-        <email>bihangasom@gmail.com</email>
-        <interests> Religious Evangelist </interests>
-		
+	    <name>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <h3>Name</h3>  Bihanga Som
+        </html>
+        </name>
+        <mobile>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <h3>Mobile No</h3>  8334889329
+        </html>
+        </mobile>
+        <linkedin>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+         <h3>LinkedIn Profile</h3>  https://www.linkedin.com/in/bihanga-som
+        </html>
+        </linkedin>
+        <email>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+         <h3>Email ID</h3> bihangasom@gmail.com
+        </html>
+        </email>
+        <interests>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <h3>Interests</h3>Religious Evangelist
+        </html>
+        </interests>
     </user>
 </profile>
+
+
+
+

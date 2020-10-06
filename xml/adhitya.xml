@@ -2,15 +2,42 @@
 <?xml-stylesheet type="text/css" href="profs.css"?>
 <profile>
 	<user>
+        <html>
+        <h1>About Us</h1>
+        </html>
 		<img>
 		<html xmlns="http://www.w3.org/1999/xhtml">
         <div class="center"><img src="img/adithya.jpg"/></div>
       	</html>
 	    </img>
-	    <name>Adhithya N</name>
-        <mobile>9167061117</mobile>
-        <linkedin>linkedin.com/in/nadhithya</linkedin>
-        <email>adhithya5599@gmail.com</email>
-        <interests>Gamer and loves watching anime</interests>
+	    <name>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <h3>Name</h3>  Adhithya N
+        </html>
+        </name>
+        <mobile>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <h3>Mobile No</h3>  9167061117 
+        </html>
+        </mobile>
+        <linkedin>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+         <h3>LinkedIn Profile</h3>  www.linkedin.com/in/nadhithya
+        </html>
+        </linkedin>
+        <email>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+         <h3>Email ID</h3> adhithya5599@gmail.com
+        </html>
+        </email>
+        <interests>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <h3>Interests</h3> Gamer and loves watching anime
+        </html>
+        </interests>
     </user>
 </profile>
+
+
+
+

@@ -2,15 +2,39 @@
 <?xml-stylesheet type="text/css" href="profs.css"?>
 <profile>
 	<user>
+        <html>
+        <h1>About Us</h1>
+        </html>
 		<img>
-		<html xmlns="http://www.w3.org/1999/xhtml">
+        <html xmlns="http://www.w3.org/1999/xhtml">
         <div class="center"><img src="img/shreyas.jpg"/></div>
-      	</html>
+        </html>
 	    </img>
-	    <name>Shreyas L</name>
-        <mobile>7550237835</mobile>
-        <linkedin>www.linkedin.com/in/shreyasl10</linkedin>
-        <email>shreyaslakshminarayanan10@gmail.com</email>
-        <interests>Issa gamer and movie geek</interests>
+        <name>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <h3>Name</h3>  Shreyas L 
+        </html>
+        </name>
+        <mobile>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <h3>Mobile No</h3>  7550237835 
+        </html>
+        </mobile>
+        <linkedin>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+         <h3>LinkedIn Profile</h3>  www.linkedin.com/in/shreyasl10
+        </html>
+        </linkedin>
+        <email>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+         <h3>Email ID</h3> shreyaslakshminarayanan10@gmail.com
+        </html>
+        </email>
+        <interests>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <h3>Interests</h3>Issa gamer and movie geek
+        </html>
+        </interests>
+        
     </user>
 </profile>

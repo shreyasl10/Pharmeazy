@@ -2,15 +2,42 @@
 <?xml-stylesheet type="text/css" href="profs.css"?>
 <profile>
 	<user>
+        <html>
+        <h1>About Us</h1>
+        </html>
 		<img>
 		<html xmlns="http://www.w3.org/1999/xhtml">
         <div class="center" style="margin-left:30%;" ><img src="img/mihir.jpg" class="center" /></div>
       	</html>
 	    </img>
-	    <name>Mihir Kumar Jha</name>
-        <mobile>9602172341</mobile>
-        <linkedin>www.linkedin.com/in/shreyasl10</linkedin>
-        <email>linkedin.com/in/mihir-jha</email>
-        <interests>Issa mega noob</interests>
+	    <name>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <h3>Name</h3>  Mihir Kumar Jha
+        </html>
+        </name>
+        <mobile>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <h3>Mobile No</h3>  9602172341
+        </html>
+        </mobile>
+        <linkedin>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+         <h3>LinkedIn Profile</h3>  www.linkedin.com/in/mihir-jha
+        </html>
+        </linkedin>
+        <email>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+         <h3>Email ID</h3> linkedin.com/in/mihir-jha
+        </html>
+        </email>
+        <interests>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <h3>Interests</h3>Issa mega noob
+        </html>
+        </interests>
     </user>
 </profile>
+
+
+
+
