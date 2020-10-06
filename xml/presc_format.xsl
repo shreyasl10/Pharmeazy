@@ -13,14 +13,14 @@
        
     </style>
     
-    <body>
+    <body style="background-color: #f6f6f7;">
     
         <div class="details">
     
-        <h2><u>Prescription 1</u>:</h2>
+        <h2 style="color: #4e5860;"><u>Prescription 1</u>:</h2>
         
         <div class="child"> 
-        <img src="img/presc1.jpg" style="width: 20em; height: 30em;" />
+        <img src="img/presc1.jpg" style="width: 20em; height: 30em; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" />
         </div>
         
         <div class="child" style="padding-left: 10em; font-size: 1.3em;">
@@ -31,7 +31,7 @@
         <p><b>Contact Number: </b> <xsl:value-of select="prescriptions/presc1/mobile" /> </p>
         <h4>Medicines Prescribed:</h4>
         
-        <table border="1">
+        <table border="1" style="margin-left: 2em;">
             <tr>
                 <th>Name</th>
                 <th>Dosage</th>
@@ -55,14 +55,14 @@
         </div>
         
         <br> </br> <br> </br> <br> </br>
-        <hr> </hr>
+        <hr style="color: #70c2ed;"> </hr>
         
         <div class="details">
     
-        <h2><u>Prescription 2</u>:</h2>
+        <h2 style="color: #4e5860;"><u>Prescription 2</u>:</h2>
         
         <div class="child">
-        <img src="img/presc2.jpg" style="width: 20em; height: 30em;" />
+        <img src="img/presc2.jpg" style="width: 20em; height: 30em; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" />
         </div>
         <div class="child" style="padding-left: 10em; font-size: 1.3em;" >
        <p><b>Doctor's Name: </b> <xsl:value-of select="prescriptions/presc2/docname" /> </p>
@@ -72,7 +72,7 @@
         <p><b>Contact Number: </b> <xsl:value-of select="prescriptions/presc2/mobile" /> </p>
         <h4>Medicines Prescribed:</h4>
         
-        <table border="1">
+        <table border="1" style="margin-left: 2em;">
             <tr>
                 <th>Name</th>
                 <th>Dosage</th>
@@ -94,7 +94,7 @@
         
         </div>
         <br> </br> <br> </br> <br> </br>
-        <hr> </hr>
+        <hr style="color: #70c2ed;"> </hr>
         
     </body>
 </html>
