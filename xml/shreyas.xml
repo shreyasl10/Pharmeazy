@@ -3,14 +3,34 @@
 <profile>
 	<user>
 		<img>
-		<html xmlns="http://www.w3.org/1999/xhtml">
+        <html xmlns="http://www.w3.org/1999/xhtml">
         <div class="center"><img src="img/shreyas.jpg"/></div>
-      	</html>
+        </html>
 	    </img>
-	    <name>Shreyas L</name>
-        <mobile>7550237835</mobile>
-        <linkedin>www.linkedin.com/in/shreyasl10</linkedin>
-        <email>shreyaslakshminarayanan10@gmail.com</email>
-        <interests>Issa gamer and movie geek</interests>
+        <name>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+         <p> <b>Name: </b>  Shreyas L </p>  
+        </html>
+        </name>
+        <mobile>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <p><b>Mobile No: </b>  7550237835</p> 
+        </html>
+        </mobile>
+        <linkedin>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+         <p><b>LinkedIn: </b>  www.linkedin.com/in/shreyasl10</p>
+        </html>
+        </linkedin>
+        <email>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+         <p><b>Email: </b> shreyaslakshminarayanan10@gmail.com</p>
+        </html>
+        </email>
+        <interests>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <p><b>Interests: </b>Issa gamer and movie geek</p>
+        </html>
+        </interests>      
     </user>
 </profile>

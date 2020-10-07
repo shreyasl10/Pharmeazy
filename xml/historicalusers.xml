@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="historical_users.xsl"?>
+<!DOCTYPE user[
+  <!ELEMENT user_details (name,mobile,email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT mobile (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+]>
+
+<user>
+	
+	<user_details1>
+		<name>Mohan Kumar</name>
+		<mobile>+91-9432643577</mobile>
+		<email>mohan.kumar2121@gmail.com</email>
+	</user_details1>
+
+	<user_details2>
+		<name>S.Lalita</name>
+		<mobile>+91-8935216570</mobile>
+		<email>lalithas10@outlook.com</email>
+	</user_details2>
+
+	<user_details3>
+		<name>Varun Raj</name>
+		<mobile>+91-7045712142</mobile>
+		<email>v.raj22@gmail.com</email>
+	</user_details3>
+
+	<user_details4>
+		<name>Preeti K</name>
+		<mobile>+91-9179435365</mobile>
+		<email>pk99@gmial.com</email>
+	</user_details4>
+
+	<user_details5>
+		<name>Rohan Verma</name>
+		<mobile>+91-8120798532</mobile>
+		<email>rohan_ver2@gmail.com</email>
+	</user_details5>
+
+</user>

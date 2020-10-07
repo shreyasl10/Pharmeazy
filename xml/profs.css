@@ -1,28 +1,37 @@
-profile{width:100%; } 
-user{
-	width: 80%;
-	height:80%;
-	
+profile {
+  width: 50%;
+  background-color: wheat;
+  margin-left: 25%;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  border: 2px solid red;
+  height
 }
- name, mobile, linkedin, email, interests { 
-	padding-top:1.5rem;
-     display : block; 
-     text-align:center;
-     font-size:20px;
-     font-family: Verdana; 
-	padding-bottom: 1.2rem;
-}
- .center {
-margin-top:2rem;
-  width:25%;
-  height:100%;
+
+name,
+mobile,
+linkedin,
+email,
+interests {
+  padding-top: 0.05em;
   display: block;
-  margin-left: 40%;
+  font-size: 20px;
+
+  text-align: center;
+}
+
+.center {
+  margin-top: 2rem;
+  width: 25%;
+  height: 100%;
+  display: block;
+  margin-left: 43%;
   margin-right: auto;
 }
-.center img{
-border-radius:50%;
-width:80%;
-height:80%;
-object-fit: scale-down;
+
+.center img {
+  border-radius: 50%;
+  width: 80%;
+  height: 80%;
+  object-fit: scale-down;
 }
