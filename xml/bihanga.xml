@@ -7,12 +7,31 @@
         <div class="center" ><img src="img/bingo.jpg"/></div>
 	    </html>
 		</img>
-		
-	    <name>Bihanga Som</name>
-        <mobile>8334889329</mobile>
-        <linkedin>https://www.linkedin.com/in/bihanga-som</linkedin>
-        <email>bihangasom@gmail.com</email>
-        <interests> Religious Evangelist </interests>
+		<name>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+         <p> <b>Name: </b> Bihanga Som</p>  
+        </html>
+        </name>
+        <mobile>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <p><b>Mobile No: </b>  8334889329</p> 
+        </html>
+        </mobile>
+        <linkedin>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+         <p><b>LinkedIn: </b>  www.linkedin.com/in/shreyasl10</p>
+        </html>
+        </linkedin>
+        <email>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+         <p><b>Email: </b> bihangasom@gmail.com</p>
+        </html>
+        </email>
+        <interests>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <p><b>Interests: </b> Religious Evangelist</p>
+        </html>
+        </interests>   
 		
     </user>
 </profile>
@@ -20,3 +39,4 @@
 
 
 
+ 
