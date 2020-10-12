@@ -107,7 +107,7 @@
       <div class="row">
         <div class="main">
           <h1 style="text-align: center; padding-top: 40px">Login</h1>
-          <form name="myForm" onsubmit="return(validate())" action="" method="POST">
+          <form name="myForm" onsubmit="return(validate())" action="php/log.php" method="POST">
             <div class="form-group">
               <label for="email">Email</label>
               <input class="form-control" type="email" name="email" placeholder="Enter your email">
@@ -120,6 +120,12 @@
               <button type="Submit" value="Submit" style="width: 50%; margin: auto"
                 class="btn btn-success btn-block">Login</button>
             </div>
+            <?php
+            if(isset($_GET['id']))
+            {
+              echo "<script> alert('Incorrect credentials')</script>";
+            }
+            ?>
           </form>
           <div style="padding-top: 30px; font-size: 2rem">
             <center>
@@ -207,6 +213,7 @@
       }
       return (true);
     }
+    
   </script>
 
 </body>
