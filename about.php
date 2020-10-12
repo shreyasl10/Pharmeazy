@@ -109,12 +109,12 @@
   </head>
 
   <body>
-    <header id="luxbar" class="luxbar-fixed">
+  <header id="luxbar" class="luxbar-fixed">
       <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
       <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
         <ul class="luxbar-navigation">
           <li class="luxbar-header">
-            <a href="index.html" class="luxbar-brand"
+            <a href="index.php" class="luxbar-brand"
               ><i
                 class="fa fa-medkit"
                 style="font-size: 2.5rem; padding: 0.5rem"
@@ -128,11 +128,22 @@
               <span></span>
             </label>
           </li>
-          <li class="luxbar-item"><a href="index.html">Home</a></li>
-          <li class="luxbar-item"><a href="about.html">About Us</a></li>
-          <li class="luxbar-item"><a href="cata.html">Shop</a></li>
-          <li class="luxbar-item"><a href="login.html">Login</a></li>
-          <li class="luxbar-item"><a href="accountinfo.html">About Me</a></li>
+
+          <li class="luxbar-item" style="text-align: center">
+            <a href="index.php">Home</a>
+          </li>
+          <li class="luxbar-item" style="text-align: center">
+            <a href="about.php">About Us</a>
+          </li>
+          <li class="luxbar-item" style="text-align: center">
+            <a href="cata.php">Shop</a>
+          </li>
+          <li class="luxbar-item" style="text-align: center">
+            <a href="login.php">Login</a>
+          </li>
+          <li class="luxbar-item" style="text-align: center">
+            <a href="accountinfo.php">About Me</a>
+          </li>
         </ul>
       </div>
     </header>

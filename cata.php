@@ -51,25 +51,44 @@
 </head>
 
 <body>
-  <header id="luxbar" class="luxbar-fixed">
-    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
-    <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
-      <ul class="luxbar-navigation">
-        <li class="luxbar-header">
-          <a href="index.html" class="luxbar-brand"><i class="fa fa-medkit"
-              style="font-size: 2.5rem; padding: 0.5rem;"></i></a>
-          <label class="luxbar-hamburger luxbar-hamburger-doublespin" id="luxbar-hamburger" for="luxbar-checkbox">
-            <span></span>
-          </label>
-        </li>
-        <li class="luxbar-item"><a href="index.html">Home</a></li>
-        <li class="luxbar-item"><a href="about.html">About Us</a></li>
-        <li class="luxbar-item"><a href="cata.html">Shop</a></li>
-        <li class="luxbar-item"><a href="login.html">Login</a></li>
-        <li class="luxbar-item"><a href="accountinfo.html">About Me</a></li>
-      </ul>
-    </div>
-  </header>
+<header id="luxbar" class="luxbar-fixed">
+      <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
+      <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
+        <ul class="luxbar-navigation">
+          <li class="luxbar-header">
+            <a href="index.php" class="luxbar-brand"
+              ><i
+                class="fa fa-medkit"
+                style="font-size: 2.5rem; padding: 0.5rem"
+              ></i
+            ></a>
+            <label
+              class="luxbar-hamburger luxbar-hamburger-doublespin"
+              id="luxbar-hamburger"
+              for="luxbar-checkbox"
+            >
+              <span></span>
+            </label>
+          </li>
+
+          <li class="luxbar-item" style="text-align: center">
+            <a href="index.php">Home</a>
+          </li>
+          <li class="luxbar-item" style="text-align: center">
+            <a href="about.php">About Us</a>
+          </li>
+          <li class="luxbar-item" style="text-align: center">
+            <a href="cata.php">Shop</a>
+          </li>
+          <li class="luxbar-item" style="text-align: center">
+            <a href="login.php">Login</a>
+          </li>
+          <li class="luxbar-item" style="text-align: center">
+            <a href="accountinfo.php">About Me</a>
+          </li>
+        </ul>
+      </div>
+    </header>
   <br />
   <div class="container">
     <div class="row">
@@ -140,13 +159,13 @@
             <div class="thumbnail product-box">
               <img src="assets/img/dummyimg.png" alt="" />
               <div class="caption">
-                <h3><a href="Product Details.html">Medicine Name </a></h3>
+                <h3><a href="Product Details.php">Medicine Name </a></h3>
                 <p>Price : <strong>Overpriced</strong></p>
 
                 <p>Random information about the medicine.</p>
                 <p>
-                  <a href="cart.html" class="btn btn-success" role="button">Add To Cart</a>
-                  <a href="Product Details.html" class="btn btn-primary" role="button">See Details</a>
+                  <a href="cart.php" class="btn btn-success" role="button">Add To Cart</a>
+                  <a href="Product Details.php" class="btn btn-primary" role="button">See Details</a>
                 </p>
               </div>
             </div>
@@ -156,13 +175,13 @@
             <div class="thumbnail product-box">
               <img src="assets/img/dummyimg.png" alt="" />
               <div class="caption">
-                <h3><a href="Product Details.html">Medicine Name </a></h3>
+                <h3><a href="Product Details.php">Medicine Name </a></h3>
                 <p>Price : <strong>Overpriced</strong></p>
 
                 <p>Random information about the medicine.</p>
                 <p>
-                  <a href="cart.html" class="btn btn-success" role="button">Add To Cart</a>
-                  <a href="Product Details.html" class="btn btn-primary" role="button">See Details</a>
+                  <a href="cart.php" class="btn btn-success" role="button">Add To Cart</a>
+                  <a href="Product Details.php" class="btn btn-primary" role="button">See Details</a>
                 </p>
               </div>
             </div>
@@ -172,13 +191,13 @@
             <div class="thumbnail product-box">
               <img src="assets/img/dummyimg.png" alt="" />
               <div class="caption">
-                <h3><a href="Product Details.html">Medicine Name </a></h3>
+                <h3><a href="Product Details.php">Medicine Name </a></h3>
                 <p>Price : <strong>Overpriced</strong></p>
 
                 <p>Random information about the medicine.</p>
                 <p>
-                  <a href="cart.html" class="btn btn-success" role="button">Add To Cart</a>
-                  <a href="Product Details.html" class="btn btn-primary" role="button">See Details</a>
+                  <a href="cart.php" class="btn btn-success" role="button">Add To Cart</a>
+                  <a href="Product Details.php" class="btn btn-primary" role="button">See Details</a>
                 </p>
               </div>
             </div>
@@ -192,13 +211,13 @@
             <div class="thumbnail product-box">
               <img src="assets/img/dummyimg.png" alt="" />
               <div class="caption">
-                <h3><a href="Product Details.html">Medicine Name </a></h3>
+                <h3><a href="Product Details.php">Medicine Name </a></h3>
                 <p>Price : <strong>Overpriced</strong></p>
 
                 <p>Random information about the medicine.</p>
                 <p>
-                  <a href="cart.html" class="btn btn-success" role="button">Add To Cart</a>
-                  <a href="Product Details.html" class="btn btn-primary" role="button">See Details</a>
+                  <a href="cart.php" class="btn btn-success" role="button">Add To Cart</a>
+                  <a href="Product Details.php" class="btn btn-primary" role="button">See Details</a>
                 </p>
               </div>
             </div>
@@ -208,13 +227,13 @@
             <div class="thumbnail product-box">
               <img src="assets/img/dummyimg.png" alt="" />
               <div class="caption">
-                <h3><a href="Product Details.html">Medicine Name </a></h3>
+                <h3><a href="Product Details.php">Medicine Name </a></h3>
                 <p>Price : <strong>Overpriced</strong></p>
 
                 <p>Random information about the medicine.</p>
                 <p>
-                  <a href="cart.html" class="btn btn-success" role="button">Add To Cart</a>
-                  <a href="Product Details.html" class="btn btn-primary" role="button">See Details</a>
+                  <a href="cart.php" class="btn btn-success" role="button">Add To Cart</a>
+                  <a href="Product Details.php" class="btn btn-primary" role="button">See Details</a>
                 </p>
               </div>
             </div>
@@ -224,13 +243,13 @@
             <div class="thumbnail product-box">
               <img src="assets/img/dummyimg.png" alt="" />
               <div class="caption">
-                <h3><a href="Product Details.html">Medicine Name </a></h3>
+                <h3><a href="Product Details.php">Medicine Name </a></h3>
                 <p>Price : <strong>Overpriced</strong></p>
 
                 <p>Random information about the medicine.</p>
                 <p>
-                  <a href="cart.html" class="btn btn-success" role="button">Add To Cart</a>
-                  <a href="Product Details.html" class="btn btn-primary" role="button">See Details</a>
+                  <a href="cart.php" class="btn btn-success" role="button">Add To Cart</a>
+                  <a href="Product Details.php" class="btn btn-primary" role="button">See Details</a>
                 </p>
               </div>
             </div>

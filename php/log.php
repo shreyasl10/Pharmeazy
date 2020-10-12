@@ -18,5 +18,7 @@
 	}
 	else
 	{
-		header("Location:../index.html?id=$email");
+		 echo "<script> alert('Login successful')
+            window.location='../index.php?id=$email';
+              </script>";
 	}

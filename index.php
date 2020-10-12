@@ -194,7 +194,7 @@
       <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
         <ul class="luxbar-navigation">
           <li class="luxbar-header">
-            <a href="index.html" class="luxbar-brand"
+            <a href="index.php" class="luxbar-brand"
               ><i
                 class="fa fa-medkit"
                 style="font-size: 2.5rem; padding: 0.5rem"
@@ -210,19 +210,19 @@
           </li>
 
           <li class="luxbar-item" style="text-align: center">
-            <a href="index.html">Home</a>
+            <a href="index.php">Home</a>
           </li>
           <li class="luxbar-item" style="text-align: center">
-            <a href="about.html">About Us</a>
+            <a href="about.php">About Us</a>
           </li>
           <li class="luxbar-item" style="text-align: center">
-            <a href="cata.html">Shop</a>
+            <a href="cata.php">Shop</a>
           </li>
           <li class="luxbar-item" style="text-align: center">
             <a href="login.php">Login</a>
           </li>
           <li class="luxbar-item" style="text-align: center">
-            <a href="accountinfo.html">About Me</a>
+            <a href="accountinfo.php">About Me</a>
           </li>
         </ul>
       </div>
@@ -241,7 +241,7 @@
           <center>We are LOREM! We are IPSUM! We are DOLOR!</center>
         </h4>
         <center>
-          <a href="cata.html"
+          <a href="cata.php"
             ><button
               class="btn btn-success"
               style="width: 9rem; height: 2.5rem; margin-top: 1%"
@@ -292,7 +292,7 @@
           <h3 style="text-shadow: 0 0 0.15em white">
             <strong>Want to learn more about us??</strong>
           </h3>
-          <a href="about.html"
+          <a href="about.php"
             ><button
               class="btn btn-success"
               style="width: 9rem; height: 2.5rem; margin-top: 2%"

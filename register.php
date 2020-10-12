@@ -107,7 +107,7 @@
       <div class="row">
         <div class="main">
           <h1 style="text-align: center; padding-top: 20px">Sign Up</h1>
-          <form name="myForm" onsubmit="return(validate())" action="" method="POST">
+          <form name="myForm" onsubmit="return(validate())" action="php/reg.php" method="POST">
             <div class="form-group">
               <label style="padding-top: 20px" for="name">Name</label>
               <input class="form-control" type="text" name="name" placeholder="Enter your name" />
@@ -127,6 +127,14 @@
             <div style= "padding-top: 20px; width: 25%; margin: auto" class="form-group">
               <button type="Submit" value="Submit" class="btn btn-success btn-block">Sign Up</button>
             </div>
+            <?php
+            if(isset($_GET['id']))
+            {
+              echo "<script> alert('Account already exists')
+              window.location = 'register.php';
+              </script>";
+            }
+            ?>
           </form> 
         </div>
         <div>
