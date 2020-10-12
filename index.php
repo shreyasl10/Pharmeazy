@@ -187,7 +187,6 @@
       }
     </style>
   </head>
-
   <body>
     <header id="luxbar" class="luxbar-fixed">
       <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
@@ -218,14 +217,28 @@
           <li class="luxbar-item" style="text-align: center">
             <a href="cata.php">Shop</a>
           </li>
-          <li class="luxbar-item" style="text-align: center">
+          <li class="luxbar-item log hidden" style="text-align: center">
             <a href="login.php">Login</a>
           </li>
+          <li class="luxbar-item prof hidden" style="text-align: center">
+            <a href="accountinfo.php">My Profile</a>
+          </li>
           <li class="luxbar-item" style="text-align: center">
-            <a href="accountinfo.php">About Me</a>
+            <a href="cart.php">Cart</a>
           </li>
         </ul>
       </div>
+      <?php
+      if(isset($_GET['id']))
+      {
+        $email=$_GET['id'];
+        navver($email);
+      }
+      else
+      {
+        navver('fail');
+      }
+      ?>
     </header>
     <header class="carousel">
       <div class="header-slides">
@@ -463,6 +476,19 @@
         }
         alert("You have successfully subscribed for latest updates");
         return true;
+      }
+      function navver(email)
+      {
+        if(email=='fail')
+        {
+          $('.log').addClass('active');
+          $('.log').removeClass('hidden');
+        }
+        else
+        {
+          $('.prof').addClass('active');
+          $('.prof').removeClass('hidden');
+        }
       }
     </script>
 
