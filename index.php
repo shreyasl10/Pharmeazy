@@ -40,7 +40,6 @@
         background-color: honeydew;
         text-decoration: none;
       }
-
       .statelinks:hover {
         text-decoration: none;
       }
@@ -48,7 +47,6 @@
       .luxbar-brand i:hover {
         color: green;
       }
-
       .carousel {
         position: relative;
         display: flex;
@@ -186,8 +184,26 @@
         font-size: 15px;
       }
     </style>
+    <script>
+    function navvy()
+    {
+      var x="<?php echo (isset($_GET['id'])) ? $_GET['id'] : "null"; ?>";
+      var y=document.getElementByID('log');
+      var z=document.getElementByID('pref');
+      if(x=="null")
+      {
+        y.style.display=block;
+        z.style.display=none;
+      }
+      else
+      {
+        y.style.display=none;
+        z.style.display=block;
+      }
+    }
+    </script>
   </head>
-  <body>
+  <body onload="navvy();">
     <header id="luxbar" class="luxbar-fixed">
       <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
       <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
@@ -217,10 +233,10 @@
           <li class="luxbar-item" style="text-align: center">
             <a href="cata.php">Shop</a>
           </li>
-          <li class="luxbar-item log hidden" style="text-align: center">
+          <li  id="log" class="luxbar-item" style="text-align: center">
             <a href="login.php">Login</a>
           </li>
-          <li class="luxbar-item prof hidden" style="text-align: center">
+          <li  id="prof" class="luxbar-item" style="text-align: center">
             <a href="accountinfo.php">My Profile</a>
           </li>
           <li class="luxbar-item" style="text-align: center">
@@ -228,17 +244,6 @@
           </li>
         </ul>
       </div>
-      <?php
-      if(isset($_GET['id']))
-      {
-        $email=$_GET['id'];
-        navver($email);
-      }
-      else
-      {
-        navver('fail');
-      }
-      ?>
     </header>
     <header class="carousel">
       <div class="header-slides">
@@ -477,21 +482,7 @@
         alert("You have successfully subscribed for latest updates");
         return true;
       }
-      function navver(email)
-      {
-        if(email=='fail')
-        {
-          $('.log').addClass('active');
-          $('.log').removeClass('hidden');
-        }
-        else
-        {
-          $('.prof').addClass('active');
-          $('.prof').removeClass('hidden');
-        }
-      }
     </script>
-
     <script type="text/javascript" src="slideshow.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
