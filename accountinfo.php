@@ -78,6 +78,7 @@
       var x="<?php echo (isset($_GET['id'])) ? $_GET['id'] : "null"; ?>";
       var y=document.getElementById('log');
       var z=document.getElementById('prof');
+      var tags=document.getElementsByClassName('my');
       if(x=="null")
       {
         y.style.display="block";
@@ -87,6 +88,12 @@
       {
         y.style.display="none";
         z.style.display="block";
+        for(i=0;i<tags.length;i++)
+        {
+          var j=tags[i].href;
+          console.log(j);
+          tags[i].href=j+"?id="+x;
+        }
       }
     }
     </script>
@@ -112,22 +119,22 @@
           </li>
 
           <li class="luxbar-item" style="text-align: center">
-            <a href="index.php">Home</a>
+            <a class="my" href="index.php">Home</a>
           </li>
           <li class="luxbar-item" style="text-align: center">
-            <a href="about.php">About Us</a>
+            <a class="my" href="about.php">About Us</a>
           </li>
           <li class="luxbar-item" style="text-align: center">
-            <a href="cata.php">Shop</a>
+            <a class="my" href="cata.php">Shop</a>
           </li>
           <li  id="log" class="luxbar-item" style="text-align: center">
-            <a href="login.php">Login</a>
+            <a class="my" href="login.php">Login</a>
           </li>
           <li  id="prof" class="luxbar-item" style="text-align: center">
-            <a href="accountinfo.php">My Profile</a>
+            <a class="my" href="accountinfo.php">My Profile</a>
           </li>
           <li class="luxbar-item" style="text-align: center">
-            <a href="cart.php">Cart</a>
+            <a class="my" href="cart.php">Cart</a>
           </li>
         </ul>
       </div>

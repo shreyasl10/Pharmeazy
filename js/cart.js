@@ -38,6 +38,6 @@
 		 alert("Please select a file first!");
 	 }
 	 else {
-		window.location.href = 'paymentinfo.html';
+		window.location.href = 'paymentinfo.php';
 	 }
  };

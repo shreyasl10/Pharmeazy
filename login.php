@@ -16,7 +16,9 @@
     html {
       font-family: 'Poppins';
     }
-
+    .page{
+      padding-bottom: 15%;
+    }
     .luxbar-item a:hover {
       color: green;
       background-color: honeydew;
@@ -28,7 +30,7 @@
     }
 
     .row {
-      margin: 10%;
+      margin: 0;
       display: flex;
       justify-content: space-evenly;
     }
@@ -45,14 +47,18 @@
       margin: 7em auto;
       border-radius: 1.5em;
       background-color: #d1d9e6;
+     
     }
-
     .form-group {
       width: 76%;
       padding: 10px 20px;
       margin-left: 50px;
+      
     }
-
+    .submit
+    {
+      padding-bottom: 5%;
+    }
     .hov {
       transition: transform 0.2s;
     }
@@ -87,6 +93,7 @@
       var x="<?php echo (isset($_GET['id'])) ? $_GET['id'] : "null"; ?>";
       var y=document.getElementById('log');
       var z=document.getElementById('prof');
+      var tags=document.getElementsByClassName('my');
       if(x=="null")
       {
         y.style.display="block";
@@ -96,6 +103,12 @@
       {
         y.style.display="none";
         z.style.display="block";
+        for(i=0;i<tags.length;i++)
+        {
+          var j=tags[i].href;
+          console.log(j);
+          tags[i].href=j+"?id="+x;
+        }
       }
     }
     </script>
@@ -121,27 +134,27 @@
           </li>
 
           <li class="luxbar-item" style="text-align: center">
-            <a href="index.php">Home</a>
+            <a class="my" href="index.php">Home</a>
           </li>
           <li class="luxbar-item" style="text-align: center">
-            <a href="about.php">About Us</a>
+            <a class="my" href="about.php">About Us</a>
           </li>
           <li class="luxbar-item" style="text-align: center">
-            <a href="cata.php">Shop</a>
+            <a class="my" href="cata.php">Shop</a>
           </li>
           <li  id="log" class="luxbar-item" style="text-align: center">
-            <a href="login.php">Login</a>
+            <a class="my" href="login.php">Login</a>
           </li>
           <li  id="prof" class="luxbar-item" style="text-align: center">
-            <a href="accountinfo.php">My Profile</a>
+            <a class="my" href="accountinfo.php">My Profile</a>
           </li>
           <li class="luxbar-item" style="text-align: center">
-            <a href="cart.php">Cart</a>
+            <a class="my" href="cart.php">Cart</a>
           </li>
         </ul>
       </div>
     </header>
-  <section>
+  <section class="page">
     <div class="container">
       <div class="row">
         <div class="main">
@@ -168,7 +181,7 @@
             }
             ?>
           </form>
-          <div style="padding-top: 30px; font-size: 2rem">
+          <div style="padding-top: 15px; font-size: 2rem">
             <center>
               <h4 style="padding-top: 30px" style="font-size:18px">Do not have an account??</h4>
             </center>

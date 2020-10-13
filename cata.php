@@ -55,6 +55,7 @@
       var x="<?php echo (isset($_GET['id'])) ? $_GET['id'] : "null"; ?>";
       var y=document.getElementById('log');
       var z=document.getElementById('prof');
+      var tags=document.getElementsByClassName('my');
       if(x=="null")
       {
         y.style.display="block";
@@ -64,6 +65,12 @@
       {
         y.style.display="none";
         z.style.display="block";
+        for(i=0;i<tags.length;i++)
+        {
+          var j=tags[i].href;
+          console.log(j);
+          tags[i].href=j+"?id="+x;
+        }
       }
     }
     </script>
@@ -89,22 +96,22 @@
           </li>
 
           <li class="luxbar-item" style="text-align: center">
-            <a href="index.php">Home</a>
+            <a class="my" href="index.php">Home</a>
           </li>
           <li class="luxbar-item" style="text-align: center">
-            <a href="about.php">About Us</a>
+            <a class="my" href="about.php">About Us</a>
           </li>
           <li class="luxbar-item" style="text-align: center">
-            <a href="cata.php">Shop</a>
+            <a class="my" href="cata.php">Shop</a>
           </li>
           <li  id="log" class="luxbar-item" style="text-align: center">
-            <a href="login.php">Login</a>
+            <a class="my" href="login.php">Login</a>
           </li>
           <li  id="prof" class="luxbar-item" style="text-align: center">
-            <a href="accountinfo.php">My Profile</a>
+            <a class="my" href="accountinfo.php">My Profile</a>
           </li>
           <li class="luxbar-item" style="text-align: center">
-            <a href="cart.php">Cart</a>
+            <a class="my" href="cart.php">Cart</a>
           </li>
         </ul>
       </div>
@@ -179,13 +186,13 @@
             <div class="thumbnail product-box">
               <img src="assets/img/dummyimg.png" alt="" />
               <div class="caption">
-                <h3><a href="Product Details.php">Medicine Name </a></h3>
+                <h3><a  class="my" href="Product Details.php">Medicine Name </a></h3>
                 <p>Price : <strong>Overpriced</strong></p>
 
                 <p>Random information about the medicine.</p>
                 <p>
-                  <a href="cart.php" class="btn btn-success" role="button">Add To Cart</a>
-                  <a href="Product Details.php" class="btn btn-primary" role="button">See Details</a>
+                  <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
+                  <a   href="Product Details.php" class="btn btn-primary my" role="button">See Details</a>
                 </p>
               </div>
             </div>
@@ -195,13 +202,13 @@
             <div class="thumbnail product-box">
               <img src="assets/img/dummyimg.png" alt="" />
               <div class="caption">
-                <h3><a href="Product Details.php">Medicine Name </a></h3>
+                <h3><a   href="Product Details.php">Medicine Name </a></h3>
                 <p>Price : <strong>Overpriced</strong></p>
 
                 <p>Random information about the medicine.</p>
                 <p>
-                  <a href="cart.php" class="btn btn-success" role="button">Add To Cart</a>
-                  <a href="Product Details.php" class="btn btn-primary" role="button">See Details</a>
+                  <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
+                  <a   href="Product Details.php" class="btn btn-primary my" role="button">See Details</a>
                 </p>
               </div>
             </div>
@@ -211,13 +218,13 @@
             <div class="thumbnail product-box">
               <img src="assets/img/dummyimg.png" alt="" />
               <div class="caption">
-                <h3><a href="Product Details.php">Medicine Name </a></h3>
+                <h3><a   href="Product Details.php">Medicine Name </a></h3>
                 <p>Price : <strong>Overpriced</strong></p>
 
                 <p>Random information about the medicine.</p>
                 <p>
-                  <a href="cart.php" class="btn btn-success" role="button">Add To Cart</a>
-                  <a href="Product Details.php" class="btn btn-primary" role="button">See Details</a>
+                  <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
+                  <a   href="Product Details.php" class="btn btn-primary my" role="button">See Details</a>
                 </p>
               </div>
             </div>
@@ -231,13 +238,13 @@
             <div class="thumbnail product-box">
               <img src="assets/img/dummyimg.png" alt="" />
               <div class="caption">
-                <h3><a href="Product Details.php">Medicine Name </a></h3>
+                <h3><a   href="Product Details.php">Medicine Name </a></h3>
                 <p>Price : <strong>Overpriced</strong></p>
 
                 <p>Random information about the medicine.</p>
                 <p>
-                  <a href="cart.php" class="btn btn-success" role="button">Add To Cart</a>
-                  <a href="Product Details.php" class="btn btn-primary" role="button">See Details</a>
+                  <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
+                  <a   href="Product Details.php" class="btn btn-primary my" role="button">See Details</a>
                 </p>
               </div>
             </div>
@@ -247,13 +254,13 @@
             <div class="thumbnail product-box">
               <img src="assets/img/dummyimg.png" alt="" />
               <div class="caption">
-                <h3><a href="Product Details.php">Medicine Name </a></h3>
+                <h3><a   href="Product Details.php">Medicine Name </a></h3>
                 <p>Price : <strong>Overpriced</strong></p>
 
                 <p>Random information about the medicine.</p>
                 <p>
-                  <a href="cart.php" class="btn btn-success" role="button">Add To Cart</a>
-                  <a href="Product Details.php" class="btn btn-primary" role="button">See Details</a>
+                  <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
+                  <a   href="Product Details.php" class="btn btn-primary my" role="button">See Details</a>
                 </p>
               </div>
             </div>
@@ -263,13 +270,13 @@
             <div class="thumbnail product-box">
               <img src="assets/img/dummyimg.png" alt="" />
               <div class="caption">
-                <h3><a href="Product Details.php">Medicine Name </a></h3>
+                <h3><a   href="Product Details.php">Medicine Name </a></h3>
                 <p>Price : <strong>Overpriced</strong></p>
 
                 <p>Random information about the medicine.</p>
                 <p>
-                  <a href="cart.php" class="btn btn-success" role="button">Add To Cart</a>
-                  <a href="Product Details.php" class="btn btn-primary" role="button">See Details</a>
+                  <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
+                  <a   href="Product Details.php" class="btn btn-primary my" role="button">See Details</a>
                 </p>
               </div>
             </div>

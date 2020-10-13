@@ -95,6 +95,12 @@
       {
         y.style.display="none";
         z.style.display="block";
+        for(i=0;i<tags.length;i++)
+        {
+          var j=tags[i].href;
+          console.log(j);
+          tags[i].href=j+"?id="+x;
+        }
       }
     }
     </script>
