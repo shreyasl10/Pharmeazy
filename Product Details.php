@@ -63,6 +63,8 @@
       {
         y.style.display="block";
         z.style.display="none";
+        document.getElementById('lol').href='login.php';
+
       }
       else
       {
@@ -187,7 +189,7 @@
 
           <div class="col-md-8  col-sm-12 col-xs-12">
             <p><label class="control-label ">Price: Overpriced</label>
-              <a href="cart.php" class="btn btn-primary pull-right my" role="button">Add To Cart</a>
+              <a href="cart.php"  id="lol" class="btn btn-primary pull-right my" role="button">Add To Cart</a>
               <a href="pin.html" onclick="centeredPopup(this.href,'myWindow','500','500','yes');return false"
                 class="btn btn-success pull-right tab" role="button">Verify</a>
             </p>
