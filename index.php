@@ -188,17 +188,17 @@
     function navvy()
     {
       var x="<?php echo (isset($_GET['id'])) ? $_GET['id'] : "null"; ?>";
-      var y=document.getElementByID('log');
-      var z=document.getElementByID('pref');
+      var y=document.getElementById('log');
+      var z=document.getElementById('prof');
       if(x=="null")
       {
-        y.style.display=block;
-        z.style.display=none;
+        y.style.display="block";
+        z.style.display="none";
       }
       else
       {
-        y.style.display=none;
-        z.style.display=block;
+        y.style.display="none";
+        z.style.display="block";
       }
     }
     </script>

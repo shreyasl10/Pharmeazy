@@ -130,28 +130,68 @@
     }
 
   </style>
+  <script>
+    function navvy()
+    {
+      var x="<?php echo (isset($_GET['id'])) ? $_GET['id'] : "null"; ?>";
+      var y=document.getElementById('log');
+      var z=document.getElementById('prof');
+      if(x=="null")
+      {
+        y.style.display="block";
+        z.style.display="none";
+      }
+      else
+      {
+        y.style.display="none";
+        z.style.display="block";
+      }
+    }
+    </script>
 </head>
 
-<body>
-  <header id="luxbar" class="luxbar-fixed">
-    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
-    <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
-      <ul class="luxbar-navigation">
-        <li class="luxbar-header">
-          <a href="index.html" class="luxbar-brand"><i class="fa fa-medkit"
-              style="font-size: 2.5rem; padding: 0.5rem;"></i></a>
-          <label class="luxbar-hamburger luxbar-hamburger-doublespin" id="luxbar-hamburger" for="luxbar-checkbox">
-            <span></span>
-          </label>
-        </li>
-        <li class="luxbar-item"><a href="index.html">Home</a></li>
-        <li class="luxbar-item"><a href="about.html">About Us</a></li>
-        <li class="luxbar-item"><a href="cata.html">Shop</a></li>
-        <li class="luxbar-item"><a href="login.html">Login</a></li>
-        <li class="luxbar-item"><a href="accountinfo.html">About Me</a></li>
-      </ul>
-    </div>
-  </header>
+<body onload="navvy()">
+<header id="luxbar" class="luxbar-fixed">
+      <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
+      <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
+        <ul class="luxbar-navigation">
+          <li class="luxbar-header">
+            <a href="index.php" class="luxbar-brand"
+              ><i
+                class="fa fa-medkit"
+                style="font-size: 2.5rem; padding: 0.5rem"
+              ></i
+            ></a>
+            <label
+              class="luxbar-hamburger luxbar-hamburger-doublespin"
+              id="luxbar-hamburger"
+              for="luxbar-checkbox"
+            >
+              <span></span>
+            </label>
+          </li>
+
+          <li class="luxbar-item" style="text-align: center">
+            <a href="index.php">Home</a>
+          </li>
+          <li class="luxbar-item" style="text-align: center">
+            <a href="about.php">About Us</a>
+          </li>
+          <li class="luxbar-item" style="text-align: center">
+            <a href="cata.php">Shop</a>
+          </li>
+          <li  id="log" class="luxbar-item" style="text-align: center">
+            <a href="login.php">Login</a>
+          </li>
+          <li  id="prof" class="luxbar-item" style="text-align: center">
+            <a href="accountinfo.php">My Profile</a>
+          </li>
+          <li class="luxbar-item" style="text-align: center">
+            <a href="cart.php">Cart</a>
+          </li>
+        </ul>
+      </div>
+    </header>
 
   <div class="container">
     <img src="assets/payment.jpeg" alt="hi"

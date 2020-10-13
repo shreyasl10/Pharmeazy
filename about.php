@@ -107,8 +107,25 @@
       }
     </style>
   </head>
-
-  <body>
+  <script>
+    function navvy()
+    {
+      var x="<?php echo (isset($_GET['id'])) ? $_GET['id'] : "null"; ?>";
+      var y=document.getElementById('log');
+      var z=document.getElementById('prof');
+      if(x=="null")
+      {
+        y.style.display="block";
+        z.style.display="none";
+      }
+      else
+      {
+        y.style.display="none";
+        z.style.display="block";
+      }
+    }
+    </script>
+  <body onload="navvy();">
   <header id="luxbar" class="luxbar-fixed">
       <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
       <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
@@ -138,11 +155,14 @@
           <li class="luxbar-item" style="text-align: center">
             <a href="cata.php">Shop</a>
           </li>
-          <li class="luxbar-item" style="text-align: center">
+          <li  id="log" class="luxbar-item" style="text-align: center">
             <a href="login.php">Login</a>
           </li>
+          <li  id="prof" class="luxbar-item" style="text-align: center">
+            <a href="accountinfo.php">My Profile</a>
+          </li>
           <li class="luxbar-item" style="text-align: center">
-            <a href="accountinfo.php">About Me</a>
+            <a href="cart.php">Cart</a>
           </li>
         </ul>
       </div>
