@@ -148,13 +148,23 @@
       var y=document.getElementById('log');
       var z=document.getElementById('prof');
       var tags=document.getElementsByClassName('my');
+      var t1=document.getElementsByClassName('shop');
+      var i,j;
       if(x=="null")
       {
         y.style.display="block";
         z.style.display="none";
+        for(j=0;j<t1.length;j++)
+        {
+          t1[j].href='login.php';
+        }
       }
       else
       {
+        for(j=0;j<t1.length;j++)
+        {
+          t1[j].href='cata.php';
+        }
         y.style.display="none";
         z.style.display="block";
         for(i=0;i<tags.length;i++)
@@ -195,7 +205,7 @@
             <a class="my" href="about.php">About Us</a>
           </li>
           <li class="luxbar-item" style="text-align: center">
-            <a class="my" href="cata.php">Shop</a>
+            <a class="my shop" href="cata.php">Shop</a>
           </li>
           <li  id="log" class="luxbar-item" style="text-align: center">
             <a class="my" href="login.php">Login</a>
