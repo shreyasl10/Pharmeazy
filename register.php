@@ -40,8 +40,8 @@
     }
 
     .main{
-       width: 700px;
-       height: 700px;
+       width: 900px;
+       height: 900px;
        margin: 9em auto;
        border-radius: 1.5em;
        background-color: #d1d9e6;
