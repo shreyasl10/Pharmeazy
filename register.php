@@ -211,7 +211,7 @@
               <button type="Submit" value="Submit" class="btn btn-success btn-block">Sign Up</button>
             </div>
             <?php
-            if(isset($_GET['id']))
+            if(isset($_GET['id']) and ($_GET['id']==0))
             {
               echo "<script> alert('Account already exists')
               window.location = 'register.php';
