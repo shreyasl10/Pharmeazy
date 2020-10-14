@@ -119,6 +119,9 @@
     }
     </script>
 <body onload="navvy();">
+<?php
+  include('php/check.php');
+  ?>
 <header id="luxbar" class="luxbar-fixed">
       <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
       <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">

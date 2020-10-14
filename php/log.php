@@ -15,10 +15,13 @@
 	if($auth==0)
 	{
 		header("Location:../login.php?id=0");
+		exit();
 	}
 	else
 	{
 		 echo "<script> alert('Login successful')
             window.location='../index.php?id=$email';
-              </script>";
+			  </script>";
+		exit();
 	}
+?>
