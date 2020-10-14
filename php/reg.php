@@ -6,6 +6,7 @@
     $phoneno = isset($_POST['phoneno']) ? mysqli_real_escape_string($conn, $_POST['phoneno']) :  "";
     $address = isset($_POST['address']) ? mysqli_real_escape_string($conn, $_POST['address']) :  "";
     $ailments = isset($_POST['ailments']) ? mysqli_real_escape_string($conn, $_POST['ailments']) :  "";
+    $imglink = isset($_POST['imglink']) ? mysqli_real_escape_string($conn, $_POST['imglink']) :  "";
     $sql="select email from users where email='$email'";
     $get_data_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
     if(mysqli_num_rows($get_data_query)!=0)
@@ -14,7 +15,7 @@
     }
     else
     {
-        $sql1="insert into users values('$email','$password','$name',$phoneno,'adadadadadad','$address','$ailments')";
+        $sql1="insert into users values('$email','$password','$name',$phoneno,'$imglink','$address','$ailments')";
         $post_data_query = mysqli_query($conn, $sql1);
         if($post_data_query)
         {
