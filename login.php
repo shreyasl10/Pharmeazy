@@ -92,6 +92,8 @@
       var tags=document.getElementsByClassName('my');
       var t1=document.getElementsByClassName('shop');
       var i,j;
+      var s;
+      s=t1[0].href;
       if(x=="null")
       {
         y.style.display="block";
@@ -105,14 +107,13 @@
       {
         for(j=0;j<t1.length;j++)
         {
-          t1[j].href='cata.php';
+          t1[j].href=s;
         }
         y.style.display="none";
         z.style.display="block";
         for(i=0;i<tags.length;i++)
         {
           var j=tags[i].href;
-          console.log(j);
           tags[i].href=j+"?id="+x;
         }
       }
@@ -155,7 +156,7 @@
             <a class="my" href="accountinfo.php">My Profile</a>
           </li>
           <li class="luxbar-item" style="text-align: center">
-            <a class="my" href="cart.php">Cart</a>
+            <a class="my shop" href="cart.php">Cart</a>
           </li>
         </ul>
       </div>
