@@ -192,6 +192,8 @@
       var z=document.getElementById('prof');
       var tags=document.getElementsByClassName('my');
       var t1=document.getElementsByClassName('shop');
+      var t2=document.getElementsByClassName('sho');
+      var s1=t2[0].href;
       var i,j;
       var s;
       s=t1[0].href;
@@ -203,12 +205,20 @@
         {
           t1[j].href='login.php';
         }
+        for(j=0;j<t2.length;j++)
+        {
+          t2[j].href='login.php';
+        }
       }
       else
       {
         for(j=0;j<t1.length;j++)
         {
           t1[j].href=s;
+        }
+        for(j=0;j<t2.length;j++)
+        {
+          t2[j].href=s1;
         }
         y.style.display="none";
         z.style.display="block";
@@ -258,7 +268,7 @@
             <a class="my" href="accountinfo.php">My Profile</a>
           </li>
           <li class="luxbar-item" style="text-align: center">
-            <a class="my shop" href="cart.php">Cart</a>
+            <a class="my sho" href="cart.php">Cart</a>
           </li>
         </ul>
       </div>
