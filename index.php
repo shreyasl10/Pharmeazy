@@ -192,20 +192,23 @@
       var z=document.getElementById('prof');
       var tags=document.getElementsByClassName('my');
       var t1=document.getElementsByClassName('shop');
-      var i;
+      var i,j;
       if(x=="null")
       {
         y.style.display="block";
         z.style.display="none";
-        var j;
+        
         for(j=0;j<t1.length;j++)
         {
-          t1[j].href='login.php'
+          t1[j].href='login.php';
         }
       }
       else
       {
-        
+        for(j=0;j<t1.length;j++)
+        {
+          t1[j].href='cata.php';
+        }
         y.style.display="none";
         z.style.display="block";
         for(i=0;i<tags.length;i++)
