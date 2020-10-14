@@ -207,7 +207,8 @@
   </div>
 
   <div style="text-align: center; font-size: larger;">
-    <p>Your order total is: <b>₹ 500.00</b></p>
+    <p>Your order total is: <b>₹ <?php echo $_GET['amt'];
+     ?> </b></p>
     <p>Please note that COD is available in selected regions only.</p>
     <p>Kindly enter your pincode to check its availaility</p>
 
