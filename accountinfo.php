@@ -193,8 +193,16 @@
         <br />
       </div>
       <div style="display: inline-block; margin-left: 25%; margin-top: 3%; padding: 1em;">
+        <?php
+          include_once('config.php');
+          $curr_email = $_GET['id'];
+          $sql = "SELECT piclink FROM users where email='$curr_email'";
+          $get_data_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+          $res = mysqli_fetch_array($get_data_query);
+          $link =  $res['piclink'];
+        ?>
         <img
-          src="assets/person.png"
+          src=<?php echo $link; ?>
           alt="Person_image"
           width="250"
           height="250"
