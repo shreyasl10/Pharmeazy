@@ -187,6 +187,7 @@
               <img src="assets/img/dummyimg.png" alt="" />
               <div class="caption">
                 <h3><a  class="my" href="Product Details.php">Medicine Name </a></h3>
+                <h3><a  class="my" href="Product Details.php">Medicine Name</a></h3>
                 <p>Price : <strong>Overpriced</strong></p>
 
                 <p>Random information about the medicine.</p>
