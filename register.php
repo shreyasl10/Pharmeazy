@@ -156,21 +156,38 @@
           <form name="myForm" onsubmit="return(validate())" action="php/reg.php" method="POST">
             <div class="form-group">
               <label style="padding-top: 20px" for="name">Name</label>
+              <label style="padding-top: 10px" for="name">Name</label>
               <input class="form-control" type="text" name="name" placeholder="Enter your name" />
             </div>
             <div class="form-group">
               <label style="padding-top: 20px" for="phoneno">Phone Number</label>
+              <label style="padding-top: 10px" for="phoneno">Phone Number</label>
               <input class="form-control" type="text" name="phoneno" placeholder="Enter your phone number" />
             </div>
             <div class="form-group">
               <label style="padding-top: 20px" for="email">Email</label>
               <input class="form-control" type="email" name="email" placeholder="Enter your email" />
+              <label style="padding-top: 10px" for="address">Address</label>
+              <input class="form-control" type="text" name="address" placeholder="Enter your address" />
             </div>
             <div class="form-group">
-              <label style="padding-top: 20px" for="password">Password</label>
+              <label style="padding-top: 10px" for="ailments">Allergies</label>
+              <input class="form-control" type="text" name="ailments" placeholder="Enter your ailments" />
+            </div>
+            <div class="form-group">
+              <label style="padding-top: 10px" for="imglink">Profile Image</label>
+              <input class="form-control" type="text" name="imglink" placeholder="Provide a profile image link" />
+            </div>
+            <div class="form-group">
+              <label style="padding-top: 10px" for="email">Email</label>
+              <input class="form-control" type="email" name="email" placeholder="Enter your email" />
+            </div>
+              <div class="form-group">
+              <label style="padding-top: 10px" for="password">Password</label>
               <input class="form-control" type="password" name="password" placeholder="Enter password" />
             </div>
             <div style= "padding-top: 20px; width: 25%; margin: auto" class="form-group">
+            <div style= "padding-top: 50px; width: 25%; margin: auto" class="form-group">
               <button type="Submit" value="Submit" class="btn btn-success btn-block">Sign Up</button>
             </div>
             <?php
