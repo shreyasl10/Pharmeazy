@@ -168,7 +168,7 @@
         </div>
         <br />
       </div>
-      <div style="display: inline-block; margin-left: 20em; margin-top: 3em; padding: 1em;">
+      <div style="display: inline-block; margin-left: 25%; margin-top: 3%; padding: 1em;">
         <img
           src="assets/person.png"
           alt="Person_image"
@@ -179,12 +179,12 @@
         <br>
         <br>
         <br>
-        <h4 style="margin-left: -1.1em;" >My uploaded prescriptions:</h3>
-        <p style="margin-left: -1.1em;">(click on the image below to view them)</p>
+        <h4 style="margin-left: -8%;" >My uploaded prescriptions:</h3>
+        <p style="margin-left: -6%;">(click on the image below to view them)</p>
         <div class="presc">
           <a href="xml/prescriptions.xml">
             <img src="assets/presc.jpeg" alt="prescription image" width="200" height="200" 
-              style="border-radius: 10%; margin-left: 2em;"/>
+              style="border-radius: 10%; margin-left: 10%;"/>
           </a>
         </div>
       </div>
