@@ -165,7 +165,7 @@
     </header>
   <main style="margin-top: 3rem;">
     <div
-        style="display: inline-block; vertical-align: top; margin-left: 5%;"
+        style="display: inline-block; vertical-align: top; margin-left: 2.5em;"
       >
         <h1 style="margin: 1em 0.5em 1em 0em;">
           <u>My Account Information</u>
@@ -192,7 +192,7 @@
         </div>
         <br />
       </div>
-      <div style="display: inline-block; margin-left: 35%; margin-top: 3%; padding: 1em;">
+      <div style="display: inline-block; margin-left: 25%; margin-top: 3%; padding: 1em;">
         <img
           src="assets/person.png"
           alt="Person_image"
