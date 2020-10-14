@@ -43,7 +43,7 @@
 
     .main {
       width: 400px;
-      height: 400px;
+      height: 65vh;
       margin: 7em auto;
       border-radius: 1.5em;
       background-color: #d1d9e6;
@@ -54,10 +54,6 @@
       padding: 10px 20px;
       margin-left: 50px;
       
-    }
-    .submit
-    {
-      padding-bottom: 5%;
     }
     .hov {
       transition: transform 0.2s;
