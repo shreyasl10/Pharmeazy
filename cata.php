@@ -77,6 +77,7 @@ $result = mysqli_query($conn,"Select * from product");
           console.log(j);
           tags[i].href=j+"?id="+x;
         }
+
       }
     }
     </script>
