@@ -173,7 +173,7 @@ $result = mysqli_query($conn,"Select * from product");
       <div class="col-md-9">
         <div>
           <ol class="breadcrumb">
-            <li><a href="index.php" class="my">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li class="active">Store</li>
           </ol>
         </div>
@@ -195,15 +195,15 @@ $result = mysqli_query($conn,"Select * from product");
           ?>
           <div class="col-md-4 text-center col-sm-6 col-xs-6">
             <div class="thumbnail product-box">
-              <img src="assets/img/dummyimg.png" alt="" />
+              <img src="<?php echo $row['picture']?>" alt="" />
               <div class="caption">
                 
-                  <h3><a class="my" href="Product Details.php"><?php echo $row['name']; ?></a></h3>
+                  <h3><a  class="my" href="Product Details.php"><?php echo $row['name']; ?></a></h3>
                   <p>Price : <strong><?php echo $row['price']; ?></strong></p>
                   <p><?php echo $row['description']; ?></p>
                   <p>
                     <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
-                    <a href="Product Details.php" class="btn btn-primary my" role="button">See Details</a>
+                    <a  href="Product Details.php" class="btn btn-primary" role="button">See Details</a>
                   </p>
               </div>
             </div>
