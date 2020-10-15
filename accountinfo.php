@@ -172,32 +172,75 @@
         <h1 style="margin: 1em 0.5em 1em 0em;">
           <u>My Account Information</u>
         </h1>
-        <p>Name: <b>Mihir Kumar Jha</b></p>
+
+        <?php
+            include_once('config.php');
+            $curr_email = $_GET['id'];
+            $sql = "SELECT name FROM users where email='$curr_email'";
+            $get_data_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+            $name = mysqli_fetch_array($get_data_query);
+          ?>
+
+        <p>Name: <b><?php echo $name['name'] ?> </b></p>
         <p></p>
         <p>Age: <b>21 years</b></p>
         <p>Known allergics:</p>
-        <ul>
-          <li>Amoxicillin</li>
-          <li>Literally anything :3</li>
-        </ul>
+        
+        <?php
+            $sql = "SELECT allergies FROM users where email='$curr_email'";
+            $get_data_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+            $res = mysqli_fetch_array($get_data_query);
+            $res2 = $res;
+            $res1 = implode(',', $res2);
+            $result = explode(" ", $res1);
+            echo "<ul>";
+            for ($x = 0; $x <= mysqli_num_rows($get_data_query) / 2; $x+=1) { 
+                echo "<b>{$res[$x]}</b>";
+              }
+              echo "<br>";
+          ?>
+        
         
         <br>
         <div style="background-image: url(assets/house4.jpeg);  color: #294172; padding: 1em; background-size: 
         cover; width: 33em; box-shadow: 10px 10px 5px #ccc; border-radius: 2%;">
         <h3>Saved address:</h3>
         <p><b>Address type (home/office): </b> Home</p>
-        <p><b>House and street name: </b>619-A, First Floor, 18th Main Road</p>
-        <p><b>Area: </b>Mico Layout, Hongasandra</p>
-        <p><b>City/village and state: </b>Bengaluru, Karnataka</p>
-        <p><b>PIN: </b>560068</p>
-        <p><b>Mobile: </b>+91-7666666669</p>
+        <?php 
+          $sql = "SELECT address FROM users where email='$curr_email'";
+          $get_data_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+          $res = mysqli_fetch_assoc($get_data_query);
+          $res1 = $res['address'];
+          $res2 = explode(",", $res1);
+          for ($x=0; $x <5; $x+=1) {
+            if ($x == 0) {
+              echo "<p><b>Flat number: </b>{$res2[$x]}</p>";
+            }
+            elseif ($x == 1) {
+              echo "<p><b>Street name: </b>{$res2[$x]}</p>"; 
+            }
+            elseif ($x == 2) {
+              echo "<p><b>Area: </b>{$res2[$x]}</p>";
+            }
+            elseif ($x == 3) {
+              echo "<p><b>City: </b>{$res2[$x]}</p>";
+            }
+            elseif ($x == 4) {
+              echo "<p><b>PIN: </b>{$res2[$x]}</p>";
+            }
+          }
+
+          $sql = "SELECT mobno FROM users where email='$curr_email'";
+          $get_data_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+          $mobno = mysqli_fetch_assoc($get_data_query);
+          echo "<p><b>Mobile: </b>+91-{$mobno['mobno']}</p>";
+        ?>
+        
         </div>
         <br />
       </div>
       <div style="display: inline-block; margin-left: 25%; margin-top: 3%; padding: 1em;">
         <?php
-          include_once('config.php');
-          $curr_email = $_GET['id'];
           $sql = "SELECT piclink FROM users where email='$curr_email'";
           $get_data_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
           $res = mysqli_fetch_array($get_data_query);
@@ -222,8 +265,8 @@
           </a>
         </div>
       </div>
-      <center> <a href="login.php"><button type="Submit" style="width: 20%; margin-top:2%;margin-bottom: 5%"
-                class="btn btn-warning btn-block">Logout</button> </a> </center>
+      <center>  <a href="login.php"><button type="Submit" style="width: 20%; margin-top:2%;margin-bottom: 5%"
+                class="btn btn-warning btn-block">Logout</button></a> </center>
   </main>
   <footer class="pt-1">
     <div>
