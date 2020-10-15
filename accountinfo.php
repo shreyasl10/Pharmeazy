@@ -222,8 +222,8 @@
           </a>
         </div>
       </div>
-      <center> <button type="Submit"  onclick="logout()" style="width: 20%; margin-top:2%;margin-bottom: 5%"
-                class="btn btn-warning btn-block">Logout</button>  </center>
+      <center> <a href="login.php"><button type="Submit" style="width: 20%; margin-top:2%;margin-bottom: 5%"
+                class="btn btn-warning btn-block">Logout</button> </a> </center>
   </main>
   <footer class="pt-1">
     <div>

@@ -62,6 +62,7 @@ $result = mysqli_query($conn,"Select * from product");
       var y=document.getElementById('log');
       var z=document.getElementById('prof');
       var tags=document.getElementsByClassName('my');
+      var t2=document.getElementsByClassName('kek');
       if(x=="null")
       {
         y.style.display="block";
@@ -77,7 +78,12 @@ $result = mysqli_query($conn,"Select * from product");
           console.log(j);
           tags[i].href=j+"?id="+x;
         }
-
+        var k;
+        for(k=0;k<t2.length;k++)
+        {
+          var j=t2[k].href;
+          t2[k].href=j+"&id="+x;
+        }
       }
     }
     </script>
@@ -199,12 +205,12 @@ $result = mysqli_query($conn,"Select * from product");
               <img src="<?php echo $row['picture']?>" alt="" />
               <div class="caption">
                 
-                  <h3><a  class="my" href="Product Details.php"><?php echo $row['name']; ?></a></h3>
+                  <h3><a class="kek" href="Product Details.php?prodid=<?php echo $row['prodid']?>"><?php echo $row['name']; ?></a></h3>
                   <p>Price : <strong><?php echo $row['price']; ?></strong></p>
                   <p><?php echo $row['description']; ?></p>
                   <p>
                     <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
-                    <a  href="Product Details.php" class="btn btn-primary" role="button">See Details</a>
+                    <a  href="Product Details.php?prodid=<?php echo $row['prodid']?>" class="btn btn-primary kek" role="button">See Details</a>
                   </p>
               </div>
             </div>
