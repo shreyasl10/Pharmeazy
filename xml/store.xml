@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="store.css"?>
+<coronastore>
+  <heading>Pharmeazy D00MS DAY OFFERS!!!!!!!!!!!!!! </heading>
+  <sec>
+  <item category="mask">
+    <title lang="en">Item 1</title>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <br></br>
+        <img src="img/dummyimg.png" class="center" />
+        <br></br>
+    </html>
+    <price>OLD PRICE: ₹100</price>
+    <np>NEW PRICE: ₹80</np>
+    <ds>DISCOUNT: 20%</ds>
+  </item>
+  </sec>
+    <sec>
+  <item category="mask">
+    <title lang="en">Item 2</title>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <br></br>
+        <img src="img/dummyimg.png" class="center" />
+        <br></br>
+    </html>
+    <price>OLD PRICE: ₹100</price>
+    <np>NEW PRICE: ₹80</np>
+    <ds>DISCOUNT: 20%</ds>
+  </item>
+</sec>
+  <sec>
+  <item category="mask">
+    <title lang="en">Item 3</title>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <br></br>
+        <img src="img/dummyimg.png" class="center" />
+        <br></br>
+    </html>
+    <price>OLD PRICE: ₹100</price>
+    <np>NEW PRICE: ₹80</np>
+    <ds>DISCOUNT: 20%</ds>
+  </item>
+</sec>
+  <sec>
+  <item category="mask">
+    <title lang="en">Item 4</title>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <br></br>
+        <img src="img/dummyimg.png" class="center" />
+        <br></br>
+    </html>
+    <price>OLD PRICE: ₹100</price>
+    <np>NEW PRICE: ₹80</np>
+    <ds>DISCOUNT: 20%</ds>
+  </item>
+</sec>
+  <sec>
+  <item category="mask">
+    <title lang="en">Item 6</title>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <br></br>
+        <img src="img/dummyimg.png" class="center" />
+        <br></br>
+    </html>
+    <price>OLD PRICE: ₹100</price>
+    <np>NEW PRICE: ₹80</np>
+    <ds>DISCOUNT: 20%</ds>
+  </item>
+</sec>
+  <sec>
+  <item category="mask">
+    <title lang="en">Item 7</title>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <br></br>
+        <img src="img/dummyimg.png" class="center" />
+        <br></br>
+    </html>
+    <price>OLD PRICE: ₹100</price>
+    <np>NEW PRICE: ₹80</np>
+    <ds>DISCOUNT: DISCOUNT: 20%</ds>
+  </item>
+</sec>
+  <sec>
+  <item category="mask">
+    <title lang="en">Item 8</title>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <br></br>
+        <img src="img/dummyimg.png" class="center" />
+        <br></br>
+    </html>
+    <price>OLD PRICE: ₹100</price>
+    <np>NEW PRICE: ₹80</np>
+    <ds>DISCOUNT: 20%</ds>
+  </item>
+</sec>
+  <sec>
+  <item category="mask">
+    <title lang="en">Item 9</title>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <br></br>
+        <img src="img/dummyimg.png" class="center" />
+        <br></br>
+    </html>
+    <price>OLD PRICE: ₹100</price>
+    <np>NEW PRICE: ₹80</np>
+    <ds>DISCOUNT: 20%</ds>
+  </item>
+</sec>
+  <sec>
+  <item category="mask">
+    <title lang="en">Item 10</title>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <br></br>
+        <img src="img/dummyimg.png" class="center" />
+        <br></br>
+    </html>
+    <price>OLD PRICE: ₹100</price>
+    <np>NEW PRICE: ₹80</np>
+    <ds>DISCOUNT: 20%</ds>
+  </item>
+</sec>
+<terms>**Terms and Conditions Apply</terms>
+<footing>Go Back Shopping. Offers gonna come soon. </footing>
+</coronastore>

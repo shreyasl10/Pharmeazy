@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="store.css"?>
+<coronastore>
+  <heading>Pharmeazy D00MS DAY OFFERS!!!!!!!!!!!!!! </heading>
+  <sec>
+    <item>
+      <title lang="en">Covid Mask 2</title>
+
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <img src="dummyimg.png" class="center" />
+      </html>
+      <price>₹100</price>
+      <np>₹80<np>
+      <ds>20%</ds>
+    </item>
+  </sec>
+</coronastore>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="profs.css"?>
+<profile>
+	<user>
+		<img>
+		<html xmlns="http://www.w3.org/1999/xhtml">
+        <div class="center"><img src="img/adithya.jpg"/></div>
+      	</html>
+	    </img>
+	    <name>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <p><b>Name: </b>  Adhithya N</p>
+        </html>
+        </name>
+        <mobile>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <p><b>Mobile No: </b>  9167061117</p> 
+        </html>
+        </mobile>
+        <linkedin>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+         <p><b>LinkedIn: </b>  www.linkedin.com/in/nadhithya</p>
+        </html>
+        </linkedin>
+        <email>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <p><b>Email:</b> adhithya5599@gmail.com</p>
+        </html>
+        </email>
+        <interests>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <p><b>Interests: </b> Gamer and loves watching anime</p>
+        </html>
+        </interests>
+    </user>
+</profile>
+
+
+
+
