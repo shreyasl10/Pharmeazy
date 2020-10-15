@@ -198,12 +198,12 @@ $result = mysqli_query($conn,"Select * from product");
               <img src="assets/img/dummyimg.png" alt="" />
               <div class="caption">
                 
-                  <h3><a  class="my" href="Product Details.php"><?php echo $row['name']; ?></a></h3>
+                  <h3><a class="my" href="Product Details.php"><?php echo $row['name']; ?></a></h3>
                   <p>Price : <strong><?php echo $row['price']; ?></strong></p>
                   <p><?php echo $row['description']; ?></p>
                   <p>
                     <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
-                    <a  href="Product Details.php" class="btn btn-primary" role="button">See Details</a>
+                    <a href="Product Details.php" class="btn btn-primary my" role="button">See Details</a>
                   </p>
               </div>
             </div>
