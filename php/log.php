@@ -10,6 +10,8 @@
 		if($r['password']==$password)
 		{
 			$auth=1;
+			$sq="update users set loggedin=1 where email='$email'";
+			$update=mysqli_query($conn,$sq);
 		}
 	}
 	if($auth==0)

@@ -15,7 +15,7 @@
     }
     else
     {
-        $sql1="insert into users values('$email','$password','$name',$phoneno,'$imglink','$address','$ailments')";
+        $sql1="insert into users values('$email','$password','$name',$phoneno,'$imglink','$address','$ailments',0)";
         $post_data_query = mysqli_query($conn, $sql1);
         if($post_data_query)
         {

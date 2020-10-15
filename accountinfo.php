@@ -117,10 +117,27 @@
         }
       }
     }
+    function logout()
+    {
+      var x="<?php logout() ?>";
+    }
     </script>
 <body onload="navvy();">
 <?php
   include('php/check.php');
+  function logout()
+  {
+    include_once('config.php');
+    $email=$_GET['id'];
+    $sql="update users set loggedin=0 where email=$email";
+    $update=mysqli_query($conn,$sql);
+    if($update)
+    {
+        echo "<script> alert('Logged out successfully')
+        window.location='../login.php';
+          </script>";
+    }
+  }
   ?>
 <header id="luxbar" class="luxbar-fixed">
       <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
@@ -220,8 +237,8 @@
           </a>
         </div>
       </div>
-      <center>  <a href="login.php"><button type="Submit" style="width: 20%; margin-top:2%;margin-bottom: 5%"
-                class="btn btn-warning btn-block">Logout</button></a> </center>
+      <center> <button type="Submit"  onclick="logout()" style="width: 20%; margin-top:2%;margin-bottom: 5%"
+                class="btn btn-warning btn-block">Logout</button>  </center>
   </main>
   <footer class="pt-1">
     <div>
