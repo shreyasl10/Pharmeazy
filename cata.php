@@ -1,3 +1,8 @@
+<?php
+include_once 'php/config.php';
+$result = mysqli_query($conn,"Select * from product");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,6 +42,7 @@
       background: black;
       color: white;
       height: 450px;
+
     }
 
     .info .foot {
@@ -56,49 +62,25 @@
       var y=document.getElementById('log');
       var z=document.getElementById('prof');
       var tags=document.getElementsByClassName('my');
-      var t1=document.getElementsByClassName('shop');
-      var t2=document.getElementsByClassName('sho');
-      var s1=t2[0].href;
-      var i,j;
-      var s;
-      s=t1[0].href;
       if(x=="null")
       {
         y.style.display="block";
         z.style.display="none";
-        for(j=0;j<t1.length;j++)
-        {
-          t1[j].href='login.php';
-        }
-        for(j=0;j<t2.length;j++)
-        {
-          t2[j].href='login.php';
-        }
       }
       else
       {
-        for(j=0;j<t1.length;j++)
-        {
-          t1[j].href=s;
-        }
-        for(j=0;j<t2.length;j++)
-        {
-          t2[j].href=s1;
-        }
         y.style.display="none";
         z.style.display="block";
         for(i=0;i<tags.length;i++)
         {
           var j=tags[i].href;
+          console.log(j);
           tags[i].href=j+"?id="+x;
         }
       }
     }
     </script>
 <body onload="navvy();">
-<?php
-  include('php/check.php');
-  ?>
 <header id="luxbar" class="luxbar-fixed">
       <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
       <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
@@ -126,7 +108,7 @@
             <a class="my" href="about.php">About Us</a>
           </li>
           <li class="luxbar-item" style="text-align: center">
-            <a class="my shop" href="cata.php">Shop</a>
+            <a class="my" href="cata.php">Shop</a>
           </li>
           <li  id="log" class="luxbar-item" style="text-align: center">
             <a class="my" href="login.php">Login</a>
@@ -135,7 +117,7 @@
             <a class="my" href="accountinfo.php">My Profile</a>
           </li>
           <li class="luxbar-item" style="text-align: center">
-            <a class="my sho" href="cart.php">Cart</a>
+            <a class="my" href="cart.php">Cart</a>
           </li>
         </ul>
       </div>
@@ -199,18 +181,76 @@
         <div class="row">
           <div class="btn-group alg-right-pad pull-right">
             <button type="button" class="btn btn-default">
-              <strong>6 </strong>items
+              <strong>3 </strong>items
             </button>
             <br />
           </div>
         </div>
         <br />
+        
+        <div class="row">
+           <?php
+            while($row = mysqli_fetch_assoc($result))
+            {
+          ?>
+          <div class="col-md-4 text-center col-sm-6 col-xs-6">
+            <div class="thumbnail product-box">
+              <img src="assets/img/dummyimg.png" alt="" />
+              <div class="caption">
+                
+                  <h3><a  class="my" href="Product Details.php"><?php echo $row['name']; ?></a></h3>
+                  <p>Price : <strong><?php echo $row['price']; ?></strong></p>
+                  <p><?php echo $row['description']; ?></p>
+                  <p>
+                    <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
+                    <a  href="Product Details.php" class="btn btn-primary" role="button">See Details</a>
+                  </p>
+              </div>
+            </div>
+          </div>
+          <?php    
+              }
+            ?>
+        </div>
+           
+          <!--<div class="col-md-4 text-center col-sm-6 col-xs-6">
+            <div class="thumbnail product-box">
+              <img src="assets/img/dummyimg.png" alt="" />
+              <div class="caption">
+                <h3><a   href="Product Details.php">Medicine Name </a></h3>
+                <p>Price : <strong>Overpriced</strong></p>
+
+                <p>Random information about the medicine.</p>
+                <p>
+                  <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
+                  <a   href="Product Details.php" class="btn btn-primary my" role="button">See Details</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 text-center col-sm-6 col-xs-6">
+            <div class="thumbnail product-box">
+              <img src="assets/img/dummyimg.png" alt="" />
+              <div class="caption">
+                <h3><a   href="Product Details.php">Medicine Name </a></h3>
+                <p>Price : <strong>Overpriced</strong></p>
+
+                <p>Random information about the medicine.</p>
+                <p>
+                  <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
+                  <a   href="Product Details.php" class="btn btn-primary my" role="button">See Details</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="row">
           <div class="col-md-4 text-center col-sm-6 col-xs-6">
             <div class="thumbnail product-box">
               <img src="assets/img/dummyimg.png" alt="" />
               <div class="caption">
-                <h3><a  class="my" href="Product Details.php">Medicine Name </a></h3>
+                <h3><a   href="Product Details.php">Medicine Name </a></h3>
                 <p>Price : <strong>Overpriced</strong></p>
 
                 <p>Random information about the medicine.</p>
@@ -221,7 +261,6 @@
               </div>
             </div>
           </div>
-          <!-- /.col -->
           <div class="col-md-4 text-center col-sm-6 col-xs-6">
             <div class="thumbnail product-box">
               <img src="assets/img/dummyimg.png" alt="" />
@@ -237,7 +276,6 @@
               </div>
             </div>
           </div>
-          <!-- /.col -->
           <div class="col-md-4 text-center col-sm-6 col-xs-6">
             <div class="thumbnail product-box">
               <img src="assets/img/dummyimg.png" alt="" />
@@ -253,61 +291,7 @@
               </div>
             </div>
           </div>
-          <!-- /.col -->
-        </div>
-
-        <!-- /.row -->
-        <div class="row">
-          <div class="col-md-4 text-center col-sm-6 col-xs-6">
-            <div class="thumbnail product-box">
-              <img src="assets/img/dummyimg.png" alt="" />
-              <div class="caption">
-                <h3><a   href="Product Details.php">Medicine Name </a></h3>
-                <p>Price : <strong>Overpriced</strong></p>
-
-                <p>Random information about the medicine.</p>
-                <p>
-                  <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
-                  <a   href="Product Details.php" class="btn btn-primary my" role="button">See Details</a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-md-4 text-center col-sm-6 col-xs-6">
-            <div class="thumbnail product-box">
-              <img src="assets/img/dummyimg.png" alt="" />
-              <div class="caption">
-                <h3><a   href="Product Details.php">Medicine Name </a></h3>
-                <p>Price : <strong>Overpriced</strong></p>
-
-                <p>Random information about the medicine.</p>
-                <p>
-                  <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
-                  <a   href="Product Details.php" class="btn btn-primary my" role="button">See Details</a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-md-4 text-center col-sm-6 col-xs-6">
-            <div class="thumbnail product-box">
-              <img src="assets/img/dummyimg.png" alt="" />
-              <div class="caption">
-                <h3><a   href="Product Details.php">Medicine Name </a></h3>
-                <p>Price : <strong>Overpriced</strong></p>
-
-                <p>Random information about the medicine.</p>
-                <p>
-                  <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
-                  <a   href="Product Details.php" class="btn btn-primary my" role="button">See Details</a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- /.col -->
-        </div>
-        <!-- /.row -->
+        </div>-->
         <div class="row">
           <ul class="pagination alg-right-pad pull-right">
             <li><a href="#">&laquo;</a></li>
