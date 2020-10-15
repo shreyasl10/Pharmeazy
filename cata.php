@@ -173,7 +173,7 @@ $result = mysqli_query($conn,"Select * from product");
       <div class="col-md-9">
         <div>
           <ol class="breadcrumb">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php" class="my">Home</a></li>
             <li class="active">Store</li>
           </ol>
         </div>

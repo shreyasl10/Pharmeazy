@@ -189,8 +189,8 @@
       <div class="col-md-9">
         <div>
           <ol class="breadcrumb">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="cata.html">Store</a></li>
+            <li><a href="index.php" class="my">Home</a></li>
+            <li><a href="cata.php" class="my">Store</a></li>
             <li class="active">Product Detail</li>
           </ol>
         </div>
