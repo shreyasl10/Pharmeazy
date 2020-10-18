@@ -241,118 +241,40 @@
 
   <main style="margin-left: 1em; margin-top: 4em;">
     <div style="display:inline-block;vertical-align:top;">
-     
-
-      <div style="display: inline-block; vertical-align: top; ">
-        <img src="assets/Paracetamol.jpg" alt="Paracetamol_image" width="100" height="100"
-          style="margin: 0.5em 1em 2em 2em;" />
-      </div>
-      <div style="display: inline-block;">
-        <div style="margin: 1em 0em 0em 3em; padding:1em; font-weight: bold;">Paracetamol (100mg) - ₹ 50</div>
-        <div form class="quantity" action="" style="margin-left:4em; padding:0em;">
-          <label for="quantity">Quantity: </label>
-          <input type="number" onchange="calc()" onkeyup="calc()" name="quantity-2" id="paracetamolQuantity" value="1" min="1" max="10">
-        </div form>
-      </div>
-
-      <br>
-      <br>
-      <br>
-      <br>
-
-      <div style="display:inline-block;vertical-align:top;">
-        <img src="assets/burnol.jpg" alt="Burnol_image" width="100" height="100" style="margin: 0.5em 1em 2em 2em;" />
-      </div>
-      <div style="display:inline-block;">
-        <div style="margin: 1em 0em 0em 3em; padding:1em; font-weight: bold;">Burnol (150g tube) - ₹ 30</div>
-        <div form class="quantity" action="" style="margin-left:4em; padding:0em;">
-          <label for="quantity">Quantity: </label>
-          <input type="number" onchange="calc()" onkeyup="calc()" name="quantity-2" id="burnolQuantity" value="1" min="1" max="10">
-        </div form>
-      </div>
 
 
-      <br>
-      <br>
-      <br>
-      <br>
+    <?php
+      include_once('config.php');
+      $curr_email = $_GET['id'];
+      $sql = "SELECT prodid, quantity FROM cart WHERE email='$curr_email'";
+      $get_data_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+      
+      while ($row = mysqli_fetch_array($get_data_query)) {
+        $prodid = $row['prodid'];
+        $quantity = $row['quantity'];
+        $sql = "SELECT picture, name, price FROM product WHERE prodid=$prodid";
+        $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+        $product = mysqli_fetch_array($res);
+        $picurl = $product['picture'];
+        $prodname = $product['name'];
+        $price = $product['price'];
 
-      <div style="display:inline-block;vertical-align:top;">
-        <img src="assets/benadryl.jpg" alt="Benadryl_image" width="100" height="100"
-          style="margin: 0.5em 1em 2em 2em;" />
-      </div>
-      <div style="display:inline-block;">
-        <div style="margin: 1em 0em 0em 3em; padding:1em; font-weight: bold;">Benadryl Cough Syrup (for dry cough) - ₹ 100</div>
-        <div form class="quantity" action="" style="margin-left:4em; padding:0em;">
-          <label for="quantity">Quantity: </label>
-          <input type="number" onchange="calc()" onkeyup="calc()" name="quantity-2" id="benadrylQuantity" value="1" min="1" max="10">
-        </div form>
-      </div>
-
-
-      <br>
-      <br>
-      <br>
-      <br>
-
-      <div style="display:inline-block;vertical-align:top;">
-        <img src="assets/digene.png" alt="Digene_image" width="100" height="100" style="margin: 0.5em 1em 2em 2em;" />
-      </div>
-      <div style="display:inline-block;">
-        <div style="margin: 1em 0em 0em 3em; padding:1em; font-weight: bold;">Digene Tablets - ₹ 20</div>
-        <div form class="quantity" action="" style="margin-left:4em; padding:0em;">
-          <label for="quantity">Quantity: </label>
-          <input type="number" onchange="calc()" onkeyup="calc()" name="quantity-2" id="digeneQuantity" value="1" min="1" max="10">
-        </div form>
-      </div>
-      <br>
-      <br>
-      <br>
-      <br>
-      <p><b>Cart Total:</b></p>
-      <p id="total"><b>₹ 200</b></p>
-      <br>
-      <br>
-      <br>
-      <h5 style="margin-left: 1em; font-family: sans-serif;">
-        Please upload a scanned copy of your prescriptions:</h5>  
-      <input name="presc_file" type="file" id="file" class="inputfile" 
-        style="margin-left: 1em; margin-top: 1em; width: 15em;">
-        <label for="file" style = "margin-left: 14em; margin-top: 2em;">Choose a file</label>
-      <center><button type="button" disabled id="paymentButton" class="button button1" style="margin: 3em 2em 3em 3em;" 
-       >Proceed to
-          Payment</button></center>
-    </div>
-
-    <div style="display:inline-block; margin-left: 20em; margin-top: 10em;">
-      <h3>Previously ordered by you:</h3>
-
-      <div style="display: inline-block; vertical-align: top; font-weight: bold;">
-        <img src="assets/allegram.jpg" alt="Allegra-M_image" width="100" height="100"
-          style="margin: 0em 0.5em 0.5em 1em;" />
-      </div>
-      <div style="display: inline-block;">
-        <div style="margin: 0.5em 0.5em 0.5em 3em; padding:1em;">Allegra M
-          <p>Ordered on: 15/07/20</p>
-        </div>
-      </div>
-
-      <br>
-      <br>
-      <div style="display: inline-block; vertical-align: top; ">
-        <img src="assets/disprin.jpg" alt="Disprin_image" width="100" height="100"
-          style="margin: 0em 0.5em 0.5em 1em;" />
-      </div>
-      <div style="display: inline-block;">
-        <div style="margin: 0.5em 0.5em 0.5em 3em; padding:1em;">Disprin
-          <p>Ordered on: 26/07/20</p>
-        </div>
-      </div>
-
-
-    </div>
+        echo '<div style="display: inline-block; vertical-align: top; ">';
+        echo "<img src=\"{$picurl}\" alt=\"Paracetamol_image\" width=\"100\" height=\"100\" style=\"margin: 0.5em 1em 2em 2em;\" />";
+        echo "</div>";
+        echo '<div style="display: inline-block;">';
+        echo "<div style='margin: 1em 0em 0em 3em; padding:1em; font-weight: bold;'>{$prodname}: ₹ {$price}</div>";
+        echo '<div form class="quantity" action="" style="margin-left:4em; padding:0em;">';
+          echo '<label for="quantity">Quantity:    </label>';
+          echo "<input type='number' onchange='calc()' onkeyup='calc()' name='quantity-2' id='paracetamolQuantity' value=\"{$quantity}\" min='1' max='10'>";
+        echo '</div form>';
+      echo '</div>';
+      echo "<br>";
+    }
+    ?>
 
   </main>
+  
   <footer class="pt-1">
     <div>
       <div class="row">
