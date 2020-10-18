@@ -197,7 +197,7 @@ $result = mysqli_query($conn,"Select * from product");
         
         <div class="row">
            <?php
-            while($row = mysqli_fetch_assoc($result))
+            while($row = mysqli_fetch_assoc($result))   //start of loop
             {
           ?>
           <div class="col-md-4 text-center col-sm-6 col-xs-6">
