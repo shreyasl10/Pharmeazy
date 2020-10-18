@@ -1,3 +1,8 @@
+<?php
+include_once 'php/config.php';
+$result = mysqli_query($conn,"Select * from product");
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -197,6 +202,10 @@
 
 
         <div class="row">
+            <?php
+            $sql = "SELECT * FROM product WHERE prodid = $_GET['prodid']";
+            $result = $mysqli -> query($sql);
+          ?>
           <div class="col-md-4 text-center col-sm-6 col-xs-6">
             <br>
             <div class="thumbnail product-box">
