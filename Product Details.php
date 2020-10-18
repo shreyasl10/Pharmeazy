@@ -204,7 +204,7 @@ $result = mysqli_query($conn,"Select * from product");
         <div class="row">
             <?php
             $sql = "SELECT * FROM product WHERE prodid = $_GET['prodid']";
-            $result = $mysqli -> query($sql);
+            $row = $mysqli -> query($sql);
           ?>
           <div class="col-md-4 text-center col-sm-6 col-xs-6">
             <br>
@@ -214,7 +214,7 @@ $result = mysqli_query($conn,"Select * from product");
           </div>
 
           <div class="col-md-8 text-center col-sm-12 col-xs-12">
-            <h3>Generic Medicine Name</h3>
+            <h3><?php echo $row['name']; ?></h3>
             <small>This may kill you</small>
             <hr class="soft">
           </div>
