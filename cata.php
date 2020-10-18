@@ -207,7 +207,7 @@ $result = mysqli_query($conn,"Select * from product");
                 
                   <h3><a class="kek" href="Product Details.php?prodid=<?php echo $row['prodid']?>"><?php echo $row['name']; ?></a></h3>
                   <p>Price : <strong><?php echo $row['price']; ?></strong></p>
-                  <p><?php echo $row['description']; ?></p>
+                  <p><?php echo $row['caption']; ?></p>
                   <p>
                     <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
                     <a  href="Product Details.php?prodid=<?php echo $row['prodid']?>" class="btn btn-primary kek" role="button">See Details</a>

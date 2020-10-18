@@ -1,12 +1,10 @@
-<?php
-include_once 'php/config.php';
-$result = mysqli_query($conn,"Select * from product");
-?>
+
 
 <!DOCTYPE html>
 <html>
 
 <head>
+
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -108,6 +106,7 @@ $result = mysqli_query($conn,"Select * from product");
 
 
 <body onload="navvy()">
+
 <?php
   include('php/check.php');
   ?>
@@ -203,63 +202,46 @@ $result = mysqli_query($conn,"Select * from product");
 
         <div class="row">
             <?php
-            $sql = "SELECT * FROM product WHERE prodid = $_GET['prodid']";
-            $result = $mysqli -> query($sql);
+            include_once 'php/config.php';
+            $a= $_GET['prodid'];
+            $result = mysqli_query($conn,"SELECT * FROM product WHERE prodid = $a;");
+            $row = mysqli_fetch_assoc($result)   //start of loop
+            
           ?>
+
           <div class="col-md-4 text-center col-sm-6 col-xs-6">
             <br>
             <div class="thumbnail product-box">
-              <img src="assets/img/dummyimg.png" alt="" />
+              <img src="<?php echo $row['picture']; ?>" alt="" />
             </div>
           </div>
 
           <div class="col-md-8 text-center col-sm-12 col-xs-12">
             <h3><?php echo $row['name']; ?></h3>
-            <small>This may kill you</small>
+            <small><?php echo $row['type']; ?></small>
             <hr class="soft">
           </div>
 
           <div class="col-md-8  col-sm-12 col-xs-12">
-            <p><label class="control-label ">Price: Overpriced</label>
+            <p><label class="control-label ">Price: <?php echo $row['price']; ?></label>
               <a href="cart.php"  id="lol" class="btn btn-primary pull-right my" role="button">Add To Cart</a>
               <a href="pin.html" onclick="centeredPopup(this.href,'myWindow','500','500','yes');return false"
                 class="btn btn-success pull-right tab" role="button">Verify</a>
             </p>
 
             <hr class="soft">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Etiam tempor orci eu lobortis elementum nibh. Aenean sed adipiscing diam donec. Mi
-              eget mauris pharetra et ultrices. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor.
-              Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula. Vitae suscipit tellus mauris a
-              diam. Sit amet tellus cras adipi scing enim eu. Quam id leo in vitae.</p>
+            <p><?php echo $row['description']; ?></p>
 
           </div>
-          <?php    
-              }
-            ?>
-        </div>
+                  </div>
 
         <div class="row">
           <div class="col-md-12  col-sm-12 col-xs-12">
             <hr class="soft clr">
             <h4>Medicine Properties</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo vel orci
-              porta non pulvinar neque. Feugiat sed lectus vestibulum mattis ullamcorper velit sed. Phasellus egestas
-              tellus rutrum tellus. Mollis aliquam ut porttitor leo a diam. Pretium aenean pharetra magna ac placerat.
-              Tempor id eu nisl nunc mi ipsum faucibus. Nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Aliquet
-              lectus proin nibh nisl condimentum id. Aliquet sagittis id consectetur purus ut faucibus. Duis ultricies
-              lacus sed turpis. Tortor dignissim convallis aenean et tortor at risus. Facilisis magna etiam tempor orci
-              eu lobortis elementum nibh. Metus dictum at tempor commodo ullamcorper. Quis auctor elit sed vulputate mi.
-              Sagittis id consectetur purus ut.</p>
+            <p><?php echo $row['properties']; ?></p>
             <h4>Direction for use</h4>
-            <p>Vitae semper quis lectus nulla at volutpat diam. Ridiculus mus mauris vitae ultricies. Id faucibus nisl
-              tincidunt eget nullam. Ornare massa eget egestas purus viverra accumsan in nisl nisi. Amet nisl suscipit
-              adipiscing bibendum est ultricies integer quis auctor. Egestas tellus rutrum tellus pellentesque eu
-              tincidunt tortor aliquam nulla. Parturient montes nascetur ridiculus mus mauris vitae ultricies leo. Eget
-              egestas purus viverra accumsan in nisl nisi. Augue mauris augue neque gravida in fermentum et. Dolor purus
-              non enim praesent. Ultricies mi quis hendrerit dolor magna eget est lorem ipsum. Sed velit dignissim
-              sodales ut eu sem.</p>
+            <p><?php echo $row['directions']; ?></p>
           </div>
         </div>
       </div>
