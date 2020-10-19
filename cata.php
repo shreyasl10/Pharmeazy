@@ -1,6 +1,7 @@
 <?php
 include_once 'php/config.php';
 $result = mysqli_query($conn,"Select * from product");
+$rows=mysqli_num_rows($result);
 ?>
 
 <!DOCTYPE html>
@@ -188,7 +189,7 @@ $result = mysqli_query($conn,"Select * from product");
         <div class="row">
           <div class="btn-group alg-right-pad pull-right">
             <button type="button" class="btn btn-default">
-              <strong>3 </strong>items
+              <strong><?php echo $rows;?> </strong>items
             </button>
             <br />
           </div>
@@ -209,7 +210,6 @@ $result = mysqli_query($conn,"Select * from product");
                   <p>Price : <strong><?php echo $row['price']; ?></strong></p>
                   <p><?php echo $row['caption']; ?></p>
                   <p>
-                    <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
                     <a  href="Product Details.php?prodid=<?php echo $row['prodid']?>" class="btn btn-primary kek" role="button">See Details</a>
                   </p>
               </div>
