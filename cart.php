@@ -398,7 +398,7 @@
           alert("Please select a file first!");
         }
         else {
-          window.location.href = 'paymentinfo.php?amt=' + total;
+          window.location.href = 'paymentinfo.php?amt=' + total + '&id=' + '<?php echo $curr_email; ?>';
         }
       };
 
