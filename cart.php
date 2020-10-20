@@ -298,7 +298,7 @@
       <input name="presc_file" type="file" id="file" class="inputfile" 
         style="margin-left: 1em; margin-top: 1em; width: 15em;">
         <label for="file" style = "margin-left: 35%; margin-top: 2em;">Choose a file</label>
-      <button type="button" disabled id="paymentButton" class="button button1" style="margin: 3em 2em 3em 25%;" 
+      <button type="button" disabled id="paymentButton" class="button button1" style="margin: 3em 2em 3em 24%;" 
        >Proceed to
           Payment</button>
     <br>
