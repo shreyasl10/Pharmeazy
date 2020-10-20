@@ -236,7 +236,7 @@
           $curr_email = $_GET['id'];
           $sql = "DELETE FROM cart WHERE email='$curr_email'";
           $get_data_query = mysqli_query($conn, $sql) or die(mysqli_error($conn)); 
-          header("Location: http://localhost/Pharmeazy/cata.php?id=$curr_email", true, 301);
+          echo "<script>window.location='cata.php?id=$curr_email';</script>";
         }  
     ?> 
     <br>
