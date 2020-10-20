@@ -131,6 +131,20 @@
 
   </style>
   <script>
+  function payment()
+  {
+    var pincode = document.getElementById('pincode'); 
+var chkpinbtn = document.getElementById('chkpinbtn');
+ var pin = pincode.value;
+
+    if (pin == 560068) {
+        alert("COD available");
+    } 
+
+    else {
+        alert("Sorry! COD not yet available.")
+    }
+}
     function navvy()
     {
       var x="<?php echo (isset($_GET['id'])) ? $_GET['id'] : "null"; ?>";
@@ -212,11 +226,11 @@
     <p>Please note that COD is available in selected regions only.</p>
     <p>Kindly enter your pincode to check its availaility</p>
 
-    <form action="">
+    
       <label for="quantity">PIN code:</label>
       <input type="number" id="pincode" name="pincode" min="000000" max="999999" />
-      <input type="submit" id="chkpinbtn" class="btn" value="Check availability" />
-    </form>
+      <input type="submit" id="chkpinbtn" class="btn" value="Check availability" onclick="payment()"/>
+    <br>
     <br>
     <p>Please choose your desired payment option:</p>
     <br>
@@ -301,7 +315,7 @@
     </div>
   </footer>
 
-  <script src="js/payment.js"></script>
+  
 </body>
 
 </html>
