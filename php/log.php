@@ -16,12 +16,12 @@
 	}
 	if($auth==0)
 	{
-		header("Location:../login.php?id=0");
+		header("Location:../login.php?id=0",true);
 		exit();
 	}
 	else
 	{
-		header("Location:../index.php?id=$email&log=1");
+		header("Location:../index.php?id=$email&log=1",false);
 		exit();
 	}
 ?>

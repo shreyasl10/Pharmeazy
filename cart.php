@@ -364,7 +364,7 @@
         var input = this.files[0];
       
         if (input) {
-          alert("You can now proceed");
+          bootbox.alert("You can now proceed");
           paymentButton.disabled = false;
           selected = true;
         } 
@@ -395,7 +395,7 @@
         amount = "₹ ".concat(total);
         document.getElementById("total").innerHTML = amount.bold();
         if (!selected) {
-          alert("Please select a file first!");
+          bootbox.alert("Please select a file first!");
         }
         else {
           window.location.href = 'paymentinfo.php?amt=' + total + '&id=' + '<?php echo $curr_email; ?>';
@@ -420,6 +420,19 @@
         }
 
     </script>
-
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap 4 dependency -->
+    <script src="popper.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+  </script>
+  <script src="bootbox.min.js"></script>
+    <script src="bootbox.locales.min.js"></script>
 </body>
 </html>
