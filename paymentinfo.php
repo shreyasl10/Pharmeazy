@@ -229,9 +229,24 @@
     <label style="color: #fe325a;" for="card">Credit/Debit Card</label>
 
     <br />
+
+    <?php
+        if(array_key_exists('button1', $_POST)) { 
+          include_once('config.php');
+          $curr_email = $_GET['id'];
+          $sql = "DELETE FROM cart WHERE email='$curr_email'";
+          $get_data_query = mysqli_query($conn, $sql) or die(mysqli_error($conn)); 
+          header("Location: http://localhost/Pharmeazy/cata.php?id=$curr_email", true, 301);
+        }  
+    ?> 
+    <br>
     <center>
-      <button class="button button1" style="margin: 10px 20px 30px 5px;" type="button">Pay</button>
+      <form method="post"> 
+          <input type="submit" name="button1"
+          class="button button1" value="Pay" style="border: 2px solid #4CAF50; border-radius: 50%;"/> 
+      </form> 
     </center>
+    <br>
     <p>
      <img src="assets/caution.png" style="height: 5em;"> <b>Merely making the payment does not guarantees the
       fulfillment of your order. You need to have the correct prescription
