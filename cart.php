@@ -237,18 +237,27 @@
     style="width: 100%; height: 25em; margin-top: 2em;">
     <div class="top-left">My Cart</div>
   </div>
-
+  <br>
 
   <main style="margin-left: 1em; margin-top: 4em;">
-    <div style="display:inline-block;vertical-align:top;">
-
+    <div style="display:inline-block;vertical-align:top;padding-left:35%;">
 
     <?php
       include_once('config.php');
       $curr_email = $_GET['id'];
       $sql = "SELECT prodid, quantity FROM cart WHERE email='$curr_email'";
       $get_data_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+      $prods = array();
+      $prices = array();
+      $quantities = array();
       
+      function add($quantity, $id) {
+        include_once('config.php');
+        $query = "UPDATE cart SET quantity=5 WHERE email='st1532@srmist.edu.in' and prodid=6";
+        $get_data_query = mysqli_query($conn, $query) or die(mysqli_error($conn)); 
+      }
+
+
       while ($row = mysqli_fetch_array($get_data_query)) {
         $prodid = $row['prodid'];
         $quantity = $row['quantity'];
@@ -259,19 +268,41 @@
         $prodname = $product['name'];
         $price = $product['price'];
 
+        array_push($prods, $prodid);
+        array_push($prices, $price);
+        array_push($quantities, $quantity);
+
         echo '<div style="display: inline-block; vertical-align: top; ">';
         echo "<img src=\"{$picurl}\" alt=\"Paracetamol_image\" width=\"100\" height=\"100\" style=\"margin: 0.5em 1em 2em 2em;\" />";
         echo "</div>";
         echo '<div style="display: inline-block;">';
-        echo "<div style='margin: 1em 0em 0em 3em; padding:1em; font-weight: bold;'>{$prodname}: ₹ {$price}</div>";
-        echo '<div form class="quantity" action="" style="margin-left:4em; padding:0em;">';
-          echo '<label for="quantity">Quantity:    </label>';
-          echo "<input type='number' onchange='calc()' onkeyup='calc()' name='quantity-2' id='paracetamolQuantity' value=\"{$quantity}\" min='1' max='10'>";
-        echo '</div form>';
+        echo "<div style='margin: 0.3em 0em 0em 3em; padding:1em; font-weight: bold;'>{$prodname}: ₹ {$price}</div>";
+        echo "                <b>Quantity:</b> <input type='number' onchange='calc()' class='quantity' id={$prodid} name={$prodid} value=\"{$quantity}\" min='1' max='10'>";
       echo '</div>';
+      echo "<br>";
       echo "<br>";
     }
     ?>
+
+      <br>
+      <br>
+      <div style="padding-left: 35%"
+      <p><b>Cart Total:</b></p>
+      <p style="padding-left:5%" id="total"><b>₹ 200</b></p>
+      </div>
+      <br>
+      <br>
+      <br>
+      <h5 style="font-family: sans-serif;">
+        Please upload a scanned copy of your prescriptions:</h5>  
+      <input name="presc_file" type="file" id="file" class="inputfile" 
+        style="margin-left: 1em; margin-top: 1em; width: 15em;">
+        <label for="file" style = "margin-left: 35%; margin-top: 2em;">Choose a file</label>
+      <button type="button" disabled id="paymentButton" class="button button1" style="margin: 3em 2em 3em 25%;" 
+       >Proceed to
+          Payment</button>
+    <br>
+    <br>
 
   </main>
   
@@ -314,8 +345,81 @@
       </div>
     </div>
   </footer>
+  
+  
+    <script>
+      var button = document.getElementById("btn");
+      var prices = <?php echo json_encode($prices); ?>;
+      var quantities = <?php echo json_encode($quantities); ?>;
+  
+      var inputs = document.getElementsByClassName('quantity');
+      var n = inputs.length, i;
 
-  <script src="js/cart.js"></script>
+      var fileInput = document.getElementById('file');
+      var paymentButton = document.getElementById("paymentButton");
+      var selected = false;
+
+      fileInput.onchange = function () {
+      
+        var input = this.files[0];
+      
+        if (input) {
+          alert("You can now proceed");
+          paymentButton.disabled = false;
+          selected = true;
+        } 
+      };
+
+      var total = 0;
+      for (i = 0; i < n; i++) {
+        var quantity = inputs[i].value;
+        total += quantity * prices[i];
+        var prodid = inputs[i].id;
+      }
+      amount = "₹ ".concat(total);
+      document.getElementById("total").innerHTML = amount.bold();
+
+      paymentButton.onclick = function() {
+        var prices = <?php echo json_encode($prices); ?>;
+        var quantities = <?php echo json_encode($quantities); ?>;
+    
+        var inputs = document.getElementsByClassName('quantity');
+        var n = inputs.length, i;
+
+        var total = 0;
+        for (i = 0; i < n; i++) {
+          var quantity = inputs[i].value;
+          total += quantity * prices[i];
+          var prodid = inputs[i].id;
+        }
+        amount = "₹ ".concat(total);
+        document.getElementById("total").innerHTML = amount.bold();
+        if (!selected) {
+          alert("Please select a file first!");
+        }
+        else {
+          window.location.href = 'paymentinfo.php?amt=' + total;
+        }
+      };
+
+      function calc() {
+          var prices = <?php echo json_encode($prices); ?>;
+          var quantities = <?php echo json_encode($quantities); ?>;
+    
+        var inputs = document.getElementsByClassName('quantity');
+        var n = inputs.length, i;
+
+        var total = 0;
+        for (i = 0; i < n; i++) {
+          var quantity = inputs[i].value;
+          total += quantity * prices[i];
+          var prodid = inputs[i].id;
+        }
+          amount = "₹ ".concat(total);
+          document.getElementById("total").innerHTML = amount.bold();
+        }
+
+    </script>
+
 </body>
-
 </html>
