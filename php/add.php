@@ -14,16 +14,16 @@
             $x=$x+1;
             $sq="update cart set quantity=$x where prodid=$prod and email='$id';";
             $get_data_query = mysqli_query($conn, $sq) or die(mysqli_error($conn));
-            echo "<script> alert('Quantity of item increased')
-            window.location='../Product Details.php?prodid=$prod&id=$id';
+            echo "<script>
+            window.location='../Product Details.php?prodid=$prod&id=$id&up=1';
             </script>";
         }
         else
         {
             $sq="insert into cart values($prod,'$id',1,$price);";
             $get_data_query = mysqli_query($conn, $sq) or die(mysqli_error($conn));
-            echo "<script> alert('New item added to cart')
-            window.location='../Product Details.php?prodid=$prod&id=$id';
+            echo "<script>
+            window.location='../Product Details.php?prodid=$prod&id=$id&up=0';
             </script>";
         }
     }

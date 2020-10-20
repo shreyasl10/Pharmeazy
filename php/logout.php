@@ -5,7 +5,7 @@
     $update=mysqli_query($conn,$sql);
     if($update)
     {
-        echo "<script> alert('Logged out successfully')
-        window.location='../login.php';
+        echo "<script>
+        window.location='../login.php?log=1';
           </script>";
     }

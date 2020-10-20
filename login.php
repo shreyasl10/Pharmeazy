@@ -87,6 +87,15 @@
     function navvy()
     {
       var x="<?php echo (isset($_GET['id'])) ? $_GET['id'] : "null"; ?>";
+      var log="<?php echo (isset($_GET['log'])) ? $_GET['log'] : "null"; ?>";
+      if(log==0)
+      {
+        bootbox.alert('<center>You Shall Not Pass!</center>');
+      }
+      else if(log==1)
+      {
+        bootbox.alert("<center>Logged out successfully</center>");
+      }
       var y=document.getElementById('log');
       var z=document.getElementById('prof');
       var tags=document.getElementsByClassName('my');
@@ -252,7 +261,9 @@
       </div>
     </div>
   </footer>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap 4 dependency -->
+    <script src="popper.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
   </script>
@@ -262,7 +273,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
   </script>
-
+  <script src="bootbox.min.js"></script>
+    <script src="bootbox.locales.min.js"></script>
   <!-- Script for Form Validation -->
   <script type="text/javascript">
     function validate() {
