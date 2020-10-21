@@ -1,7 +1,7 @@
 <?php
 include_once 'php/config.php';
 $result = mysqli_query($conn,"Select * from product");
-$rows=mysqli_num_rows($result);
+$rows=mysqli_num_rows($result); 
 ?>
 
 <!DOCTYPE html>
@@ -206,6 +206,22 @@ $rows=mysqli_num_rows($result);
         
         <div class="row">
            <?php
+            if (!isset ($_GET['page'])) 
+            {  
+              $page = 1;  
+            } 
+            else 
+            {  
+              $page = $_GET['page'];  
+            } 
+            $results_per_page = 6;
+            $page_first_result = ($page-1) * $results_per_page;
+            $query = "select * from product";  
+            $result = mysqli_query($conn, $query);  
+            $number_of_result = mysqli_num_rows($result);   
+            $number_of_page = ceil ($number_of_result / $results_per_page);
+            $query = "SELECT *FROM product LIMIT " . $page_first_result . ',' . $results_per_page;  
+            $result = mysqli_query($conn, $query);    
             while($row = mysqli_fetch_assoc($result))   //start of loop
             {
           ?>
@@ -227,95 +243,22 @@ $rows=mysqli_num_rows($result);
               }
             ?>
         </div>
-           
-          <!--<div class="col-md-4 text-center col-sm-6 col-xs-6">
-            <div class="thumbnail product-box">
-              <img src="assets/img/dummyimg.png" alt="" />
-              <div class="caption">
-                <h3><a   href="Product Details.php">Medicine Name </a></h3>
-                <p>Price : <strong>Overpriced</strong></p>
-
-                <p>Random information about the medicine.</p>
-                <p>
-                  <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
-                  <a   href="Product Details.php" class="btn btn-primary my" role="button">See Details</a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 text-center col-sm-6 col-xs-6">
-            <div class="thumbnail product-box">
-              <img src="assets/img/dummyimg.png" alt="" />
-              <div class="caption">
-                <h3><a   href="Product Details.php">Medicine Name </a></h3>
-                <p>Price : <strong>Overpriced</strong></p>
-
-                <p>Random information about the medicine.</p>
-                <p>
-                  <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
-                  <a   href="Product Details.php" class="btn btn-primary my" role="button">See Details</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-4 text-center col-sm-6 col-xs-6">
-            <div class="thumbnail product-box">
-              <img src="assets/img/dummyimg.png" alt="" />
-              <div class="caption">
-                <h3><a   href="Product Details.php">Medicine Name </a></h3>
-                <p>Price : <strong>Overpriced</strong></p>
-
-                <p>Random information about the medicine.</p>
-                <p>
-                  <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
-                  <a   href="Product Details.php" class="btn btn-primary my" role="button">See Details</a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 text-center col-sm-6 col-xs-6">
-            <div class="thumbnail product-box">
-              <img src="assets/img/dummyimg.png" alt="" />
-              <div class="caption">
-                <h3><a   href="Product Details.php">Medicine Name </a></h3>
-                <p>Price : <strong>Overpriced</strong></p>
-
-                <p>Random information about the medicine.</p>
-                <p>
-                  <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
-                  <a   href="Product Details.php" class="btn btn-primary my" role="button">See Details</a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 text-center col-sm-6 col-xs-6">
-            <div class="thumbnail product-box">
-              <img src="assets/img/dummyimg.png" alt="" />
-              <div class="caption">
-                <h3><a   href="Product Details.php">Medicine Name </a></h3>
-                <p>Price : <strong>Overpriced</strong></p>
-
-                <p>Random information about the medicine.</p>
-                <p>
-                  <a  href="cart.php" class="btn btn-success my" role="button">Add To Cart</a>
-                  <a   href="Product Details.php" class="btn btn-primary my" role="button">See Details</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>-->
+          
         <div class="row">
           <ul class="pagination alg-right-pad pull-right">
-            <li><a href="#">&laquo;</a></li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">&raquo;</a></li>
+            <li><?php 
+               for($page = 1; $page<= $number_of_page; $page++) 
+               {  
+                  echo '<a href = "cata.php?id='.$_GET['id'].'&page=' . $page . '">' . $page . ' </a>';  
+               } 
+            ?></li>
+            <!--<li><a href="#">&laquo;</a></li>
+            <li><a href="#1">1</a></li>
+            <li><a href="#2">2</a></li>
+            <li><a href="#3">3</a></li>
+            <li><a href="#4">4</a></li>
+            <li><a href="#5">5</a></li>
+            <li><a href="#">&raquo;</a></li>-->
           </ul>
         </div>
       </div>
