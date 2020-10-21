@@ -137,8 +137,8 @@
   function payment()
   {
     var pincode = document.getElementById('pincode'); 
-var chkpinbtn = document.getElementById('chkpinbtn');
- var pin = pincode.value;
+    var chkpinbtn = document.getElementById('chkpinbtn');
+    var pin = pincode.value;
 
     if (pin == 560068) {
         bootbox.alert("COD available");
@@ -253,6 +253,13 @@ var chkpinbtn = document.getElementById('chkpinbtn');
           $curr_email = $_GET['id'];
           $sql = "DELETE FROM cart WHERE email='$curr_email'";
           $get_data_query = mysqli_query($conn, $sql) or die(mysqli_error($conn)); 
+
+          $sql = "SELECT coalesce(max(transid) + 1, 1) FROM transaction";
+          $get_data_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+          $transid = mysqli_fetch_array($get_data_query);
+          $amount = $_GET['amt'];
+          $sql = "INSERT INTO `transaction` (`transid`, `date`, `amount`) VALUES ('1', CURDATE(), $amount); ";
+          $get_data_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
           echo "<script>window.location='cata.php?id=$curr_email&pay=1';</script>";
         }  
     ?> 
