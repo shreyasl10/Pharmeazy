@@ -93,7 +93,7 @@
       var log="<?php echo (isset($_GET['log'])) ? $_GET['log'] : "null"; ?>";
       if(log==0)
       {
-        bootbox.alert('<center>You Shall Not Pass!</center>');
+        bootbox.alert('<center>Tresspassers are prohibited. Please login again!!</center>');
       }
       else if(log==1)
       {
