@@ -250,7 +250,7 @@ var chkpinbtn = document.getElementById('chkpinbtn');
           $curr_email = $_GET['id'];
           $sql = "DELETE FROM cart WHERE email='$curr_email'";
           $get_data_query = mysqli_query($conn, $sql) or die(mysqli_error($conn)); 
-          echo "<script>window.location='cata.php?id=$curr_email';</script>";
+          echo "<script>window.location='cata.php?id=$curr_email&pay=1';</script>";
         }  
     ?> 
     <br>

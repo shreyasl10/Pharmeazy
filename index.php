@@ -256,7 +256,7 @@
       <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
         <ul class="luxbar-navigation">
           <li class="luxbar-header">
-            <a href="index.php" class="luxbar-brand"
+            <a href="index.php" class="luxbar-brand my"
               ><i
                 class="fa fa-medkit"
                 style="font-size: 2.5rem; padding: 0.5rem"
@@ -303,6 +303,11 @@
           <center>Welcome to PharmEazy</center>
         </h1>
         <center>
+        <h4>
+        <center>
+        The Eazier Pharmacy!!
+        </center>
+        </h4>
           <a class="my shop" href="cata.php"
             ><button
               class="btn btn-success"

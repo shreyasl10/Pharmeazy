@@ -60,6 +60,11 @@ $rows=mysqli_num_rows($result);
     function navvy()
     {
       var x="<?php echo (isset($_GET['id'])) ? $_GET['id'] : "null"; ?>";
+      var pay="<?php echo (isset($_GET['pay'])) ? $_GET['pay'] : "null"; ?>";
+      if(pay==1)
+      {
+        alert("Payment Successful");
+      }
       var y=document.getElementById('log');
       var z=document.getElementById('prof');
       var tags=document.getElementsByClassName('my');
