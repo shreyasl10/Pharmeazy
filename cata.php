@@ -10,6 +10,9 @@ $rows=mysqli_num_rows($result);
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel = "icon" href =  
+"assets/hospital.png"
+        type = "image/x-icon"> 
   <title>Catalogue - Pharmaeazy | An Easier Pharmacy</title>
   <!-- Bootstrap core CSS -->
   <link href="assets/css/bootstrap.css" rel="stylesheet" />
