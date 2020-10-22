@@ -231,7 +231,7 @@ $rows=mysqli_num_rows($result);
               <div class="caption">
                 
                   <h3><a class="kek" href="Product Details.php?prodid=<?php echo $row['prodid']?>"><?php echo $row['name']; ?></a></h3>
-                  <p>Price : <strong><?php echo $row['price']; ?></strong></p>
+                  <p>Price : <strong> ₹<?php echo $row['price']; ?></strong></p>
                   <p><?php echo $row['caption']; ?></p>
                   <p>
                     <a  href="Product Details.php?prodid=<?php echo $row['prodid']?>" class="btn btn-primary kek" role="button">See Details</a>
