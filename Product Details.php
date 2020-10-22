@@ -217,7 +217,7 @@
             include_once 'php/config.php';
             $a= $_GET['prodid'];
             $result = mysqli_query($conn,"SELECT * FROM product WHERE prodid = $a;");
-            $row = mysqli_fetch_assoc($result)   //start of loop
+            $row = mysqli_fetch_assoc($result)   
             
           ?>
 
@@ -235,7 +235,7 @@
           </div>
 
           <div class="col-md-8  col-sm-12 col-xs-12">
-            <p><label class="control-label ">Price: <?php echo $row['price']; ?></label>
+            <p><label class="control-label ">Price:  ₹<?php echo $row['price']; ?></label>
             <form action="php/add.php" method="POST"> <input type="hidden" name="prodid" value="<?php echo $_GET['prodid']; ?>"> <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"> <input type="hidden" name="price" value="<?php echo $row['price']; ?>"> <input type="submit" value="Add to Cart" id="lol" class="btn btn-primary pull-right" role="button"></input></form>
              
               <a href="pin.html" onclick="centeredPopup(this.href,'myWindow','500','500','yes');return false"
