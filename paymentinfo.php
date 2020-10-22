@@ -278,8 +278,8 @@
     </p>
     <p>
       Before you click on the Pay button and place your order, we encourage
-      you to read our <a href="">Terms & Conditions</a> and
-      <a href="faq.html">FAQs</a>.
+      you to read our <a class="my" href="terms_and_conditions.php">Terms & Conditions</a> and
+      <a class="my" href="faq.php">FAQs</a>.
     </p>
     <p>You will receive a confirmation email after you place the order.</p>
     <p>Thank you for shopping with us!</p>
