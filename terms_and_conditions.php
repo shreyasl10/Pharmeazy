@@ -107,17 +107,74 @@
       }
     </style>
   </head>
-
-  <body>
-    <header id="luxbar" class="luxbar-fixed">
+  <script>
+    function navvy()
+    {
+      var x="<?php echo (isset($_GET['id'])) ? $_GET['id'] : "null"; ?>";
+      var log="<?php echo (isset($_GET['log'])) ? $_GET['log'] : "null"; ?>";
+      if(log==0)
+      {
+        bootbox.alert('<center>Tresspassers are prohibited. Please login again!!</center>');
+      }
+      else if(log==1)
+      {
+        bootbox.alert("<center>Logged out successfully</center>");
+      }
+      var y=document.getElementById('log');
+      var z=document.getElementById('prof');
+      var tags=document.getElementsByClassName('my');
+      var t1=document.getElementsByClassName('shop');
+      var t2=document.getElementsByClassName('sho');
+      var s1=t2[0].href;
+      var i,j;
+      var s;
+      s=t1[0].href;
+      if(x=="null")
+      {
+        y.style.display="block";
+        z.style.display="none";
+        for(j=0;j<t1.length;j++)
+        {
+          t1[j].href='login.php';
+        }
+        for(j=0;j<t2.length;j++)
+        {
+          t2[j].href='login.php';
+        }
+      }
+      else
+      {
+        for(j=0;j<t1.length;j++)
+        {
+          t1[j].href=s;
+        }
+        for(j=0;j<t2.length;j++)
+        {
+          t2[j].href=s1;
+        }
+        y.style.display="none";
+        z.style.display="block";
+        for(i=0;i<tags.length;i++)
+        {
+          var j=tags[i].href;
+          tags[i].href=j+"?id="+x;
+        }
+      }
+    }
+    </script>
+  <body onload="navvy();">
+  <?php
+  include('php/check.php');
+  ?>
+<header id="luxbar" class="luxbar-fixed">
       <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
       <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
         <ul class="luxbar-navigation">
           <li class="luxbar-header">
-            <a href="index.html" class="luxbar-brand"
+            <a href="index.php" class="luxbar-brand my"
               ><i
                 class="fa fa-medkit"
-                style="font-size: 2.5rem; padding: 0.5rem;"
+                style="font-size: 2.5rem; padding: 0.5rem"
               ></i
             ></a>
             <label
@@ -128,11 +185,25 @@
               <span></span>
             </label>
           </li>
-          <li class="luxbar-item"><a href="index.html">Home</a></li>
-          <li class="luxbar-item"><a href="about.html">About Us</a></li>
-          <li class="luxbar-item"><a href="cata.html">Shop</a></li>
-          <li class="luxbar-item"><a href="login.html">Login</a></li>
-          <li class="luxbar-item"><a href="accountinfo.html">About Me</a></li>
+
+          <li class="luxbar-item" style="text-align: center">
+            <a class="my" href="index.php">Home</a>
+          </li>
+          <li class="luxbar-item" style="text-align: center">
+            <a class="my" href="about.php">About Us</a>
+          </li>
+          <li class="luxbar-item" style="text-align: center">
+            <a class="my shop" href="cata.php">Shop</a>
+          </li>
+          <li  id="log" class="luxbar-item" style="text-align: center">
+            <a class="my" href="login.php">Login</a>
+          </li>
+          <li  id="prof" class="luxbar-item" style="text-align: center">
+            <a class="my" href="accountinfo.php">My Profile</a>
+          </li>
+          <li class="luxbar-item" style="text-align: center">
+            <a class="my sho" href="cart.php">Cart</a>
+          </li>
         </ul>
       </div>
     </header>
@@ -169,7 +240,7 @@
 
             <ul class="pl-5">
               <li>
-                <a href="#!">Terms and Conditions</a>
+                <a class="my" href="terms_and_conditions.php">Terms and Conditions</a>
               </li>
               <li>
                 <a href="#!">Privacy Policy</a>
@@ -178,7 +249,7 @@
                 <a href="#!">Customer Service</a>
               </li>
               <li>
-                <a href="faq.html">FAQs</a>
+                <a class="my" href="faq.php">FAQs</a>
               </li>
             </ul>
           </div>
@@ -190,20 +261,19 @@
         </div>
       </div>
     </footer>
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap 4 dependency -->
+    <script src="popper.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+  </script>
+  <script src="bootbox.min.js"></script>
+    <script src="bootbox.locales.min.js"></script>
   </body>
 </html>

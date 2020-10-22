@@ -283,7 +283,7 @@ $rows=mysqli_num_rows($result);
 
           <ul class="pl-5">
             <li>
-              <a href="terms_and_conditions.html">Terms and Conditions</a>
+              <a class="my" href="terms_and_conditions.php">Terms and Conditions</a>
             </li>
             <li>
               <a href="#!">Privacy Policy</a>
@@ -292,7 +292,7 @@ $rows=mysqli_num_rows($result);
               <a href="#!">Customer Service</a>
             </li>
             <li>
-              <a href="faq.html">FAQs</a>
+              <a class="my" href="faq.php">FAQs</a>
             </li>
           </ul>
         </div>
