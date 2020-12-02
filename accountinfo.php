@@ -3,6 +3,9 @@
 
 <head>
   <meta charset="utf-8" />
+  <link rel = "icon" href =  
+"assets/hospital.png"
+        type = "image/x-icon"> 
   <title>Account Information - PharmEazy | An Easier Pharmacy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
@@ -129,7 +132,7 @@
       <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
         <ul class="luxbar-navigation">
           <li class="luxbar-header">
-            <a href="index.php" class="luxbar-brand"
+            <a href="index.php" class="luxbar-brand my"
               ><i
                 class="fa fa-medkit"
                 style="font-size: 2.5rem; padding: 0.5rem"
@@ -254,6 +257,74 @@
           style="border-radius: 50%; box-shadow: 10px 10px 5px #ccc;"
         />
         <br>
+
+
+        <?php
+          function func() {
+            $target_dir = "uploads/";
+            $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+            $uploadOk = 1;
+            $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+          
+            if(isset($_POST["submit"])) {
+              $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+              if($check !== false) {
+              
+                $uploadOk = 1;
+              } else {
+            
+                $uploadOk = 0;
+              }
+            }
+
+            if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+            && $imageFileType != "gif" ) {
+              echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+              $uploadOk = 0;
+            }
+
+          
+            if ($uploadOk == 0) {
+              //echo "Sorry, your file was not uploaded.";
+            // if everything is ok, try to upload file
+            } else {
+              if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                //echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+              } else {
+               // echo "Sorry, there was an error uploading your file.";
+              }
+            }
+
+            //include_once('config.php');
+            $conn = mysqli_connect('localhost', 'root', 'root');
+            mysqli_select_db($conn, 'pharmeazy');
+
+            $curr_email = $_GET['id'];
+            //echo $_FILES["fileToUpload"]["name"];
+            $picurl = "uploads/".$_FILES["fileToUpload"]["name"];
+            $sql = "UPDATE `users` SET `piclink` = '$picurl' WHERE `users`.`email` = '$curr_email'; ";
+            $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+            //$product = mysqli_fetch_array($res);
+            echo("<meta http-equiv='refresh' content='1'>");
+
+          }
+
+          if(isset($_POST['submit']))
+            {
+              func();
+            } 
+          ?>
+
+        <form action="" method="post" enctype="multipart/form-data">
+          <br>
+          <input type="file" name="fileToUpload" id="fileToUpload" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 20em;">
+          <br>
+          <br>
+          <input type="submit" value="Upload Image" name="submit">
+        </form>
+        
+        
         <br>
         <br>
         <h4 style="margin-left: -8%;" >My uploaded prescriptions:</h3>
@@ -265,8 +336,8 @@
           </a>
         </div>
       </div>
-      <center>  <a href="login.php"><button type="Submit" style="width: 20%; margin-top:2%;margin-bottom: 5%"
-                class="btn btn-warning btn-block">Logout</button></a> </center>
+      <center>  <form action="php/logout.php" method="POST"> <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"> <input type="Submit" value="Logout" style="width: 20%; margin-top:2%;margin-bottom: 5%"
+                class="btn btn-warning btn-block"></input> </form> </center>
   </main>
   <footer class="pt-1">
     <div>
@@ -286,7 +357,7 @@
 
           <ul class="pl-5">
             <li>
-              <a href="#!">Terms and Conditions</a>
+              <a class="my" href="terms_and_conditions.php">Terms and Conditions</a>
             </li>
             <li>
               <a href="#!">Privacy Policy</a>
@@ -295,7 +366,7 @@
               <a href="#!">Customer Service</a>
             </li>
             <li>
-              <a href="faq.html">FAQs</a>
+              <a class="my" href="faq.php">FAQs</a>
             </li>
           </ul>
         </div>

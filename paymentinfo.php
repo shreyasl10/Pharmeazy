@@ -3,6 +3,9 @@
 
 <head>
   <meta charset="utf-8" />
+  <link rel = "icon" href =  
+"assets/hospital.png"
+        type = "image/x-icon"> 
   <title>Payment Options - PharmEazy | An Easier Pharmacy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -131,6 +134,20 @@
 
   </style>
   <script>
+  function payment()
+  {
+    var pincode = document.getElementById('pincode'); 
+    var chkpinbtn = document.getElementById('chkpinbtn');
+    var pin = pincode.value;
+
+    if (pin == 560068) {
+        bootbox.alert("COD available");
+    } 
+
+    else {
+        bootbox.alert("Sorry! COD not yet available.")
+    }
+}
     function navvy()
     {
       var x="<?php echo (isset($_GET['id'])) ? $_GET['id'] : "null"; ?>";
@@ -212,11 +229,11 @@
     <p>Please note that COD is available in selected regions only.</p>
     <p>Kindly enter your pincode to check its availaility</p>
 
-    <form action="">
+    
       <label for="quantity">PIN code:</label>
       <input type="number" id="pincode" name="pincode" min="000000" max="999999" />
-      <input type="submit" id="chkpinbtn" class="btn" value="Check availability" />
-    </form>
+      <input type="submit" id="chkpinbtn" class="btn" value="Check availability" onclick="payment()"/>
+    <br>
     <br>
     <p>Please choose your desired payment option:</p>
     <br>
@@ -229,9 +246,31 @@
     <label style="color: #fe325a;" for="card">Credit/Debit Card</label>
 
     <br />
+
+    <?php
+        if(array_key_exists('button1', $_POST)) { 
+          include_once('config.php');
+          $curr_email = $_GET['id'];
+          $sql = "DELETE FROM cart WHERE email='$curr_email'";
+          $get_data_query = mysqli_query($conn, $sql) or die(mysqli_error($conn)); 
+
+          $sql = "SELECT coalesce(max(transid) + 1, 1) FROM transaction";
+          $get_data_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+          $transid = mysqli_fetch_array($get_data_query);
+          $amount = $_GET['amt'];
+          $sql = "INSERT INTO `transaction` (`transid`, `date`, `amount`) VALUES ('1', CURDATE(), $amount); ";
+          $get_data_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+          echo "<script>window.location='cata.php?id=$curr_email&pay=1';</script>";
+        }  
+    ?> 
+    <br>
     <center>
-      <button class="button button1" style="margin: 10px 20px 30px 5px;" type="button">Pay</button>
+      <form method="post"> 
+          <input type="submit" name="button1"
+          class="button button1" value="Pay" style="border: 2px solid #4CAF50; border-radius: 50%;"/> 
+      </form> 
     </center>
+    <br>
     <p>
      <img src="assets/caution.png" style="height: 5em;"> <b>Merely making the payment does not guarantees the
       fulfillment of your order. You need to have the correct prescription
@@ -239,8 +278,8 @@
     </p>
     <p>
       Before you click on the Pay button and place your order, we encourage
-      you to read our <a href="">Terms & Conditions</a> and
-      <a href="faq.html">FAQs</a>.
+      you to read our <a class="my" href="terms_and_conditions.php">Terms & Conditions</a> and
+      <a class="my" href="faq.php">FAQs</a>.
     </p>
     <p>You will receive a confirmation email after you place the order.</p>
     <p>Thank you for shopping with us!</p>
@@ -264,7 +303,7 @@
 
           <ul class="pl-5">
             <li>
-              <a href="terms_and_conditions.html">Terms and Conditions</a>
+              <a class="my" href="terms_and_conditions.php">Terms and Conditions</a>
             </li>
             <li>
               <a href="#!">Privacy Policy</a>
@@ -273,7 +312,7 @@
               <a href="#!">Customer Service</a>
             </li>
             <li>
-              <a href="faq.html">FAQs</a>
+              <a class="my" href="faq.php">FAQs</a>
             </li>
           </ul>
         </div>
@@ -286,7 +325,20 @@
     </div>
   </footer>
 
-  <script src="js/payment.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap 4 dependency -->
+    <script src="popper.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+  </script>
+  <script src="bootbox.min.js"></script>
+    <script src="bootbox.locales.min.js"></script>
 </body>
 
 </html>

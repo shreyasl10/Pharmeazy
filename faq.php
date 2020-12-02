@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel = "icon" href =  
 "assets/hospital.png"
-        type = "image/x-icon">
+        type = "image/x-icon"> 
   <title>PharmEazy | An Easier Pharmacy</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -19,9 +18,7 @@
     html {
       font-family: 'Poppins';
     }
-    .page{
-      padding-bottom: 15%;
-    }
+
     .luxbar-item a:hover {
       color: green;
       background-color: honeydew;
@@ -33,7 +30,7 @@
     }
 
     .row {
-      margin: 0;
+      margin: 10%;
       display: flex;
       justify-content: space-evenly;
     }
@@ -44,20 +41,6 @@
       padding-top: 15%;
     }
 
-    .main {
-      width: 400px;
-      height: 65vh;
-      margin: 7em auto;
-      border-radius: 1.5em;
-      background-color: #d1d9e6;
-     
-    }
-    .form-group {
-      width: 76%;
-      padding: 10px 20px;
-      margin-left: 50px;
-      
-    }
     .hov {
       transition: transform 0.2s;
     }
@@ -186,85 +169,87 @@
         </ul>
       </div>
     </header>
-  <section class="page">
+  <section style="text-align: center;">
     <div class="container">
       <div class="row">
-        <div class="main">
-          <h1 style="text-align: center; padding-top: 40px">Login</h1>
-          <form name="myForm" onsubmit="return(validate())" action="php/log.php" method="POST">
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input class="form-control" type="email" name="email" placeholder="Enter your email">
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input class="form-control" type="password" name="password" placeholder="Enter your password">
-            </div>
-            <div class="form-group">
-              <button type="Submit" value="Submit" style="width: 50%; margin: auto"
-                class="btn btn-success btn-block">Login</button>
-            </div>
-            <?php
-            if(isset($_GET['id']) and ($_GET['id']==0))
-            {
-              echo "<script> alert('Incorrect credentials')
-              window.location = 'login.php';
-              </script>";
-            }
-            ?>
-          </form>
-          <div style="padding-top: 15px; font-size: 2rem">
-            <center>
-              <h4 style="padding-top: 30px" style="font-size:18px">Do not have an account??</h4>
-            </center>
-            <center><a style="text-align: center" href="register.php"> <button class="btn btn-success"> Create an
-                  Account </button> </a>
-          </div>
-        </div>
+        <h1>FAQ</h1>
       </div>
     </div>
   </section>
+  <section class="body">
+    <section>
+      <div class="contact-box-main">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-sm-12">
+              <div class="contact-form-right">
+                <h4><span data-toggle="collapse" data-target="#demo"><i class="fa fa-plus-square"
+                      aria-hidden="true"></i></span> Do you accept refunds or exchanges?</h4>
+                <p id="demo" class="collapse in">Refunds and exchanges are accepted within 5 days of delivery of the product in case of any quality or service issue.</p>
+              </div>
+              <div class="contact-form-right">
+                <h4><span data-toggle="collapse" data-target="#demo1"><i class="fa fa-plus-square"
+                      aria-hidden="true"></i></span> How can I track my shipment?</h4>
+                <p id="demo1" class="collapse in">You can track your shipment through the delivery company portal whose credentials will be messaged to you.</p>
+              </div>
+              <div class="contact-form-right">
+                <h4><span data-toggle="collapse" data-target="#demo2"><i class="fa fa-plus-square"
+                      aria-hidden="true"></i></span> Can I get refund for shipping costs?</h4>
+                <p id="demo2" class="collapse in">According to our norms, you can not get a refund for shipping charge but your replacement will come without any additional shippind charges.</p>
+              </div>
+              <div class="contact-form-right">
+                <h4><span data-toggle="collapse" data-target="#demo3"><i class="fa fa-plus-square"
+                      aria-hidden="true"></i></span> What payment methods do you accept?</h4>
+                <p id="demo3" class="collapse in">We accept all types of payment methods inclusive of all credit and debit cards and digital platforms, pay on delivery is subject to customer's location.</p>
+              </div>
+              <div class="contact-form-right">
+                <h4><span data-toggle="collapse" data-target="#demo4"><i class="fa fa-plus-square"
+                      aria-hidden="true"></i></span> How can I upload my prescription?</h4>
+                <p id="demo4" class="collapse in">You can not order without uploading prescription, so you will know soonish automatically.</p>
+              </div>
+            </div>
+    </section>
+    <footer class="pt-1">
+      <div>
+        <div class="row">
+          <div class="col-md-6">
+            <h5>About Us</h5>
+            <p style="text-align: justify;">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem,
+              accusamus suscipit, voluptas temporibus doloribus nesciunt tempore
+              eligendi deserunt dignissimos officiis sed molestiae placeat
+              fugiat cumque amet ipsam.
+            </p>
+          </div>
 
-  <footer class="pt-1">
-    <div>
-      <div class="row">
-        <div class="col-md-6">
-          <h5>About Us</h5>
-          <p style="text-align: justify;">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem,
-            accusamus suscipit, voluptas temporibus doloribus nesciunt tempore
-            eligendi deserunt dignissimos officiis sed molestiae placeat
-            fugiat cumque amet ipsam.
-          </p>
-        </div>
+          <div class="col-md-3">
+            <h5 class="pl-2">Information</h5>
 
-        <div class="col-md-3">
-          <h5 class="pl-2">Information</h5>
-
-          <ul class="pl-5">
-            <li>
-              <a class="my" href="terms_and_conditions.php">Terms and Conditions</a>
-            </li>
-            <li>
-              <a href="#!">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="#!">Customer Service</a>
-            </li>
-            <li>
-              <a class="my" href="faq.php">FAQs</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-3">
-          <h5>Pharmacy Timings</h5>
-          <p class="pl-3">Mon - Sat : 09:00AM - 10:00PM</p>
-          <p class="pl-3">Sunday : 10:00AM - 10:00PM</p>
+            <ul class="pl-5">
+              <li>
+                <a class="my" href="terms_and_conditions.php">Terms and Conditions</a>
+              </li>
+              <li>
+                <a href="#!">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#!">Customer Service</a>
+              </li>
+              <li>
+                <a class="my" href="faq.php">FAQs</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5>Pharmacy Timings</h5>
+            <p class="pl-3">Mon - Sat : 09:00AM - 10:00PM</p>
+            <p class="pl-3">Sunday : 10:00AM - 10:00PM</p>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Bootstrap 4 dependency -->
     <script src="popper.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -278,33 +263,6 @@
   </script>
   <script src="bootbox.min.js"></script>
     <script src="bootbox.locales.min.js"></script>
-  <!-- Script for Form Validation -->
-  <script type="text/javascript">
-    function validate() {
-      if (document.myForm.email.value == "") {
-        alert("Please provide your Email");
-        document.myForm.email.focus();
-        return false;
-      } else {
-        var emailId = document.myForm.email.value;
-        var atpos = emailId.indexOf("@");
-        var dotpos = emailId.lastIndexOf(".");
-        if (atpos < 1 || (dotpos - atpos < 2) || (dotpos + 2 >= emailId.length)) {
-          alert("Please enter a valid Email");
-          document.myForm.email.focus();
-          return false;
-        }
-      }
-      if (document.myForm.password.value == "") {
-        alert("Please provide your Password");
-        document.myForm.password.focus();
-        return false;
-      }
-      return (true);
-    }
-    
-  </script>
-
 </body>
 
 </html>

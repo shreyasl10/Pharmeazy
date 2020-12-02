@@ -1,13 +1,19 @@
+
+
 <!DOCTYPE html>
 <html>
 
 <head>
+
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel = "icon" href =  
+"assets/hospital.png"
+        type = "image/x-icon"> 
   <title>Product - PharmEazy | An Easier Pharmacy</title>
   <!-- Bootstrap core CSS -->
-  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <link href="assets/css/bootstrap.css" rel="stylesheet" />
   <!-- Fontawesome core CSS -->
   <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
   <!--GOOGLE FONT -->
@@ -56,6 +62,15 @@
     function navvy()
     {
       var x="<?php echo (isset($_GET['id'])) ? $_GET['id'] : "null"; ?>";
+      var up="<?php echo (isset($_GET['up'])) ? $_GET['up'] : "null"; ?>";
+      if(up==0)
+      {
+        alert('New item added to cart');
+      }
+      else if(up==1)
+      {
+        alert('Quantity of item increased');
+      }
       var y=document.getElementById('log');
       var z=document.getElementById('prof');
       var tags=document.getElementsByClassName('my');
@@ -103,6 +118,7 @@
 
 
 <body onload="navvy()">
+
 <?php
   include('php/check.php');
   ?>
@@ -111,7 +127,7 @@
       <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
         <ul class="luxbar-navigation">
           <li class="luxbar-header">
-            <a href="index.php" class="luxbar-brand"
+            <a href="index.php" class="luxbar-brand my"
               ><i
                 class="fa fa-medkit"
                 style="font-size: 2.5rem; padding: 0.5rem"
@@ -197,57 +213,48 @@
 
 
         <div class="row">
+            <?php
+            include_once 'php/config.php';
+            $a= $_GET['prodid'];
+            $result = mysqli_query($conn,"SELECT * FROM product WHERE prodid = $a;");
+            $row = mysqli_fetch_assoc($result)   
+            
+          ?>
+
           <div class="col-md-4 text-center col-sm-6 col-xs-6">
             <br>
             <div class="thumbnail product-box">
-              <img src="assets/img/dummyimg.png" alt="" />
+              <img src="<?php echo $row['picture']; ?>" alt="" />
             </div>
           </div>
 
           <div class="col-md-8 text-center col-sm-12 col-xs-12">
-            <h3>Generic Medicine Name</h3>
-            <small>This may kill you</small>
+            <h3><?php echo $row['name']; ?></h3>
+            <small><?php echo $row['type']; ?></small>
             <hr class="soft">
           </div>
 
           <div class="col-md-8  col-sm-12 col-xs-12">
-            <p><label class="control-label ">Price: Overpriced</label>
-              <a href="cart.php"  id="lol" class="btn btn-primary pull-right my" role="button">Add To Cart</a>
+            <p><label class="control-label ">Price:  ₹<?php echo $row['price']; ?></label>
+            <form action="php/add.php" method="POST"> <input type="hidden" name="prodid" value="<?php echo $_GET['prodid']; ?>"> <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"> <input type="hidden" name="price" value="<?php echo $row['price']; ?>"> <input type="submit" value="Add to Cart" id="lol" class="btn btn-primary pull-right" role="button"></input></form>
+             
               <a href="pin.html" onclick="centeredPopup(this.href,'myWindow','500','500','yes');return false"
                 class="btn btn-success pull-right tab" role="button">Verify</a>
             </p>
 
             <hr class="soft">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Etiam tempor orci eu lobortis elementum nibh. Aenean sed adipiscing diam donec. Mi
-              eget mauris pharetra et ultrices. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor.
-              Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula. Vitae suscipit tellus mauris a
-              diam. Sit amet tellus cras adipi scing enim eu. Quam id leo in vitae.</p>
+            <p><?php echo $row['description']; ?></p>
 
           </div>
-        </div>
+                  </div>
 
         <div class="row">
           <div class="col-md-12  col-sm-12 col-xs-12">
             <hr class="soft clr">
             <h4>Medicine Properties</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Leo vel orci
-              porta non pulvinar neque. Feugiat sed lectus vestibulum mattis ullamcorper velit sed. Phasellus egestas
-              tellus rutrum tellus. Mollis aliquam ut porttitor leo a diam. Pretium aenean pharetra magna ac placerat.
-              Tempor id eu nisl nunc mi ipsum faucibus. Nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Aliquet
-              lectus proin nibh nisl condimentum id. Aliquet sagittis id consectetur purus ut faucibus. Duis ultricies
-              lacus sed turpis. Tortor dignissim convallis aenean et tortor at risus. Facilisis magna etiam tempor orci
-              eu lobortis elementum nibh. Metus dictum at tempor commodo ullamcorper. Quis auctor elit sed vulputate mi.
-              Sagittis id consectetur purus ut.</p>
+            <p><?php echo $row['properties']; ?></p>
             <h4>Direction for use</h4>
-            <p>Vitae semper quis lectus nulla at volutpat diam. Ridiculus mus mauris vitae ultricies. Id faucibus nisl
-              tincidunt eget nullam. Ornare massa eget egestas purus viverra accumsan in nisl nisi. Amet nisl suscipit
-              adipiscing bibendum est ultricies integer quis auctor. Egestas tellus rutrum tellus pellentesque eu
-              tincidunt tortor aliquam nulla. Parturient montes nascetur ridiculus mus mauris vitae ultricies leo. Eget
-              egestas purus viverra accumsan in nisl nisi. Augue mauris augue neque gravida in fermentum et. Dolor purus
-              non enim praesent. Ultricies mi quis hendrerit dolor magna eget est lorem ipsum. Sed velit dignissim
-              sodales ut eu sem.</p>
+            <p><?php echo $row['directions']; ?></p>
           </div>
         </div>
       </div>
@@ -272,7 +279,7 @@
 
           <ul class="pl-5">
             <li>
-              <a href="terms_and_conditions.html">Terms and Conditions</a>
+              <a class="my" href="terms_and_conditions.php">Terms and Conditions</a>
             </li>
             <li>
               <a href="#!">Privacy Policy</a>
@@ -281,7 +288,7 @@
               <a href="#!">Customer Service</a>
             </li>
             <li>
-              <a href="faq.html">FAQs</a>
+              <a class="my" href="faq.php">FAQs</a>
             </li>
           </ul>
         </div>
@@ -306,6 +313,15 @@
       popupWindow = window.open(url, winName, settings)
     }
   </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap 4 dependency -->
+    <script src="popper.min.js"></script>
+    
+    
+      <!-- bootbox code -->
+      <script src="bootbox.min.js"></script>
+    <script src="bootbox.locales.min.js"></script>
+    <script type="text/javascript" src="maps.js"></script>
 </body>
 
 

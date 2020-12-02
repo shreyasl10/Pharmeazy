@@ -3,6 +3,9 @@
 
 <head>
   <meta charset="utf-8">
+  <link rel = "icon" href =  
+"assets/hospital.png"
+        type = "image/x-icon"> 
   <title>Cart - PharmEazy | An Easier Pharmacy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
@@ -196,7 +199,7 @@
       <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
         <ul class="luxbar-navigation">
           <li class="luxbar-header">
-            <a href="index.php" class="luxbar-brand"
+            <a href="index.php" class="luxbar-brand my"
               ><i
                 class="fa fa-medkit"
                 style="font-size: 2.5rem; padding: 0.5rem"
@@ -237,122 +240,75 @@
     style="width: 100%; height: 25em; margin-top: 2em;">
     <div class="top-left">My Cart</div>
   </div>
-
+  <br>
 
   <main style="margin-left: 1em; margin-top: 4em;">
-    <div style="display:inline-block;vertical-align:top;">
-     
+    <div style="display:inline-block;vertical-align:top;padding-left:35%;">
 
-      <div style="display: inline-block; vertical-align: top; ">
-        <img src="assets/Paracetamol.jpg" alt="Paracetamol_image" width="100" height="100"
-          style="margin: 0.5em 1em 2em 2em;" />
-      </div>
-      <div style="display: inline-block;">
-        <div style="margin: 1em 0em 0em 3em; padding:1em; font-weight: bold;">Paracetamol (100mg) - ₹ 50</div>
-        <div form class="quantity" action="" style="margin-left:4em; padding:0em;">
-          <label for="quantity">Quantity: </label>
-          <input type="number" onchange="calc()" onkeyup="calc()" name="quantity-2" id="paracetamolQuantity" value="1" min="1" max="10">
-        </div form>
-      </div>
-
-      <br>
-      <br>
-      <br>
-      <br>
-
-      <div style="display:inline-block;vertical-align:top;">
-        <img src="assets/burnol.jpg" alt="Burnol_image" width="100" height="100" style="margin: 0.5em 1em 2em 2em;" />
-      </div>
-      <div style="display:inline-block;">
-        <div style="margin: 1em 0em 0em 3em; padding:1em; font-weight: bold;">Burnol (150g tube) - ₹ 30</div>
-        <div form class="quantity" action="" style="margin-left:4em; padding:0em;">
-          <label for="quantity">Quantity: </label>
-          <input type="number" onchange="calc()" onkeyup="calc()" name="quantity-2" id="burnolQuantity" value="1" min="1" max="10">
-        </div form>
-      </div>
+    <?php
+      include_once('config.php');
+      $curr_email = $_GET['id'];
+      $sql = "SELECT prodid, quantity FROM cart WHERE email='$curr_email'";
+      $get_data_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+      $prods = array();
+      $prices = array();
+      $quantities = array();
+      
+      function add($quantity, $id) {
+        include_once('config.php');
+        $query = "UPDATE cart SET quantity=5 WHERE email='st1532@srmist.edu.in' and prodid=6";
+        $get_data_query = mysqli_query($conn, $query) or die(mysqli_error($conn)); 
+      }
 
 
-      <br>
-      <br>
-      <br>
-      <br>
+      while ($row = mysqli_fetch_array($get_data_query)) {
+        $prodid = $row['prodid'];
+        $quantity = $row['quantity'];
+        $sql = "SELECT picture, name, price FROM product WHERE prodid=$prodid";
+        $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+        $product = mysqli_fetch_array($res);
+        $picurl = $product['picture'];
+        $prodname = $product['name'];
+        $price = $product['price'];
 
-      <div style="display:inline-block;vertical-align:top;">
-        <img src="assets/benadryl.jpg" alt="Benadryl_image" width="100" height="100"
-          style="margin: 0.5em 1em 2em 2em;" />
-      </div>
-      <div style="display:inline-block;">
-        <div style="margin: 1em 0em 0em 3em; padding:1em; font-weight: bold;">Benadryl Cough Syrup (for dry cough) - ₹ 100</div>
-        <div form class="quantity" action="" style="margin-left:4em; padding:0em;">
-          <label for="quantity">Quantity: </label>
-          <input type="number" onchange="calc()" onkeyup="calc()" name="quantity-2" id="benadrylQuantity" value="1" min="1" max="10">
-        </div form>
-      </div>
+        array_push($prods, $prodid);
+        array_push($prices, $price);
+        array_push($quantities, $quantity);
 
+        echo '<div style="display: inline-block; vertical-align: top; ">';
+        echo "<img src=\"{$picurl}\" alt=\"Paracetamol_image\" width=\"100\" height=\"100\" style=\"margin: 0.5em 1em 2em 2em;\" />";
+        echo "</div>";
+        echo '<div style="display: inline-block;">';
+        echo "<div style='margin: 0.3em 0em 0em 3em; padding:1em; font-weight: bold;'>{$prodname}: ₹ {$price}</div>";
+        echo "                <b>Quantity:</b> <input type='number' onchange='calc()' class='quantity' id={$prodid} name={$prodid} value=\"{$quantity}\" min='1' max='10'>";
+      echo '</div>';
+      echo "<br>";
+      echo "<br>";
+    }
+    ?>
 
       <br>
       <br>
-      <br>
-      <br>
-
-      <div style="display:inline-block;vertical-align:top;">
-        <img src="assets/digene.png" alt="Digene_image" width="100" height="100" style="margin: 0.5em 1em 2em 2em;" />
-      </div>
-      <div style="display:inline-block;">
-        <div style="margin: 1em 0em 0em 3em; padding:1em; font-weight: bold;">Digene Tablets - ₹ 20</div>
-        <div form class="quantity" action="" style="margin-left:4em; padding:0em;">
-          <label for="quantity">Quantity: </label>
-          <input type="number" onchange="calc()" onkeyup="calc()" name="quantity-2" id="digeneQuantity" value="1" min="1" max="10">
-        </div form>
-      </div>
-      <br>
-      <br>
-      <br>
-      <br>
+      <div style="padding-left: 35%"
       <p><b>Cart Total:</b></p>
-      <p id="total"><b>₹ 200</b></p>
+      <p style="padding-left:5%" id="total"><b>₹ 200</b></p>
+      </div>
       <br>
       <br>
       <br>
-      <h5 style="margin-left: 1em; font-family: sans-serif;">
+      <h5 style="font-family: sans-serif;">
         Please upload a scanned copy of your prescriptions:</h5>  
       <input name="presc_file" type="file" id="file" class="inputfile" 
         style="margin-left: 1em; margin-top: 1em; width: 15em;">
-        <label for="file" style = "margin-left: 14em; margin-top: 2em;">Choose a file</label>
-      <center><button type="button" disabled id="paymentButton" class="button button1" style="margin: 3em 2em 3em 3em;" 
+        <label for="file" style = "margin-left: 35%; margin-top: 2em;">Choose a file</label>
+      <button type="button" disabled id="paymentButton" class="button button1" style="margin: 3em 2em 3em 24%;" 
        >Proceed to
-          Payment</button></center>
-    </div>
-
-    <div style="display:inline-block; margin-left: 20em; margin-top: 10em;">
-      <h3>Previously ordered by you:</h3>
-
-      <div style="display: inline-block; vertical-align: top; font-weight: bold;">
-        <img src="assets/allegram.jpg" alt="Allegra-M_image" width="100" height="100"
-          style="margin: 0em 0.5em 0.5em 1em;" />
-      </div>
-      <div style="display: inline-block;">
-        <div style="margin: 0.5em 0.5em 0.5em 3em; padding:1em;">Allegra M
-          <p>Ordered on: 15/07/20</p>
-        </div>
-      </div>
-
-      <br>
-      <br>
-      <div style="display: inline-block; vertical-align: top; ">
-        <img src="assets/disprin.jpg" alt="Disprin_image" width="100" height="100"
-          style="margin: 0em 0.5em 0.5em 1em;" />
-      </div>
-      <div style="display: inline-block;">
-        <div style="margin: 0.5em 0.5em 0.5em 3em; padding:1em;">Disprin
-          <p>Ordered on: 26/07/20</p>
-        </div>
-      </div>
-
-
-    </div>
+          Payment</button>
+    <br>
+    <br>
 
   </main>
+  
   <footer class="pt-1">
     <div>
       <div class="row">
@@ -371,7 +327,7 @@
 
           <ul class="pl-5">
             <li>
-              <a href="#!">Terms and Conditions</a>
+              <a class="my" href="terms_and_conditions.php">Terms and Conditions</a>
             </li>
             <li>
               <a href="#!">Privacy Policy</a>
@@ -380,7 +336,7 @@
               <a href="#!">Customer Service</a>
             </li>
             <li>
-              <a href="faq.html">FAQs</a>
+              <a class="my" href="faq.php">FAQs</a>
             </li>
           </ul>
         </div>
@@ -392,8 +348,94 @@
       </div>
     </div>
   </footer>
+  
+  
+    <script>
+      var button = document.getElementById("btn");
+      var prices = <?php echo json_encode($prices); ?>;
+      var quantities = <?php echo json_encode($quantities); ?>;
+  
+      var inputs = document.getElementsByClassName('quantity');
+      var n = inputs.length, i;
 
-  <script src="js/cart.js"></script>
+      var fileInput = document.getElementById('file');
+      var paymentButton = document.getElementById("paymentButton");
+      var selected = false;
+
+      fileInput.onchange = function () {
+      
+        var input = this.files[0];
+      
+        if (input) {
+          bootbox.alert("You can now proceed");
+          paymentButton.disabled = false;
+          selected = true;
+        } 
+      };
+
+      var total = 0;
+      for (i = 0; i < n; i++) {
+        var quantity = inputs[i].value;
+        total += quantity * prices[i];
+        var prodid = inputs[i].id;
+      }
+      amount = "₹ ".concat(total);
+      document.getElementById("total").innerHTML = amount.bold();
+
+      paymentButton.onclick = function() {
+        var prices = <?php echo json_encode($prices); ?>;
+        var quantities = <?php echo json_encode($quantities); ?>;
+    
+        var inputs = document.getElementsByClassName('quantity');
+        var n = inputs.length, i;
+
+        var total = 0;
+        for (i = 0; i < n; i++) {
+          var quantity = inputs[i].value;
+          total += quantity * prices[i];
+          var prodid = inputs[i].id;
+        }
+        amount = "₹ ".concat(total);
+        document.getElementById("total").innerHTML = amount.bold();
+        if (!selected) {
+          bootbox.alert("Please select a file first!");
+        }
+        else {
+          window.location.href = 'paymentinfo.php?amt=' + total + '&id=' + '<?php echo $curr_email; ?>';
+        }
+      };
+
+      function calc() {
+          var prices = <?php echo json_encode($prices); ?>;
+          var quantities = <?php echo json_encode($quantities); ?>;
+    
+        var inputs = document.getElementsByClassName('quantity');
+        var n = inputs.length, i;
+
+        var total = 0;
+        for (i = 0; i < n; i++) {
+          var quantity = inputs[i].value;
+          total += quantity * prices[i];
+          var prodid = inputs[i].id;
+        }
+          amount = "₹ ".concat(total);
+          document.getElementById("total").innerHTML = amount.bold();
+        }
+
+    </script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap 4 dependency -->
+    <script src="popper.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+  </script>
+  <script src="bootbox.min.js"></script>
+    <script src="bootbox.locales.min.js"></script>
 </body>
-
 </html>

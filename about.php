@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel = "icon" href =  
+"assets/hospital.png"
+        type = "image/x-icon"> 
     <title>About Us - PharmEazy | An Easier Pharmacy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -162,7 +165,7 @@
       <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
         <ul class="luxbar-navigation">
           <li class="luxbar-header">
-            <a href="index.php" class="luxbar-brand"
+            <a href="index.php" class="luxbar-brand my"
               ><i
                 class="fa fa-medkit"
                 style="font-size: 2.5rem; padding: 0.5rem"
@@ -210,38 +213,30 @@
         </div>
         <div class="col-lg-6">
           <center>
-            <h2 style="padding: 5%"><strong>WHO WE ARE</strong></h2>
+            <h2 style="padding: 2.5%"><strong>WHO WE ARE</strong></h2>
           </center>
-          <p style="padding: 2%; text-align: justify">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero
-            tempore quam repellat eveniet facilis in dolor doloribus sapiente
-            eos necessitatibus? Ipsam, ut nihil vitae repudiandae minus totam
-            earum doloremque voluptates! Quos impedit in pariatur temporibus
-            accusantium unde dolore, veniam asperiores consequatur! Libero, sit!
-            Nam voluptatem id sint iure, possimus molestiae eaque ipsa eius
-            dolorum dicta enim quasi, fuga accusantium blanditiis! Ullam laborum
-            consequatur odit alias ipsam perferendis ratione quos ipsa eum ea,
-            molestiae odio iusto iste quibusdam veritatis, sequi, placeat quae
-            eligendi et libero earum illum nemo? Ut, quae possimus!
+          <p style="padding: 1%; text-align: justify">
+            Pharmeazy, or as we like to call it, <b><i>the easier pharmacy</i></b>, was born out of
+            the lack in feasibility in the conventional pharmacy system. Pharmeazy is a
+            team of 4 enthusiastic individuals striving to make a difference in the community
+            by incorporating technology into conventional methods and making them more efficient.
+            Pharmeazy will be the only pharmacy you will ever need to visit as we offer you every
+            single product that you will require for your medical needs in the most affordable price.
+            Every purchase you perform here is verified along with a proper prescription with utmost security
+            to provide you the most seamless and <b><i>eaziest</i></b> experience.
           </p>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-6">
           <center>
-            <h2 style="padding: 5%"><strong>OUR VISION</strong></h2>
+            <h2 style="padding: 2.5%"><strong>OUR VISION</strong></h2>
           </center>
-          <p style="padding: 2%; text-align: justify">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero
-            tempore quam repellat eveniet facilis in dolor doloribus sapiente
-            eos necessitatibus? Ipsam, ut nihil vitae repudiandae minus totam
-            earum doloremque voluptates! Quos impedit in pariatur temporibus
-            accusantium unde dolore, veniam asperiores consequatur! Libero, sit!
-            Nam voluptatem id sint iure, possimus molestiae eaque ipsa eius
-            dolorum dicta enim quasi, fuga accusantium blanditiis! Ullam laborum
-            consequatur odit alias ipsam perferendis ratione quos ipsa eum ea,
-            molestiae odio iusto iste quibusdam veritatis, sequi, placeat quae
-            eligendi et libero earum illum nemo? Ut, quae possimus!
+          <p style="padding: 1%; text-align: justify">
+            Here at Pharmeazy, We believe in <b><i>Healing, Caring and Empathy.</i></b> We believe that
+            every individual should be entitled to receive the utmost medical care in the most affordable
+            price possible. The medical field is the most substantial and rapidly developing field at the moment. We wish to make a difference in the medical world by providing an efficient method
+            for people to purchase their medicines. 
           </p>
         </div>
         <div class="col-lg-6">
@@ -308,7 +303,7 @@
 
             <ul class="pl-5">
               <li>
-                <a href="terms_and_conditions.html">Terms and Conditions</a>
+                <a class="my" href="terms_and_conditions.php">Terms and Conditions</a>
               </li>
               <li>
                 <a href="#!">Privacy Policy</a>
@@ -317,7 +312,7 @@
                 <a href="#!">Customer Service</a>
               </li>
               <li>
-                <a href="faq.html">FAQs</a>
+                <a class="my" href="faq.php">FAQs</a>
               </li>
             </ul>
           </div>

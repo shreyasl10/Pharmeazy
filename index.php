@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PharmEazy | An Easier Pharmacy</title>
+    <link rel = "icon" href =  
+"assets/hospital.png"
+        type = "image/x-icon"> 
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
       rel="stylesheet"
@@ -65,7 +68,11 @@
         background-color: rgba(0, 0, 0, 0.1);
         color: white;
       }
-
+      .body .header-text
+      {
+        text-shadow: 0 0 0.15em black;
+        padding-left: 3em;
+      }
       .carousel h1 {
         margin-bottom: 0.75rem;
         font-size: 4.5rem;
@@ -95,8 +102,8 @@
       }
 
       .row {
-        margin-top: 5%;
-        margin-bottom: 5%;
+        margin-top: 2%;
+        margin-bottom: 2%;
         padding: 2rem 2.5rem;
         display: flex;
         justify-content: space-evenly;
@@ -150,7 +157,7 @@
       .row h3 {
         display: flex;
         justify-content: space-evenly;
-        padding-top: 15%;
+        padding-top: 5%;
       }
 
       .row img {
@@ -183,11 +190,23 @@
       .info .foot p {
         font-size: 15px;
       }
+      bootbox.alert
+      (
+        {
+          font-family: "Poppins", sans-serif;
+          
+        }
+      )
     </style>
     <script>
     function navvy()
     {
       var x="<?php echo (isset($_GET['id'])) ? $_GET['id'] : "null"; ?>";
+      var log="<?php echo (isset($_GET['log'])) ? $_GET['log'] : "null"; ?>";
+      if(log==1)
+      {
+        bootbox.alert('<center>Login successful</center>');
+      }
       var y=document.getElementById('log');
       var z=document.getElementById('prof');
       var tags=document.getElementsByClassName('my');
@@ -240,7 +259,7 @@
       <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
         <ul class="luxbar-navigation">
           <li class="luxbar-header">
-            <a href="index.php" class="luxbar-brand"
+            <a href="index.php" class="luxbar-brand my"
               ><i
                 class="fa fa-medkit"
                 style="font-size: 2.5rem; padding: 0.5rem"
@@ -286,10 +305,12 @@
         <h1>
           <center>Welcome to PharmEazy</center>
         </h1>
-        <h4>
-          <center>We are LOREM! We are IPSUM! We are DOLOR!</center>
-        </h4>
         <center>
+        <h4>
+        <center>
+        The Eazier Pharmacy!!
+        </center>
+        </h4>
           <a class="my shop" href="cata.php"
             ><button
               class="btn btn-success"
@@ -301,8 +322,9 @@
         </center>
       </div>
     </header>
-    <section class="body">
-      <section class="icons" style="padding-left: 5%">
+    <section class="body" style="margin-top:10%">
+   <div class="header-text"><h2> <center>We Believe in....</center> </h2></div> 
+      <section class="icons" style="padding-left: 5%; padding-top:1%">
         <div class="row">
           <div class="card" style="padding-bottom: 2%">
             <img
@@ -311,7 +333,7 @@
               style="max-width: 200px; margin-left: 5%"
               class="hov"
             />
-            <h3 style="text-shadow: 0 0 0.15em white">Lorem Ipsum Dolor!</h3>
+            <h3 style="text-shadow: 0 0 1.5em black; padding-left:20%">Healing</h3>
           </div>
           <div class="card" style="padding-bottom: 2%">
             <img
@@ -320,7 +342,7 @@
               style="max-width: 200px; margin-left: 5%"
               class="hov"
             />
-            <h3 style="text-shadow: 0 0 0.15em white">Lorem Ipsum Dolor!</h3>
+            <h3 style="text-shadow: 0 0 1.5em black; padding-left:20%">Caring</h3>
           </div>
           <div class="card" style="padding-bottom: 2%">
             <img
@@ -329,7 +351,7 @@
               style="max-width: 200px; margin-left: 5%"
               class="hov"
             />
-            <h3 style="text-shadow: 0 0 0.15em white">Lorem Ipsum Dolor!</h3>
+            <h3 style="text-shadow: 0 0 1.5em black; padding-left:30%">Empathy</h3>
           </div>
         </div>
       </section>
@@ -357,7 +379,7 @@
             <strong>Visit Us At Our Stores</strong>
           </h3>
         </center>
-        <div class="row" style="margin-top: 5%; margin-right: 2%">
+        <div class="row" style="margin-top: 5%; margin-right: 1%">
           <div onclick="maps(1)" class="statepic hov">
             <img
               src="assets/chennai.jpg"
@@ -410,7 +432,7 @@
                 style="
                   color: white;
                   text-shadow: 0 0 0.15em black;
-                  padding-left: 30%;
+                  padding-left: 50%;
                 "
               >
                 Delhi
@@ -427,7 +449,7 @@
           <h3 style="text-shadow: 0 0 0.15em white">
             <strong>Want to get updates on our Eazy Offers?? </strong>
           </h3>
-          <h5 style="padding-top: 1.5em">
+          <h5 style="padding-top: 0.5em">
             Subscribe to get instant updates the next time we give an EZ Offer
           </h5>
           <form
@@ -473,7 +495,7 @@
 
             <ul class="pl-5">
               <li>
-                <a href="terms_and_conditions.html">Terms and Conditions</a>
+                <a class="my" href="terms_and_conditions.php">Terms and Conditions</a>
               </li>
               <li>
                 <a href="#!">Privacy Policy</a>
@@ -482,7 +504,7 @@
                 <a href="#!">Customer Service</a>
               </li>
               <li>
-                <a href="faq.html">FAQs</a>
+                <a class="my" href="faq.php">FAQs</a>
               </li>
             </ul>
           </div>
@@ -515,6 +537,10 @@
       }
     </script>
     <script type="text/javascript" src="slideshow.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap 4 dependency -->
+    <script src="popper.min.js"></script>
+
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -530,6 +556,9 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
+      <!-- bootbox code -->
+      <script src="bootbox.min.js"></script>
+    <script src="bootbox.locales.min.js"></script>
     <script type="text/javascript" src="maps.js"></script>
   </body>
 </html>

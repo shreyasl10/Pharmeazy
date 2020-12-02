@@ -19,8 +19,8 @@
     }
     if(mysqli_num_rows($get_data_query)==0 or $flag==1)
     {
-        echo "<script> alert('YOU SHALL NOT PASS!')
-        window.location='login.php';
+        echo "<script>
+        window.location='login.php?log=0';
           </script>";
         exit();
     }

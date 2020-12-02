@@ -16,14 +16,12 @@
 	}
 	if($auth==0)
 	{
-		header("Location:../login.php?id=0");
+		header("Location:../login.php?id=0",true);
 		exit();
 	}
 	else
 	{
-		 echo "<script> alert('Login successful')
-            window.location='../index.php?id=$email';
-			  </script>";
+		header("Location:../index.php?id=$email&log=1",false);
 		exit();
 	}
 ?>

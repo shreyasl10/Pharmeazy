@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel = "icon" href =  
+"assets/hospital.png"
+        type = "image/x-icon"> 
   <title>PharmEazy | An Easier Pharmacy</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -134,7 +137,7 @@
       <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
         <ul class="luxbar-navigation">
           <li class="luxbar-header">
-            <a href="index.php" class="luxbar-brand"
+            <a href="index.php" class="luxbar-brand my"
               ><i
                 class="fa fa-medkit"
                 style="font-size: 2.5rem; padding: 0.5rem"
@@ -238,7 +241,7 @@
 
           <ul class="pl-5">
             <li>
-              <a href="terms_and_conditions.html">Terms and Conditions</a>
+              <a class="my" href="terms_and_conditions.php">Terms and Conditions</a>
             </li>
             <li>
               <a href="#!">Privacy Policy</a>
@@ -247,7 +250,7 @@
               <a href="#!">Customer Service</a>
             </li>
             <li>
-              <a href="faq.html">FAQs</a>
+              <a class="my" href="faq.php">FAQs</a>
             </li>
           </ul>
         </div>
